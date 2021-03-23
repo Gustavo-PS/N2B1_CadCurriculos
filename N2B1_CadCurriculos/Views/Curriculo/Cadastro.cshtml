@@ -27,16 +27,16 @@
                     <input type="text" Name="" value="" placeholder="Seu nome aqui" required />
                     <br>
                     <label>CPF</label>
-                    <input type="text" Name="" value="" placeholder="000.000.000-00" pattern="\d{11}" required />
+                    <input type="text" Name="cpf" id="cpf" value="" onkeypress="InputNumber(event)" placeholder="000.000.000-00" />
                     <br>
                     <label>Telefone</label>
-                    <input type="tel" Name="" value="" placeholder="(DD)0000-0000" required />
+                    <input type="tel" Name="" value="" onkeypress="InputNumber(event)" placeholder="(00) 0000-0000" />
                     <br>
                     <label>E-mail</label>
                     <input type="email" Name="" value="" placeholder="nome@dominio.com" required />
                     <br>
                     <label>Cargo</label>
-                    <input type="text" Name="" value="" placeholder="Gerente de Vendas" required />
+                    <input type="text" Name="" value="" />
 
                 </div>
             </div>
