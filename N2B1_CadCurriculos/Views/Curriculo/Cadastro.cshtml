@@ -8,6 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <title>Cadastro</title>
 </head>
 
@@ -43,28 +44,30 @@
             <div>
                 <h2>Endereço</h2>
                 <div>
-                    <label>País</label>
-                    <input type="text" Name="" value="" />
                     <br>
                     <label>CEP</label>
-                    <input type="text" Name="" value="" />
+                    <input id="cep" type="text" Name="" value="" placeholder="00000-000" />
                     <br>
                     <label>Estado</label>
-                    <input type="text" Name="" value="" />
+                    <input id="uf" type="text" Name="" value="" />
                     <br>
                     <label>Cidade</label>
-                    <input type="text" Name="" value="" />
+                    <input id="cidade" type="text" Name="" value="" />
                     <br>
                     <label>Bairro</label>
-                    <input type="text" Name="" value="" />
+                    <input id="bairro" type="text" Name="" value="" />
                     <br>
                     <label>Endereço</label>
-                    <input type="text" Name="" value="" />
+                    <input id="rua" type="text" Name="" value="" />
+                    <br />
+                    <label>Número</label>
+                    <input id="numero" type="text" Name="" value="" />
                 </div>
             </div>
+
             <!--Dados de Formação Academica e Cursos-->
-            <div>
-                <h2>Dados de formação acadêmica e cursos:</h2>
+            <h2>Dados de formação acadêmica e cursos:</h2>
+            <div id=cad0>
                 <div>
                     <label>Nome do curso</label>
                     <input type="text" Name="" value="" />
@@ -116,8 +119,12 @@
                             </select>
                         </div>
                     </div>
+
                 </div>
+                </br>
+                <button id="addCurso" type="button" onclick="duplicarCampos();">Adicionar Curso</button>
             </div>
+
             <!--Dados de experiências profissionais anteriores-->
             <div>
                 <h2>Dados de experiências profissionais anteriores:</h2>
@@ -307,6 +314,35 @@
         </form>
     </main>
 
+
+    <script type="text/javascript">
+        $("#cep").focusout(function () {
+            //Início do Comando AJAX
+            $.ajax({
+                //O campo URL diz o caminho de onde virá os dados
+                //É importante concatenar o valor digitado no CEP
+                url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
+                //Aqui você deve preencher o tipo de dados que será lido,
+                //no caso, estamos lendo JSON.
+                dataType: 'json',
+                //SUCESS é referente a função que será executada caso
+                //ele consiga ler a fonte de dados com sucesso.
+                //O parâmetro dentro da função se refere ao nome da variável
+                //que você vai dar para ler esse objeto.
+                success: function (resposta) {
+                    //Agora basta definir os valores que você deseja preencher
+                    //automaticamente nos campos acima.
+                    $("#rua").val(resposta.logradouro);
+                    //$("#numero").val(resposta.complemento);
+                    $("#bairro").val(resposta.bairro);
+                    $("#cidade").val(resposta.localidade);
+                    $("#uf").val(resposta.uf);
+                    //Vamos incluir para que o Número seja focado automaticamente
+                    //melhorando a experiência do usuário
+                    $("#numero").focus();
+                }
+            });
+        });</script>
     <footer>
     </footer>
 </body>
