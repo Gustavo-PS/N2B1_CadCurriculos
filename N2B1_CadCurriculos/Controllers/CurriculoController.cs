@@ -25,5 +25,21 @@ namespace N2B1_CadCurriculos.Controllers
         {
             return View();
         }
+        public IActionResult Listagem()
+        {
+            return View();
+        }
+
+        public IActionResult Impressao()
+        {
+            return View();
+        }
+
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
     }
 }

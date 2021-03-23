@@ -5,32 +5,13 @@
 
 <body>
     <header>
-        <h1>Gerenciador de Curriculos</h1>
-
         <nav>
             <ul>
                 <li><a asp-area="" asp-controller="Curriculo" asp-action="Sobre">Sobre</a></li>
-                <li><a asp-area="" asp-controller="Curriculo" asp-action="Cadastro">Cadastrar Currículo</a></li>
+                <li><a asp-area="" asp-controller="Curriculo" asp-action="Cadastro">Cadastrar</a></li>
+                <li><a asp-area="" asp-controller="Curriculo" asp-action="Listagem">Listagem</a></li>
+                <li><a asp-area="" asp-controller="Curriculo" asp-action="Impressao">Impressão</a></li>
             </ul>
         </nav>
     </header>
-
-    <main>
-        <h2>Curriculos cadastrados</h2>
-
-        <table>
-            <tr>
-                <th>CPF</th>
-                <th>Nome</th>
-                <th>CEP</th>
-                <th>Rua</th>
-            </tr>
-            <tr>
-                <td>CPF_valor</td>
-                <td>Nome_valor</td>
-                <td>CEP_valor</td>
-                <td>Rua_valor</td>
-            </tr>
-        </table>
-    </main>
 </body>
