@@ -1,42 +1,104 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+var mask = {
 
-// Write your JavaScript code.
+    //Init
+    init: function (o, f) {
+        v_obj = o;
+        v_fun = f;
 
+        setTimeout("mask.execmasc()", 1);
+    },
 
-//Input apenas números
-function InputNumber(evt) {
-    var ch = String.fromCharCode(evt.which)
+    //ExecMasc
+    execmasc: function () {
+        v_obj.value = v_fun(v_obj.value)
+    },
 
-    if (!(/[0-9]/.test(ch))) {
-        evt.preventDefault();
-    }
+    //Cep
+    cep: function (v) {
+        v = v.replace(/\D/g, "");
+        v = v.replace(/^(\d{5})(\d)/, "$1-$2");
+
+        document.getElementById("cep").maxLength = "9";
+
+        return v;
+    },
+
+    //Tel
+    tel: function (v) {
+        v = v.replace(/\D/g, "");
+        v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
+        v = v.replace(/(\d)(\d{4})$/, "$1-$2");
+
+        document.getElementById("tel").maxLength = "15";
+
+        return v;
+    },
+
+    //CPF
+    cpf: function (v) {
+        v = v.replace(/\D/g, "");
+        v = v.replace(/(\d{3})(\d)/, "$1.$2");
+        v = v.replace(/(\d{3})(\d)/, "$1.$2");
+        v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+        document.getElementById("cpf").maxLength = "14";
+
+        return v;
+    },
+
+    //Num
+    num: function (v) {
+        v = v.replace(/\D/g, "");
+
+        return v;
+    },
+
+    //Date
+    date: function (v) {
+        v = v.replace(/\D/g, "");
+        v = v.replace(/(\d{2})(\d)/, "$1/$2");
+        v = v.replace(/(\d{2})(\d)/, "$1/$2");
+
+        v = v.replace(/(\d{2})(\d{2})$/, "$1$2");
+
+        return v;
+    },
+
 }
 
-//Máscara para CPF
-var campoCPF = document.getElementById('cpf');
 
-campoCPF.oninput = function () {
-    var cpf = campoCPF.value;
+// Adicionar/Remover
+var countAR = 2;
 
-    if (cpf.length == 3 || cpf.length == 7) {
-        campoCPF.value += "."
+function duplicarCampos() {
+    var clone = document.getElementById('origem').cloneNode(true);
+    var destino = document.getElementById('destino');
+    destino.appendChild(clone);
+
+    var camposClonados = clone.getElementsByTagName('input');
+    var camposClonadosS = clone.getElementsByTagName('select');
+
+    for (i = 0; i < camposClonados.length; i++) {
+        camposClonados[i].value = '';
+        console.log(camposClonados[i].id + countAR);
+        camposClonados[i].id = camposClonados[i].id + countAR;
+        console.log(camposClonados[i].id);
     }
 
-    if (cpf.length == 11) {
-        campoCPF.value += "-"
+    for (i = 0; i < camposClonadosS.length; i++) {
+        camposClonadosS[i].value = '';
+        console.log(camposClonadosS[i].id + countAR);
     }
-        
+
+    countAR++;
 }
 
-/*
- function mask_CPF() {
-    var cpf = document.getElementById('cpf');
-
-    if (cpf.length == 3 || cpf.length == 7) {
-        campoCPF.value += "."
-    } else (cpf.length == 11) {
-        campoCPF.value += "-"
-    }
+function removerCampos(id) {
+    var node1 = document.getElementById('destino');
+    node1.removeChild(node1.childNodes[0]);
+    countAR = countAR - 1;
 }
- */
+
+
+
