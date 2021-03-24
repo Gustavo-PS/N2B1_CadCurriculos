@@ -12,7 +12,14 @@ namespace N2B1_CadCurriculos.Models
         public string telefone { get; set; }
         public string email { get; set; }
         public string cargo { get; set; }
-        public EnderecoViewModel endereco { get; set; }
+
+        //Endereço
+        public int cep { get; set; }
+        public string estado { get; set; }
+        public string cidade { get; set; }
+        public string bairo { get; set; }
+        public string rua { get; set; }
+        public int numero { get; set; }
 
         //Dados de formação acadêmica e cursos
         public string escolaridade1 { get; set; }
