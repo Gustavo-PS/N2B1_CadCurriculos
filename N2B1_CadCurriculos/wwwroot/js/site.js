@@ -68,4 +68,37 @@ var mask = {
 }
 
 
+// Adicionar/Remover
+var countAR = 2;
+
+function duplicarCampos() {
+    var clone = document.getElementById('origem').cloneNode(true);
+    var destino = document.getElementById('destino');
+    destino.appendChild(clone);
+
+    var camposClonados = clone.getElementsByTagName('input');
+    var camposClonadosS = clone.getElementsByTagName('select');
+
+    for (i = 0; i < camposClonados.length; i++) {
+        camposClonados[i].value = '';
+        console.log(camposClonados[i].id + countAR);
+        camposClonados[i].id = camposClonados[i].id + countAR;
+        console.log(camposClonados[i].id);
+    }
+
+    for (i = 0; i < camposClonadosS.length; i++) {
+        camposClonadosS[i].value = '';
+        console.log(camposClonadosS[i].id + countAR);
+    }
+
+    countAR++;
+}
+
+function removerCampos(id) {
+    var node1 = document.getElementById('destino');
+    node1.removeChild(node1.childNodes[0]);
+    countAR = countAR - 1;
+}
+
+
 

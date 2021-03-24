@@ -24,19 +24,19 @@
                 <h2>Dados pessoais:</h2>
                 <div>
                     <label>Nome</label>
-                    <input type="text" Name="" value="" placeholder="Seu nome aqui" required />
+                    <input type="text" Name="nome" value="" placeholder="Seu nome aqui" required />
                     <br>
                     <label>CPF</label>
                     <input type="text" Name="cpf" id="cpf" value="" onkeydown="mask.init(this, mask.cpf)" placeholder="000.000.000-00" required/>
                     <br>
                     <label>Telefone</label>
-                    <input type="tel" Name="" value="" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" required/>
+                    <input type="tel" Name="telefone" value="" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" required/>
                     <br>
                     <label>E-mail</label>
-                    <input type="email" Name="" value="" placeholder="nome@dominio.com" required />
+                    <input type="email" Name="email" value="" placeholder="nome@dominio.com" required />
                     <br>
                     <label>Cargo</label>
-                    <input type="text" Name="" value="" />
+                    <input type="text" Name="cargo" value="" />
 
                 </div>
             </div>
@@ -46,35 +46,35 @@
                 <div>
                     <br>
                     <label>CEP</label>
-                    <input id="cep" type="text" Name="" value="" onkeydown="mask.init(this, mask.cep)" required placeholder="00000-000" />
+                    <input id="cep" type="text" Name="cep" value="" onkeydown="mask.init(this, mask.cep)" required placeholder="00000-000" />
                     <br>
                     <label>Estado</label>
-                    <input id="uf" type="text" Name="" value="" readonly />
+                    <input id="uf" type="text" Name="estado" value="" readonly />
                     <br>
                     <label>Cidade</label>
-                    <input id="cidade" type="text" Name="" value="" readonly />
+                    <input id="cidade" type="text" Name="cidade" value="" readonly />
                     <br>
                     <label>Bairro</label>
-                    <input id="bairro" type="text" Name="" value="" readonly />
+                    <input id="bairro" type="text" Name="bairro" value="" readonly />
                     <br>
                     <label>Endereço</label>
-                    <input id="rua" type="text" Name="" value="" readonly />
+                    <input id="rua" type="text" Name="endereco" value="" readonly />
                     <br />
                     <label>Número</label>
-                    <input id="numero" type="text" Name="" value="" required/>
+                    <input id="numero" type="text" Name="numero" value="" required/>
                 </div>
             </div>
 
             <!--Dados de Formação Academica e Cursos-->
             <h2>Dados de formação acadêmica e cursos:</h2>
             <div>
-                <div id="0">
+                <div id="origem">
                     <label>Curso</label>
-                    <input type="text" Name="" value="" required />
+                    <input type="text" id="curso" Name="curso" value="" required />
                     <br>
                     <label>Nível de escolaridade</label>
                     <div>
-                        <select name="" id="" required>
+                        <select name="" id="escolaridade" required>
                             <option value=""></option>
                             <option value="1">Fundamental</option>
                             <option value="2">Médio</option>
@@ -88,11 +88,11 @@
                     </div>
                     <br>
                     <label>Instituição</label>
-                    <input type="text" Name="" value="" placeholder="Faculdade X" required />
+                    <input type="text" id="instituicao" Name="" value="" placeholder="Faculdade X" required />
                     <br>
 
                     <label>Situação Atual:</label>
-                    <select name="" id="" required>
+                    <select name="" id="situacao" required>
                         <option value=""></option>
                         <option value="1">Completo</option>
                         <option value="2">Cursando</option>
@@ -100,12 +100,12 @@
                     </select>
                     <br>
                     <label>Mês/Ano de Conclusão</label>
-                    <input type="month" Name="" value="" required />
+                    <input type="month" id="conclusao" Name="" value="" required />
 
                     <div>
                         <label>Período de aula</label>
                         <div>
-                            <select name="" id="" required>
+                            <select name="" id="periodo" required>
                                 <option value=""></option>
                                 <option value="1">A distancia</option>
                                 <option value="2">Madrugada</option>
@@ -120,10 +120,15 @@
                             </select>
                         </div>
                     </div>
-
+                    <br />
+                    <button id="btn0" type="button" onclick="removerCampos();">Remover</button>
                 </div>
+
                 <br>
-                <button id="btn0" type="button" onclick="duplicarCampos(0)">Adicionar</button>
+                <div id="destino"></div>
+                <br>
+
+                <button id="btn0" type="button" onclick="duplicarCampos();">Adicionar</button>
             </div>
 
 
