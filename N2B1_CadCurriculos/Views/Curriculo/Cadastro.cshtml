@@ -24,7 +24,7 @@
                 <h2>Dados pessoais:</h2>
                 <div>
                     <label>Nome</label>
-                    <input type="text" Name="" value="" />
+                    <input type="text" Name="" value="" placeholder="Seu nome aqui" required />
                     <br>
                     <label>CPF</label>
                     <input type="text" Name="cpf" id="cpf" value="" onkeypress="InputNumber(event)" placeholder="000.000.000-00" />
@@ -33,7 +33,7 @@
                     <input type="tel" Name="" value="" onkeypress="InputNumber(event)" placeholder="(00) 0000-0000" />
                     <br>
                     <label>E-mail</label>
-                    <input type="email" Name="" value="" />
+                    <input type="email" Name="" value="" placeholder="nome@dominio.com" required />
                     <br>
                     <label>Cargo</label>
                     <input type="text" Name="" value="" />
@@ -46,19 +46,19 @@
                 <div>
                     <br>
                     <label>CEP</label>
-                    <input id="cep" type="text" Name="" value="" placeholder="00000-000" />
+                    <input id="cep" type="text" Name="" value="" required placeholder="00000-000" />
                     <br>
                     <label>Estado</label>
-                    <input id="uf" type="text" Name="" value="" />
+                    <input id="uf" type="text" Name="" value="" disabled />
                     <br>
                     <label>Cidade</label>
-                    <input id="cidade" type="text" Name="" value="" />
+                    <input id="cidade" type="text" Name="" value="" disabled />
                     <br>
                     <label>Bairro</label>
-                    <input id="bairro" type="text" Name="" value="" />
+                    <input id="bairro" type="text" Name="" value="" disabled />
                     <br>
                     <label>Endereço</label>
-                    <input id="rua" type="text" Name="" value="" />
+                    <input id="rua" type="text" Name="" value="" disabled />
                     <br />
                     <label>Número</label>
                     <input id="numero" type="text" Name="" value="" />
@@ -67,14 +67,14 @@
 
             <!--Dados de Formação Academica e Cursos-->
             <h2>Dados de formação acadêmica e cursos:</h2>
-            <div id=cad0>
-                <div>
-                    <label>Nome do curso</label>
-                    <input type="text" Name="" value="" />
+            <div>
+                <div id="0">
+                    <label>Curso</label>
+                    <input type="text" Name="" value="" placeholder="Engenharia da Computação" required />
                     <br>
                     <label>Nível de escolaridade</label>
                     <div>
-                        <select name="" id="">
+                        <select name="" id="" required>
                             <option value=""></option>
                             <option value="1">Fundamental</option>
                             <option value="2">Médio</option>
@@ -88,23 +88,24 @@
                     </div>
                     <br>
                     <label>Instituição</label>
-                    <input type="text" Name="" value="" />
+                    <input type="text" Name="" value="" placeholder="Faculdade X" required />
                     <br>
+
                     <label>Situação Atual:</label>
-                    <input type="radio" Name="" value="" />
-                    <label>Interrompido</label>
-                    <input type="radio" Name="" value="" />
-                    <label>Cursando</label>
-                    <input type="radio" Name="" value="" />
-                    <label>Completo</label>
+                    <select name="" id="" required>
+                        <option value=""></option>
+                        <option value="1">Completo</option>
+                        <option value="2">Cursando</option>
+                        <option value="3">Interrompido</option>
+                    </select>
                     <br>
                     <label>Mês/Ano de Conclusão</label>
-                    <input type="month" Name="" value="" />
+                    <input type="text" Name="" value="" placeholder="MM/AAAA" required />
 
                     <div>
                         <label>Período de aula</label>
                         <div>
-                            <select>
+                            <select name="" id="" required>
                                 <option value=""></option>
                                 <option value="1">A distancia</option>
                                 <option value="2">Madrugada</option>
@@ -121,26 +122,27 @@
                     </div>
 
                 </div>
-                </br>
-                <button id="addCurso" type="button" onclick="duplicarCampos();">Adicionar Curso</button>
+                <br>
+                <button id="btn0" type="button" onclick="duplicarCampos(0)">Adicionar</button>
             </div>
+
 
             <!--Dados de experiências profissionais anteriores-->
             <div>
                 <h2>Dados de experiências profissionais anteriores:</h2>
                 <label>Empresa</label>
-                <input type="text" Name="" value="" />
+                <input type="text" Name="" value="" required />
                 <br>
                 <label>Início</label>
-                <input type="month" name="" value="" />
+                <input type="text" name="" value="" placeholder="MM/AAAA" required />
                 <br>
                 <label>Término</label>
-                <input type="month" name="" value="" />
+                <input type="text" name="" value="" placeholder="MM/AAAA" required />
                 <br>
                 <div>
                     <label>Ocupaçoes na Empresa</label>
                     <div>
-                        <select name="" id="">
+                        <select name="" id="" required>
                             <option value=""></option>
                             <option value="1">Auxiliar/Operacional</option>
                             <option value="2">Técnico</option>
@@ -158,10 +160,11 @@
                 <div>
                     <label>Atividades</label>
                     <div>
-                        <textarea placeholder="Descreva suas atividades"></textarea>
+                        <textarea placeholder="Descreva suas atividades" required></textarea>
                     </div>
                 </div>
             </div>
+
             <!--Dados de idiomas-->
             <div>
                 <h2>Dados de idiomas:</h2>
@@ -169,7 +172,7 @@
                     <div>
                         <label>Idioma</label>
                         <div>
-                            <select name="" id="">
+                            <select name="" id="" required>
                                 <option value=""></option>
                                 <option value="1">Africâner</option>
                                 <option value="2">Albanês</option>
@@ -284,7 +287,7 @@
                         <div>
                             <label>Conhecimento</label>
                             <div>
-                                <select name="" id="">
+                                <select name="" id="" required>
                                     <option value=""></option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -298,7 +301,7 @@
 
             <!--Conhecimentos-->
             <div>
-                <h2>Conhecimentos:</h2>
+                <h2>Conhecimentos extras:</h2>
                 <div>
                     <input type="text">
                     <select name="" id="">
@@ -315,6 +318,9 @@
     </main>
 
 
+
+
+    <!--Script de pesquisa e preenchimento do CEP-->
     <script type="text/javascript">
         $("#cep").focusout(function () {
             //Início do Comando AJAX
@@ -343,8 +349,9 @@
                 }
             });
         });</script>
+
+
     <footer>
     </footer>
 </body>
-
 </html>
