@@ -19,6 +19,8 @@ var mask = {
         v = v.replace(/\D/g, "");
         v = v.replace(/^(\d{5})(\d)/, "$1-$2");
 
+        document.getElementById("cep").maxLength = "9";
+
         return v;
     },
 
@@ -27,6 +29,8 @@ var mask = {
         v = v.replace(/\D/g, "");
         v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
         v = v.replace(/(\d)(\d{4})$/, "$1-$2");
+
+        document.getElementById("tel").maxLength = "15";
 
         return v;
     },
@@ -38,18 +42,9 @@ var mask = {
         v = v.replace(/(\d{3})(\d)/, "$1.$2");
         v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
 
+        document.getElementById("cpf").maxLength = "14";
+
         return v;
-    },
-
-    //CNPJ
-    cnpj: function (v) {
-        v = v.replace(/\D/g, "");
-        v = v.replace(/^(\d{2})(\d)/, "$1.$2");
-        v = v.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
-        v = v.replace(/\.(\d{3})(\d)/, ".$1/$2");
-        v = v.replace(/(\d{4})(\d)/, "$1-$2");
-
-        return v
     },
 
     //Num
@@ -71,4 +66,6 @@ var mask = {
     },
 
 }
+
+
 
