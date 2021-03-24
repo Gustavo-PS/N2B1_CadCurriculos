@@ -1,42 +1,74 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+var mask = {
 
-// Write your JavaScript code.
+    //Init
+    init: function (o, f) {
+        v_obj = o;
+        v_fun = f;
 
+        setTimeout("mask.execmasc()", 1);
+    },
 
-//Input apenas números
-function InputNumber(evt) {
-    var ch = String.fromCharCode(evt.which)
+    //ExecMasc
+    execmasc: function () {
+        v_obj.value = v_fun(v_obj.value)
+    },
 
-    if (!(/[0-9]/.test(ch))) {
-        evt.preventDefault();
-    }
+    //Cep
+    cep: function (v) {
+        v = v.replace(/\D/g, "");
+        v = v.replace(/^(\d{5})(\d)/, "$1-$2");
+
+        return v;
+    },
+
+    //Tel
+    tel: function (v) {
+        v = v.replace(/\D/g, "");
+        v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
+        v = v.replace(/(\d)(\d{4})$/, "$1-$2");
+
+        return v;
+    },
+
+    //CPF
+    cpf: function (v) {
+        v = v.replace(/\D/g, "");
+        v = v.replace(/(\d{3})(\d)/, "$1.$2");
+        v = v.replace(/(\d{3})(\d)/, "$1.$2");
+        v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+        return v;
+    },
+
+    //CNPJ
+    cnpj: function (v) {
+        v = v.replace(/\D/g, "");
+        v = v.replace(/^(\d{2})(\d)/, "$1.$2");
+        v = v.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+        v = v.replace(/\.(\d{3})(\d)/, ".$1/$2");
+        v = v.replace(/(\d{4})(\d)/, "$1-$2");
+
+        return v
+    },
+
+    //Num
+    num: function (v) {
+        v = v.replace(/\D/g, "");
+
+        return v;
+    },
+
+    //Date
+    date: function (v) {
+        v = v.replace(/\D/g, "");
+        v = v.replace(/(\d{2})(\d)/, "$1/$2");
+        v = v.replace(/(\d{2})(\d)/, "$1/$2");
+
+        v = v.replace(/(\d{2})(\d{2})$/, "$1$2");
+
+        return v;
+    },
+
 }
 
-//Máscara para CPF
-var campoCPF = document.getElementById('cpf');
-
-campoCPF.oninput = function () {
-    var cpf = campoCPF.value;
-
-    if (cpf.length == 3 || cpf.length == 7) {
-        campoCPF.value += "."
-    }
-
-    if (cpf.length == 11) {
-        campoCPF.value += "-"
-    }
-        
-}
-
-/*
- function mask_CPF() {
-    var cpf = document.getElementById('cpf');
-
-    if (cpf.length == 3 || cpf.length == 7) {
-        campoCPF.value += "."
-    } else (cpf.length == 11) {
-        campoCPF.value += "-"
-    }
-}
- */

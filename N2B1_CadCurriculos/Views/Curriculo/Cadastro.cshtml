@@ -27,10 +27,10 @@
                     <input type="text" Name="" value="" placeholder="Seu nome aqui" required />
                     <br>
                     <label>CPF</label>
-                    <input type="text" Name="cpf" id="cpf" value="" onkeypress="InputNumber(event)" placeholder="000.000.000-00" />
+                    <input type="text" Name="cpf" id="cpf" value="" onkeyup="mask.init(this, mask.cpf)" placeholder="000.000.000-00" maxlength="14" required/>
                     <br>
                     <label>Telefone</label>
-                    <input type="tel" Name="" value="" onkeypress="InputNumber(event)" placeholder="(00) 0000-0000" />
+                    <input type="tel" Name="" value="" onkeyup="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" maxlength="15" required/>
                     <br>
                     <label>E-mail</label>
                     <input type="email" Name="" value="" placeholder="nome@dominio.com" required />
@@ -46,7 +46,7 @@
                 <div>
                     <br>
                     <label>CEP</label>
-                    <input id="cep" type="text" Name="" value="" required placeholder="00000-000" />
+                    <input id="cep" type="text" Name="" value="" onkeyup="mask.init(this, mask.cep)" required placeholder="00000-000" maxlength="9" />
                     <br>
                     <label>Estado</label>
                     <input id="uf" type="text" Name="" value="" readonly />
@@ -61,7 +61,7 @@
                     <input id="rua" type="text" Name="" value="" readonly />
                     <br />
                     <label>Número</label>
-                    <input id="numero" type="text" Name="" value="" />
+                    <input id="numero" type="text" Name="" value="" required/>
                 </div>
             </div>
 
@@ -70,7 +70,7 @@
             <div>
                 <div id="0">
                     <label>Curso</label>
-                    <input type="text" Name="" value="" placeholder="Engenharia da Computação" required />
+                    <input type="text" Name="" value="" required />
                     <br>
                     <label>Nível de escolaridade</label>
                     <div>
