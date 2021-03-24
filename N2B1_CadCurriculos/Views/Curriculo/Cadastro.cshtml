@@ -27,10 +27,10 @@
                     <input type="text" Name="nome" value="" placeholder="Seu nome aqui" required />
                     <br>
                     <label>CPF</label>
-                    <input type="text" Name="cpf" id="cpf" value="" onkeydown="mask.init(this, mask.cpf)" placeholder="000.000.000-00" required/>
+                    <input type="text" Name="cpf" id="cpf" value="" onkeydown="mask.init(this, mask.cpf)" placeholder="000.000.000-00" required />
                     <br>
                     <label>Telefone</label>
-                    <input type="tel" Name="telefone" value="" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" required/>
+                    <input type="tel" Name="telefone" value="" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" required />
                     <br>
                     <label>E-mail</label>
                     <input type="email" Name="email" value="" placeholder="nome@dominio.com" required />
@@ -40,6 +40,7 @@
 
                 </div>
             </div>
+
             <!--Endereço-->
             <div>
                 <h2>Endereço</h2>
@@ -61,20 +62,20 @@
                     <input id="rua" type="text" Name="endereco" value="" readonly />
                     <br />
                     <label>Número</label>
-                    <input id="numero" type="text" Name="numero" value="" required/>
+                    <input id="numero" type="text" Name="numero" value="" required />
                 </div>
             </div>
 
             <!--Dados de Formação Academica e Cursos-->
             <h2>Dados de formação acadêmica e cursos:</h2>
-            <div>
-                <div id="origem">
+            <div id="Formacao1">
+                <div>
                     <label>Curso</label>
-                    <input type="text" id="curso" Name="curso" value="" required />
+                    <input type="text" id="curso1" Name="curso" value="" required />
                     <br>
                     <label>Nível de escolaridade</label>
                     <div>
-                        <select name="" id="escolaridade" required>
+                        <select name="" id="escolaridade1" required>
                             <option value=""></option>
                             <option value="1">Fundamental</option>
                             <option value="2">Médio</option>
@@ -88,11 +89,11 @@
                     </div>
                     <br>
                     <label>Instituição</label>
-                    <input type="text" id="instituicao" Name="" value="" placeholder="Faculdade X" required />
+                    <input type="text" id="instituicao1" Name="" value="" placeholder="Faculdade X" required />
                     <br>
 
                     <label>Situação Atual:</label>
-                    <select name="" id="situacao" required>
+                    <select name="" id="situacao1" required>
                         <option value=""></option>
                         <option value="1">Completo</option>
                         <option value="2">Cursando</option>
@@ -100,12 +101,12 @@
                     </select>
                     <br>
                     <label>Mês/Ano de Conclusão</label>
-                    <input type="month" id="conclusao" Name="" value="" required />
+                    <input type="month" id="conclusao1" Name="" value="" required />
 
                     <div>
                         <label>Período de aula</label>
                         <div>
-                            <select name="" id="periodo" required>
+                            <select name="" id="periodo1" required>
                                 <option value=""></option>
                                 <option value="1">A distancia</option>
                                 <option value="2">Madrugada</option>
@@ -120,17 +121,228 @@
                             </select>
                         </div>
                     </div>
-                    <br />
-                    <button id="btn0" type="button" onclick="removerCampos();">Remover</button>
                 </div>
+            </div> <!--Formação1-->
+            <div id="Formacao2">
+                <div>
+                    <label>Curso</label>
+                    <input type="text" id="curso2" Name="curso" value="" required />
+                    <br>
+                    <label>Nível de escolaridade</label>
+                    <div>
+                        <select name="" id="escolaridade2" required>
+                            <option value=""></option>
+                            <option value="1">Fundamental</option>
+                            <option value="2">Médio</option>
+                            <option value="3">Técnico</option>
+                            <option value="4">Superior</option>
+                            <option value="5">Superior tecnólogo</option>
+                            <option value="6">Pós-Graduação</option>
+                            <option value="7">Mestrado</option>
+                            <option value="8">Doutorado</option>
+                        </select>
+                    </div>
+                    <br>
+                    <label>Instituição</label>
+                    <input type="text" id="instituicao2" Name="" value="" placeholder="Faculdade X" required />
+                    <br>
 
-                <br>
-                <div id="destino"></div>
-                <br>
+                    <label>Situação Atual:</label>
+                    <select name="" id="situacao2" required>
+                        <option value=""></option>
+                        <option value="1">Completo</option>
+                        <option value="2">Cursando</option>
+                        <option value="3">Interrompido</option>
+                    </select>
+                    <br>
+                    <label>Mês/Ano de Conclusão</label>
+                    <input type="month" id="conclusao2" Name="" value="" required />
 
-                <button id="btn0" type="button" onclick="duplicarCampos();">Adicionar</button>
-            </div>
+                    <div>
+                        <label>Período de aula</label>
+                        <div>
+                            <select name="" id="periodo2" required>
+                                <option value=""></option>
+                                <option value="1">A distancia</option>
+                                <option value="2">Madrugada</option>
+                                <option value="3">Noturno</option>
+                                <option value="4">Sábado - Manhã</option>
+                                <option value="5">Sábado - Tarde</option>
+                                <option value="6">Sábado - Noite</option>
+                                <option value="7">Sábado - Integral</option>
+                                <option value="8">Integral</option>
+                                <option value="9">Matutino</option>
+                                <option value="10">Vespertino</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div> <!--Formação2-->
+            <div id="Formacao3">
+                <div id="origem">
+                    <label>Curso</label>
+                    <input type="text" id="curso3" Name="curso" value="" required />
+                    <br>
+                    <label>Nível de escolaridade</label>
+                    <div>
+                        <select name="" id="escolaridade3" required>
+                            <option value=""></option>
+                            <option value="1">Fundamental</option>
+                            <option value="2">Médio</option>
+                            <option value="3">Técnico</option>
+                            <option value="4">Superior</option>
+                            <option value="5">Superior tecnólogo</option>
+                            <option value="6">Pós-Graduação</option>
+                            <option value="7">Mestrado</option>
+                            <option value="8">Doutorado</option>
+                        </select>
+                    </div>
+                    <br>
+                    <label>Instituição</label>
+                    <input type="text" id="instituicao3" Name="" value="" placeholder="Faculdade X" required />
+                    <br>
 
+                    <label>Situação Atual:</label>
+                    <select name="" id="situacao3" required>
+                        <option value=""></option>
+                        <option value="1">Completo</option>
+                        <option value="2">Cursando</option>
+                        <option value="3">Interrompido</option>
+                    </select>
+                    <br>
+                    <label>Mês/Ano de Conclusão</label>
+                    <input type="month" id="conclusao3" Name="" value="" required />
+
+                    <div>
+                        <label>Período de aula</label>
+                        <div>
+                            <select name="" id="periodo3" required>
+                                <option value=""></option>
+                                <option value="1">A distancia</option>
+                                <option value="2">Madrugada</option>
+                                <option value="3">Noturno</option>
+                                <option value="4">Sábado - Manhã</option>
+                                <option value="5">Sábado - Tarde</option>
+                                <option value="6">Sábado - Noite</option>
+                                <option value="7">Sábado - Integral</option>
+                                <option value="8">Integral</option>
+                                <option value="9">Matutino</option>
+                                <option value="10">Vespertino</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div><!--Formação3-->
+            <div id="Formacao4">
+                <div>
+                    <label>Curso</label>
+                    <input type="text" id="curso4" Name="curso" value="" required />
+                    <br>
+                    <label>Nível de escolaridade</label>
+                    <div>
+                        <select name="" id="escolaridade4" required>
+                            <option value=""></option>
+                            <option value="1">Fundamental</option>
+                            <option value="2">Médio</option>
+                            <option value="3">Técnico</option>
+                            <option value="4">Superior</option>
+                            <option value="5">Superior tecnólogo</option>
+                            <option value="6">Pós-Graduação</option>
+                            <option value="7">Mestrado</option>
+                            <option value="8">Doutorado</option>
+                        </select>
+                    </div>
+                    <br>
+                    <label>Instituição</label>
+                    <input type="text" id="instituicao4" Name="" value="" placeholder="Faculdade X" required />
+                    <br>
+
+                    <label>Situação Atual:</label>
+                    <select name="" id="situacao4" required>
+                        <option value=""></option>
+                        <option value="1">Completo</option>
+                        <option value="2">Cursando</option>
+                        <option value="3">Interrompido</option>
+                    </select>
+                    <br>
+                    <label>Mês/Ano de Conclusão</label>
+                    <input type="month" id="conclusao4" Name="" value="" required />
+
+                    <div>
+                        <label>Período de aula</label>
+                        <div>
+                            <select name="" id="periodo4" required>
+                                <option value=""></option>
+                                <option value="1">A distancia</option>
+                                <option value="2">Madrugada</option>
+                                <option value="3">Noturno</option>
+                                <option value="4">Sábado - Manhã</option>
+                                <option value="5">Sábado - Tarde</option>
+                                <option value="6">Sábado - Noite</option>
+                                <option value="7">Sábado - Integral</option>
+                                <option value="8">Integral</option>
+                                <option value="9">Matutino</option>
+                                <option value="10">Vespertino</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div><!--Formação4-->
+            <div id="Formacao5">
+                <div>
+                    <label>Curso</label>
+                    <input type="text" id="curso5" Name="curso" value="" required />
+                    <br>
+                    <label>Nível de escolaridade</label>
+                    <div>
+                        <select name="" id="escolaridade5" required>
+                            <option value=""></option>
+                            <option value="1">Fundamental</option>
+                            <option value="2">Médio</option>
+                            <option value="3">Técnico</option>
+                            <option value="4">Superior</option>
+                            <option value="5">Superior tecnólogo</option>
+                            <option value="6">Pós-Graduação</option>
+                            <option value="7">Mestrado</option>
+                            <option value="8">Doutorado</option>
+                        </select>
+                    </div>
+                    <br>
+                    <label>Instituição</label>
+                    <input type="text" id="instituicao5" Name="" value="" placeholder="Faculdade X" required />
+                    <br>
+
+                    <label>Situação Atual:</label>
+                    <select name="" id="situacao5" required>
+                        <option value=""></option>
+                        <option value="1">Completo</option>
+                        <option value="2">Cursando</option>
+                        <option value="3">Interrompido</option>
+                    </select>
+                    <br>
+                    <label>Mês/Ano de Conclusão</label>
+                    <input type="month" id="conclusao5" Name="" value="" required />
+
+                    <div>
+                        <label>Período de aula</label>
+                        <div>
+                            <select name="" id="periodo5" required>
+                                <option value=""></option>
+                                <option value="1">A distancia</option>
+                                <option value="2">Madrugada</option>
+                                <option value="3">Noturno</option>
+                                <option value="4">Sábado - Manhã</option>
+                                <option value="5">Sábado - Tarde</option>
+                                <option value="6">Sábado - Noite</option>
+                                <option value="7">Sábado - Integral</option>
+                                <option value="8">Integral</option>
+                                <option value="9">Matutino</option>
+                                <option value="10">Vespertino</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div><!--Formação5-->
 
             <!--Dados de experiências profissionais anteriores-->
             <div>
