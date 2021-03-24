@@ -1,0 +1,357 @@
+﻿@{
+    ViewData["Title"] = "Curriculo";
+}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastrar Currículo</h1>
+    </header>
+
+    <main>
+        <form>
+            <!--Dados Pessoais-->
+            <div>
+                <h2>Dados pessoais:</h2>
+                <div>
+                    <label>Nome</label>
+                    <input type="text" Name="" value="" placeholder="Seu nome aqui" required />
+                    <br>
+                    <label>CPF</label>
+                    <input type="text" Name="cpf" id="cpf" value="" onkeypress="InputNumber(event)" placeholder="000.000.000-00" />
+                    <br>
+                    <label>Telefone</label>
+                    <input type="tel" Name="" value="" onkeypress="InputNumber(event)" placeholder="(00) 0000-0000" />
+                    <br>
+                    <label>E-mail</label>
+                    <input type="email" Name="" value="" placeholder="nome@dominio.com" required />
+                    <br>
+                    <label>Cargo</label>
+                    <input type="text" Name="" value="" />
+
+                </div>
+            </div>
+            <!--Endereço-->
+            <div>
+                <h2>Endereço</h2>
+                <div>
+                    <br>
+                    <label>CEP</label>
+                    <input id="cep" type="text" Name="" value="" required placeholder="00000-000" />
+                    <br>
+                    <label>Estado</label>
+                    <input id="uf" type="text" Name="" value="" disabled />
+                    <br>
+                    <label>Cidade</label>
+                    <input id="cidade" type="text" Name="" value="" disabled />
+                    <br>
+                    <label>Bairro</label>
+                    <input id="bairro" type="text" Name="" value="" disabled />
+                    <br>
+                    <label>Endereço</label>
+                    <input id="rua" type="text" Name="" value="" disabled />
+                    <br />
+                    <label>Número</label>
+                    <input id="numero" type="text" Name="" value="" />
+                </div>
+            </div>
+
+            <!--Dados de Formação Academica e Cursos-->
+            <h2>Dados de formação acadêmica e cursos:</h2>
+            <div>
+                <div id="0">
+                    <label>Curso</label>
+                    <input type="text" Name="" value="" placeholder="Engenharia da Computação" required />
+                    <br>
+                    <label>Nível de escolaridade</label>
+                    <div>
+                        <select name="" id="" required>
+                            <option value=""></option>
+                            <option value="1">Fundamental</option>
+                            <option value="2">Médio</option>
+                            <option value="3">Técnico</option>
+                            <option value="4">Superior</option>
+                            <option value="5">Superior tecnólogo</option>
+                            <option value="6">Pós-Graduação</option>
+                            <option value="7">Mestrado</option>
+                            <option value="8">Doutorado</option>
+                        </select>
+                    </div>
+                    <br>
+                    <label>Instituição</label>
+                    <input type="text" Name="" value="" placeholder="Faculdade X" required />
+                    <br>
+
+                    <label>Situação Atual:</label>
+                    <select name="" id="" required>
+                        <option value=""></option>
+                        <option value="1">Completo</option>
+                        <option value="2">Cursando</option>
+                        <option value="3">Interrompido</option>
+                    </select>
+                    <br>
+                    <label>Mês/Ano de Conclusão</label>
+                    <input type="text" Name="" value="" placeholder="MM/AAAA" required />
+
+                    <div>
+                        <label>Período de aula</label>
+                        <div>
+                            <select name="" id="" required>
+                                <option value=""></option>
+                                <option value="1">A distancia</option>
+                                <option value="2">Madrugada</option>
+                                <option value="3">Noturno</option>
+                                <option value="4">Sábado - Manhã</option>
+                                <option value="5">Sábado - Tarde</option>
+                                <option value="6">Sábado - Noite</option>
+                                <option value="7">Sábado - Integral</option>
+                                <option value="8">Integral</option>
+                                <option value="9">Matutino</option>
+                                <option value="10">Vespertino</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <button id="btn0" type="button" onclick="duplicarCampos(0)">Adicionar</button>
+            </div>
+
+
+            <!--Dados de experiências profissionais anteriores-->
+            <div>
+                <h2>Dados de experiências profissionais anteriores:</h2>
+                <label>Empresa</label>
+                <input type="text" Name="" value="" required />
+                <br>
+                <label>Início</label>
+                <input type="text" name="" value="" placeholder="MM/AAAA" required />
+                <br>
+                <label>Término</label>
+                <input type="text" name="" value="" placeholder="MM/AAAA" required />
+                <br>
+                <div>
+                    <label>Ocupaçoes na Empresa</label>
+                    <div>
+                        <select name="" id="" required>
+                            <option value=""></option>
+                            <option value="1">Auxiliar/Operacional</option>
+                            <option value="2">Técnico</option>
+                            <option value="3">Estágio</option>
+                            <option value="4">Júnior/Trainee</option>
+                            <option value="5">Pleno</option>
+                            <option value="6">Sênior</option>
+                            <option value="7">Supervisão/Coordenação</option>
+                            <option value="8">Gerência</option>
+                            <option value="9">Diretoria</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label>Atividades</label>
+                    <div>
+                        <textarea placeholder="Descreva suas atividades" required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!--Dados de idiomas-->
+            <div>
+                <h2>Dados de idiomas:</h2>
+                <div>
+                    <div>
+                        <label>Idioma</label>
+                        <div>
+                            <select name="" id="" required>
+                                <option value=""></option>
+                                <option value="1">Africâner</option>
+                                <option value="2">Albanês</option>
+                                <option value="3">Alemão</option>
+                                <option value="4">Amárico</option>
+                                <option value="5">Árabe</option>
+                                <option value="6">Armênio</option>
+                                <option value="7">Azerbaijano</option>
+                                <option value="8">Basco</option>
+                                <option value="9">Bengali</option>
+                                <option value="10">Bielorrusso</option>
+                                <option value="11">Birmanês</option>
+                                <option value="12">Bósnio</option>
+                                <option value="13">Búlgaro</option>
+                                <option value="14">Canarim</option>
+                                <option value="15">Catalão</option>
+                                <option value="16">Cazaque</option>
+                                <option value="17">Cebuano</option>
+                                <option value="18">Chinês (simplificado)</option>
+                                <option value="19">Chiês (tradicional)</option>
+                                <option value="20">Cingalês</option>
+                                <option value="21">Coreano</option>
+                                <option value="22">Corso</option>
+                                <option value="23">Croata</option>
+                                <option value="24">Curdo</option>
+                                <option value="25">Dinamarquês</option>
+                                <option value="26">Eslovaco</option>
+                                <option value="27">Esloveno</option>
+                                <option value="28">Espanhol</option>
+                                <option value="29">Esperanto</option>
+                                <option value="30">Estoniano</option>
+                                <option value="31">Filipino</option>
+                                <option value="32">Finlandês</option>
+                                <option value="33">Francês</option>
+                                <option value="34">Frísio ocidental</option>
+                                <option value="35">Gaélico escocês</option>
+                                <option value="36">Galego</option>
+                                <option value="37">Galês</option>
+                                <option value="38">Georgiano</option>
+                                <option value="39">Grego</option>
+                                <option value="40">Guzerate</option>
+                                <option value="41">Haitiano</option>
+                                <option value="42">Hauçá</option>
+                                <option value="43">Havaiano</option>
+                                <option value="44">Hebraico</option>
+                                <option value="45">Híndi</option>
+                                <option value="46">Hmong</option>
+                                <option value="47">Holandês</option>
+                                <option value="48">Húngaro</option>
+                                <option value="49">Igbo</option>
+                                <option value="50">Iídiche</option>
+                                <option value="51">Indonésio</option>
+                                <option value="52">Inglês</option>
+                                <option value="53">Iorubá</option>
+                                <option value="54">Irlandês</option>
+                                <option value="55">Islandês</option>
+                                <option value="56">Italiano</option>
+                                <option value="57">Japonês</option>
+                                <option value="58">Javanês</option>
+                                <option value="59">Khmer</option>
+                                <option value="60">Laosiano</option>
+                                <option value="61">Latim</option>
+                                <option value="62">Letão</option>
+                                <option value="63">Lituano</option>
+                                <option value="64">Luxemburguês</option>
+                                <option value="65">Macedônio</option>
+                                <option value="66">Malaiala</option>
+                                <option value="67">Malaio</option>
+                                <option value="68">Malgaxe</option>
+                                <option value="69">Maltês</option>
+                                <option value="70">Maori</option>
+                                <option value="71">Marati</option>
+                                <option value="72">Mongol</option>
+                                <option value="73">Nepalês</option>
+                                <option value="74">Nianja</option>
+                                <option value="75">Norueguês</option>
+                                <option value="76">Oriá</option>
+                                <option value="77">Panjabi</option>
+                                <option value="78">Pashto</option>
+                                <option value="79">Persa</option>
+                                <option value="80">Polonês</option>
+                                <option value="81">Português</option>
+                                <option value="82">Quiniaruanda</option>
+                                <option value="83">Quirguiz</option>
+                                <option value="84">Romeno</option>
+                                <option value="85">Russo</option>
+                                <option value="86">Samoano</option>
+                                <option value="87">Sérvio</option>
+                                <option value="88">Sindi</option>
+                                <option value="89">Somali</option>
+                                <option value="90">Soto do sul</option>
+                                <option value="91">Suaíli</option>
+                                <option value="92">Sueco</option>
+                                <option value="93">Sundanês</option>
+                                <option value="94">Tadjique</option>
+                                <option value="95">Tailandês</option>
+                                <option value="96">Tâmil</option>
+                                <option value="97">Tártaro</option>
+                                <option value="98">Tcheco</option>
+                                <option value="99">Télugo</option>
+                                <option value="100">Turco</option>
+                                <option value="101">Turcomeno</option>
+                                <option value="102">Uigur</option>
+                                <option value="103">Urdu</option>
+                                <option value="104">Uzbeque</option>
+                                <option value="105">Vietnamita</option>
+                                <option value="106">Xhosa</option>
+                                <option value="107">Xona</option>
+                                <option value="108">Zulu</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Conhecimento</label>
+                            <div>
+                                <select name="" id="" required>
+                                    <option value=""></option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Conhecimentos-->
+            <div>
+                <h2>Conhecimentos extras:</h2>
+                <div>
+                    <input type="text">
+                    <select name="" id="">
+                        <option value=""></option>
+                        <option value="1">Básico</option>
+                        <option value="2">Intermediário</option>
+                        <option value="3">Avançado</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="submit" value="Salvar Curriculo">
+        </form>
+    </main>
+
+
+
+
+    <!--Script de pesquisa e preenchimento do CEP-->
+    <script type="text/javascript">
+        $("#cep").focusout(function () {
+            //Início do Comando AJAX
+            $.ajax({
+                //O campo URL diz o caminho de onde virá os dados
+                //É importante concatenar o valor digitado no CEP
+                url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
+                //Aqui você deve preencher o tipo de dados que será lido,
+                //no caso, estamos lendo JSON.
+                dataType: 'json',
+                //SUCESS é referente a função que será executada caso
+                //ele consiga ler a fonte de dados com sucesso.
+                //O parâmetro dentro da função se refere ao nome da variável
+                //que você vai dar para ler esse objeto.
+                success: function (resposta) {
+                    //Agora basta definir os valores que você deseja preencher
+                    //automaticamente nos campos acima.
+                    $("#rua").val(resposta.logradouro);
+                    //$("#numero").val(resposta.complemento);
+                    $("#bairro").val(resposta.bairro);
+                    $("#cidade").val(resposta.localidade);
+                    $("#uf").val(resposta.uf);
+                    //Vamos incluir para que o Número seja focado automaticamente
+                    //melhorando a experiência do usuário
+                    $("#numero").focus();
+                }
+            });
+        });</script>
+
+
+    <footer>
+    </footer>
+</body>
+</html>

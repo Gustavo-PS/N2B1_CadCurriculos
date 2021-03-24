@@ -1,29 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using N2B1_CadCurriculos.Models;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using N2B1_CadCurriculos.Models;
+using System.Diagnostics;
 
 namespace N2B1_CadCurriculos.Controllers
 {
-    public class HomeController : Controller
+    public class CurriculoController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }
@@ -32,6 +20,21 @@ namespace N2B1_CadCurriculos.Controllers
         {
             return View();
         }
+
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
+        public IActionResult Listagem()
+        {
+            return View();
+        }
+
+        public IActionResult Impressao()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
