@@ -31,8 +31,8 @@ namespace N2B1_CadCurriculos.DAO
         public void Inserir(CurriculoViewModel c)
         {
             string sql =
-            "insert into alunos(id, nome, mensalidade, cidadeId, dataNascimento)" +
-            "values ( @id, @nome, @mensalidade, @cidadeId, @dataNascimento)";
+            "insert into Cadastro (CPF, nome, telefone, email, cargo, CEP, estado, cidade, bairro, rua, numero, curso1, nivelescolaridade1, instituicao1, situacao1, conclusao1, periodo1, curso2, nivelescolaridade2, instituicao2, situacao2, conclusao2, periodo2, curso3, nivelescolaridade3, instituicao3, situacao3, conclusao3, periodo3, curso4, nivelescolaridade4, instituicao4, situacao4, conclusao4, periodo4, curso5, nivelescolaridade5, instituicao5, situacao5, conclusao5, periodo5, empresa1, inicio1, termino1, ocupacao1, Atividades1, empresa2, inicio2, termino2, ocupacao2, Atividades2, empresa3, inicio3, termino3, ocupacao3, Atividades3, idioma1, nivelidioma1, idioma2, nivelidioma2, idioma3, nivelidioma3)" +
+            "values (@CPF, @nome, @telefone, @email, @cargo, @CEP, @estado, @cidade, @bairro, @rua, @numero, @curso1, @nivelescolaridade1, @instituicao1, @situacao1, @conclusao1, @periodo1, @curso2, @nivelescolaridade2, @instituicao2, @situacao2, @conclusao2, @periodo2, @curso3, @nivelescolaridade3, @instituicao3, @situacao3, @conclusao3, @periodo3, @curso4, @nivelescolaridade4, @instituicao4, @situacao4, @conclusao4, @periodo4, @curso5, @nivelescolaridade5, @instituicao5, @situacao5, @conclusao5, @periodo5, @empresa1, @inicio1, @termino1, @ocupacao1, @Atividades1, @empresa2, @inicio2, @termino2, @ocupacao2, @Atividades2, @empresa3, @inicio3, @termino3, @ocupacao3, @Atividades3, @idioma1, @nivelidioma1, @idioma2, @nivelidioma2, @idioma3, @nivelidioma3)";
             HelperDAO.ExecutaSQL(sql, CriaParametros(c));
         }
     }
