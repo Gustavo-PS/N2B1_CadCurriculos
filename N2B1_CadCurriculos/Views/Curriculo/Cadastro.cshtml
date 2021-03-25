@@ -340,6 +340,9 @@
                         </div>
                     </div>
                 </div><!--Formação5-->
+
+                <br />
+
                 <button id="btnAdicionaCurso" onclick="showCurso()" class="bg-info">Adicionar</button>
                 <button id="btnRemoveCurso" onclick="esconderCurso()" style="display: none" class="bg-danger">Remover</button>
             </div>
@@ -348,6 +351,31 @@
             <div>
                 <h2>Dados de experiências profissionais anteriores:</h2>
                 <!--Experiências1-->
+                <input type="text" Name="" value="" />
+                <br>
+                <label>Início</label>
+                <input type="month" name="" value="" />
+                <br>
+                <label>Término</label>
+                <input type="month" name="" value="" />
+                <br>
+                <div>
+                    <label>Ocupaçoes na Empresa</label>
+                    <div>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value="1">Auxiliar/Operacional</option>
+                            <option value="2">Técnico</option>
+                            <option value="3">Estágio</option>
+                            <option value="4">Júnior/Trainee</option>
+                            <option value="5">Pleno</option>
+                            <option value="6">Sênior</option>
+                            <option value="7">Supervisão/Coordenação</option>
+                            <option value="8">Gerência</option>
+                            <option value="9">Diretoria</option>
+                        </select>
+                    </div>
+                </div>
                 <div id="Experiencias1">
                     <div>
                         <label>Empresa</label>
@@ -437,7 +465,12 @@
                         <label>Término</label>
                         <input type="month" id="termino3" name="" value="" required />
                         <br>
-                        <div>
+                </div> <!--Experiências3-->
+                
+                <br />
+
+                <button id="btnAdicionaExperiencia" onclick="showExperiencia()" class="bg-info">Adicionar</button>
+                <button id="btnRemoveExperiencias" onclick="esconderExperiencia()" style="display: none" class="bg-danger">Remover</button>
                             <label>Ocupaçoes na Empresa</label>
                             <div>
                                 <select name="" id="ocupacao3" required>
@@ -462,7 +495,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> <!--Experiências3-->
             </div>
 
             <!--Dados de idioma-->
@@ -711,6 +744,8 @@
                     </div>
                 </div>
 
+                <br />
+
                 <button id="btnAdicionaIdioma" onclick="showIdioma()" class="bg-info">Adicionar</button>
                 <button id="btnRemoveIdioma" onclick="esconderIdioma()" style="display: none" class="bg-danger">Remover</button>
             </div>
@@ -718,7 +753,6 @@
             <input type="submit" value="Salvar Curriculo">
         </form>
     </main>
-
 
 
     <!--Script de pesquisa e preenchimento do CEP-->
