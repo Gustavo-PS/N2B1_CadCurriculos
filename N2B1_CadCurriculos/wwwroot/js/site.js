@@ -67,7 +67,7 @@ var mask = {
 
 }
 
-
+/*
 // Adicionar/Remover
 var countAR = 2;
 
@@ -99,6 +99,4 @@ function removerCampos(id) {
     node1.removeChild(node1.childNodes[0]);
     countAR = countAR - 1;
 }
-
-
-
+*/
