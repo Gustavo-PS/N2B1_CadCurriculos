@@ -74,7 +74,7 @@ namespace N2B1_CadCurriculos.DAO
 
             parametros[46] = new SqlParameter("empresa3", c.Empresa3);
             parametros[47] = new SqlParameter("inicio3", c.Inicio3);
-            parametros[47] = new SqlParameter("termino3", c.Termino3);
+            parametros[48] = new SqlParameter("termino3", c.Termino3);
             parametros[49] = new SqlParameter("ocupacao3", c.Ocupacao3);
             parametros[50] = new SqlParameter("Atividades3", c.Atividades3);
 
