@@ -1,5 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Curriculo";
+﻿@model CurriculoViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!DOCTYPE html>
 
@@ -7,7 +8,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta for="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <title>Cadastro</title>
 </head>
@@ -24,19 +25,20 @@
                 <h2>Dados pessoais:</h2>
                 <div>
                     <label>Nome</label>
-                    <input type="text" id="nome" value="" placeholder="Seu nome aqui" />
+
+                    <input type="text" asp-for="Nome" class="form-control" placeholder="Seu nome aqui" />
                     <br>
                     <label>CPF</label>
-                    <input type="text" Name="cpf" id="cpf" value="" onkeydown="mask.init(this, mask.cpf)" placeholder="000.000.000-00" />
+                    <input type="text" asp-for="Cpf"  onkeydown="mask.init(this, mask.cpf)" placeholder="000.000.000-00" />
                     <br>
                     <label>Telefone</label>
-                    <input type="text" Name="telefone" value="" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" />
+                    <input type="tel" asp-for="Telefone" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" />
                     <br>
                     <label>E-mail</label>
-                    <input type="email" Name="email" value="" placeholder="nome@dominio.com" />
+                    <input type="email" asp-for="Email" placeholder="nome@dominio.com" />
                     <br>
                     <label>Cargo</label>
-                    <input type="text" Name="cargo" value="" />
+                    <input type="text" asp-for="Cargo" />
 
                 </div>
             </div>
@@ -47,19 +49,22 @@
                 <div>
                     <br>
                     <label>CEP</label>
-                    <input id="cep" type="text" Name="cep" value="" onkeydown="mask.init(this, mask.cep)" placeholder="00000-000" />
+                    <input type="text" asp-for="Cep" onkeydown="mask.init(this, mask.cep)" placeholder="00000-000" />
                     <br>
                     <label>Estado</label>
-                    <input id="uf" type="text" Name="estado" value="" readonly />
+                    <input type="text" asp-for="Estado"  readonly />
                     <br>
                     <label>Cidade</label>
-                    <input id="cidade" type="text" Name="cidade" value="" readonly />
+                    <input type="text" asp-for="Cidade" readonly />
                     <br>
                     <label>Bairro</label>
-                    <input id="bairro" type="text" Name="bairro" value="" readonly />
+                    <input type="text" asp-for="Bairro" readonly />
                     <br>
+                    <label>Endereço</label>
+                    <input type="text"  asp-for="Rua" readonly />
+                    <br />
                     <label>Número</label>
-                    <input id="numero" type="text" Name="numero" value="" />
+                    <input type="text"  asp-for="Numero"/>
                 </div>
             </div>
 
@@ -69,273 +74,143 @@
                 <div id="Formacao1">
                     <div>
                         <label>Curso</label>
-                        <input type="text" id="curso1" Name="curso" value="" />
+                        <input type="text" id="curso1" for="Curso1" value="@Model.Curso1" />
                         <br>
                         <label>Nível de escolaridade</label>
                         <div>
-                            <select name="" id="escolaridade1">
-                                <option value=""></option>
-                                <option value="1">Fundamental</option>
-                                <option value="2">Médio</option>
-                                <option value="3">Técnico</option>
-                                <option value="4">Superior</option>
-                                <option value="5">Superior tecnólogo</option>
-                                <option value="6">Pós-Graduação</option>
-                                <option value="7">Mestrado</option>
-                                <option value="8">Doutorado</option>
-                            </select>
+                            <input type="text" for="Escolaridade1" id="escolaridade1" value="@Model.Escolaridade1" />
                         </div>
                         <br>
                         <label>Instituição</label>
-                        <input type="text" id="instituicao1" Name="" value="" placeholder="Faculdade X" />
+                        <input type="text" id="Instituicao1" for="instituicao1" value="@Model.Instituicao1" placeholder="Faculdade X" />
                         <br>
 
                         <label>Situação Atual:</label>
-                        <select name="" id="situacao1">
-                            <option value=""></option>
-                            <option value="1">Completo</option>
-                            <option value="2">Cursando</option>
-                            <option value="3">Interrompido</option>
-                        </select>
+                        <input type="text" for="Situacao1" id="situacao1" value="@Model.Situacao1" />
                         <br>
                         <label>Mês/Ano de Conclusão</label>
-                        <input type="month" id="conclusao1" Name="" value="" />
+                        <input type="month" id="Conclusao1" for="conclusao1" value="@Model.Conclusao1" />
 
                         <div>
                             <label>Período de aula</label>
                             <div>
-                                <select name="" id="periodo1">
-                                    <option value=""></option>
-                                    <option value="1">A distancia</option>
-                                    <option value="2">Madrugada</option>
-                                    <option value="3">Noturno</option>
-                                    <option value="4">Sábado - Manhã</option>
-                                    <option value="5">Sábado - Tarde</option>
-                                    <option value="6">Sábado - Noite</option>
-                                    <option value="7">Sábado - Integral</option>
-                                    <option value="8">Integral</option>
-                                    <option value="9">Matutino</option>
-                                    <option value="10">Vespertino</option>
-                                </select>
+                                <input type="text" for="Periodo1" id="periodo1" value="@Model.Periodo1" />
                             </div>
                         </div>
                     </div>
                 </div> <!--Formação1-->
-                <div id="Formacao2" style="display: none">
+
+                <div id="Formacao2" style="display:none">
                     <div>
                         <label>Curso</label>
-                        <input type="text" id="curso2" Name="curso" value="" />
+                        <input type="text" id="curso2" for="Curso2" value="@Model.Curso2" />
                         <br>
                         <label>Nível de escolaridade</label>
                         <div>
-                            <select name="" id="escolaridade2" >
-                                <option value=""></option>
-                                <option value="1">Fundamental</option>
-                                <option value="2">Médio</option>
-                                <option value="3">Técnico</option>
-                                <option value="4">Superior</option>
-                                <option value="5">Superior tecnólogo</option>
-                                <option value="6">Pós-Graduação</option>
-                                <option value="7">Mestrado</option>
-                                <option value="8">Doutorado</option>
-                            </select>
+                            <input type="text" for="Escolaridade2" id="escolaridade2" value="@Model.Escolaridade2" />
                         </div>
                         <br>
                         <label>Instituição</label>
-                        <input type="text" id="instituicao2" Name="" value="" placeholder="Faculdade X" />
+                        <input type="text" id="Instituicao2" for="instituicao2" value="@Model.Instituicao2" placeholder="Faculdade X" />
                         <br>
 
                         <label>Situação Atual:</label>
-                        <select name="" id="situacao2">
-                            <option value=""></option>
-                            <option value="1">Completo</option>
-                            <option value="2">Cursando</option>
-                            <option value="3">Interrompido</option>
-                        </select>
+                        <input type="text" for="Situacao2" id="situacao2" value="@Model.Situacao2" />
                         <br>
                         <label>Mês/Ano de Conclusão</label>
-                        <input type="month" id="conclusao2" Name="" value="" />
+                        <input type="month" id="Conclusao2" for="conclusao2" value="@Model.Conclusao2" />
 
                         <div>
                             <label>Período de aula</label>
                             <div>
-                                <select name="" id="periodo2">
-                                    <option value=""></option>
-                                    <option value="1">A distancia</option>
-                                    <option value="2">Madrugada</option>
-                                    <option value="3">Noturno</option>
-                                    <option value="4">Sábado - Manhã</option>
-                                    <option value="5">Sábado - Tarde</option>
-                                    <option value="6">Sábado - Noite</option>
-                                    <option value="7">Sábado - Integral</option>
-                                    <option value="8">Integral</option>
-                                    <option value="9">Matutino</option>
-                                    <option value="10">Vespertino</option>
-                                </select>
+                                <input type="text" for="Periodo2" id="periodo2" value="@Model.Periodo2" />
                             </div>
                         </div>
                     </div>
-                </div> <!--Formação2-->
+                </div><!--Formação2-->
+
                 <div id="Formacao3" style="display: none">
-                    <div id="origem">
+                    <div>
                         <label>Curso</label>
-                        <input type="text" id="curso3" Name="curso" value="" />
+                        <input type="text" id="curso3" for="Curso3" value="@Model.Curso3" />
                         <br>
                         <label>Nível de escolaridade</label>
                         <div>
-                            <select name="" id="escolaridade3">
-                                <option value=""></option>
-                                <option value="1">Fundamental</option>
-                                <option value="2">Médio</option>
-                                <option value="3">Técnico</option>
-                                <option value="4">Superior</option>
-                                <option value="5">Superior tecnólogo</option>
-                                <option value="6">Pós-Graduação</option>
-                                <option value="7">Mestrado</option>
-                                <option value="8">Doutorado</option>
-                            </select>
+                            <input type="text" for="Escolaridade3" id="escolaridade3" value="@Model.Escolaridade3" />
                         </div>
                         <br>
                         <label>Instituição</label>
-                        <input type="text" id="instituicao3" Name="" value="" placeholder="Faculdade X" />
+                        <input type="text" id="Instituicao3" for="instituicao3" value="@Model.Instituicao3" placeholder="Faculdade X" />
                         <br>
 
                         <label>Situação Atual:</label>
-                        <select name="" id="situacao3">
-                            <option value=""></option>
-                            <option value="1">Completo</option>
-                            <option value="2">Cursando</option>
-                            <option value="3">Interrompido</option>
-                        </select>
+                        <input type="text" for="Situacao3" id="situacao3" value="@Model.Situacao3" />
                         <br>
                         <label>Mês/Ano de Conclusão</label>
-                        <input type="month" id="conclusao3" Name="" value="" />
+                        <input type="month" id="Conclusao3" for="conclusao3" value="@Model.Conclusao3" />
 
                         <div>
                             <label>Período de aula</label>
                             <div>
-                                <select name="" id="periodo3">
-                                    <option value=""></option>
-                                    <option value="1">A distancia</option>
-                                    <option value="2">Madrugada</option>
-                                    <option value="3">Noturno</option>
-                                    <option value="4">Sábado - Manhã</option>
-                                    <option value="5">Sábado - Tarde</option>
-                                    <option value="6">Sábado - Noite</option>
-                                    <option value="7">Sábado - Integral</option>
-                                    <option value="8">Integral</option>
-                                    <option value="9">Matutino</option>
-                                    <option value="10">Vespertino</option>
-                                </select>
+                                <input type="text" for="Periodo3" id="periodo3" value="@Model.Periodo3" />
                             </div>
                         </div>
                     </div>
                 </div><!--Formação3-->
+
                 <div id="Formacao4" style="display: none">
                     <div>
                         <label>Curso</label>
-                        <input type="text" id="curso4" Name="curso" value="" />
+                        <input type="text" id="curso4" for="Curso4" value="@Model.Curso4" />
                         <br>
                         <label>Nível de escolaridade</label>
                         <div>
-                            <select name="" id="escolaridade4" required>
-                                <option value=""></option>
-                                <option value="1">Fundamental</option>
-                                <option value="2">Médio</option>
-                                <option value="3">Técnico</option>
-                                <option value="4">Superior</option>
-                                <option value="5">Superior tecnólogo</option>
-                                <option value="6">Pós-Graduação</option>
-                                <option value="7">Mestrado</option>
-                                <option value="8">Doutorado</option>
-                            </select>
+                            <input type="text" for="Escolaridade4" id="escolaridade4" value="@Model.Escolaridade4" />
                         </div>
                         <br>
                         <label>Instituição</label>
-                        <input type="text" id="instituicao4" Name="" value="" placeholder="Faculdade X" />
+                        <input type="text" id="Instituicao4" for="instituicao4" value="@Model.Instituicao4" placeholder="Faculdade X" />
                         <br>
 
                         <label>Situação Atual:</label>
-                        <select name="" id="situacao4">
-                            <option value=""></option>
-                            <option value="1">Completo</option>
-                            <option value="2">Cursando</option>
-                            <option value="3">Interrompido</option>
-                        </select>
+                        <input type="text" for="Situacao4" id="situacao4" value="@Model.Situacao4" />
                         <br>
                         <label>Mês/Ano de Conclusão</label>
-                        <input type="month" id="conclusao4" Name="" value="" />
+                        <input type="month" id="Conclusao4" for="conclusao4" value="@Model.Conclusao4" />
+
                         <div>
                             <label>Período de aula</label>
                             <div>
-                                <select name="" id="periodo4">
-                                    <option value=""></option>
-                                    <option value="1">A distancia</option>
-                                    <option value="2">Madrugada</option>
-                                    <option value="3">Noturno</option>
-                                    <option value="4">Sábado - Manhã</option>
-                                    <option value="5">Sábado - Tarde</option>
-                                    <option value="6">Sábado - Noite</option>
-                                    <option value="7">Sábado - Integral</option>
-                                    <option value="8">Integral</option>
-                                    <option value="9">Matutino</option>
-                                    <option value="10">Vespertino</option>
-                                </select>
+                                <input type="text" for="Periodo4" id="periodo4" value="@Model.Periodo4" />
                             </div>
                         </div>
                     </div>
                 </div><!--Formação4-->
+
                 <div id="Formacao5" style="display: none">
                     <div>
                         <label>Curso</label>
-                        <input type="text" id="curso5" Name="curso" value="" />
+                        <input type="text" id="curso5" for="Curso5" value="@Model.Curso5" />
                         <br>
                         <label>Nível de escolaridade</label>
                         <div>
-                            <select name="" id="escolaridade5">
-                                <option value=""></option>
-                                <option value="1">Fundamental</option>
-                                <option value="2">Médio</option>
-                                <option value="3">Técnico</option>
-                                <option value="4">Superior</option>
-                                <option value="5">Superior tecnólogo</option>
-                                <option value="6">Pós-Graduação</option>
-                                <option value="7">Mestrado</option>
-                                <option value="8">Doutorado</option>
-                            </select>
+                            <input type="text" for="Escolaridade5" id="escolaridade5" value="@Model.Escolaridade5" />
                         </div>
                         <br>
                         <label>Instituição</label>
-                        <input type="text" id="instituicao5" Name="" value="" placeholder="Faculdade X" />
+                        <input type="text" id="Instituicao5" for="instituicao5" value="@Model.Instituicao5" placeholder="Faculdade X" />
                         <br>
 
                         <label>Situação Atual:</label>
-                        <select name="" id="situacao5">
-                            <option value=""></option>
-                            <option value="1">Completo</option>
-                            <option value="2">Cursando</option>
-                            <option value="3">Interrompido</option>
-                        </select>
+                        <input type="text" for="Situacao5" id="situacao5" value="@Model.Situacao5" />
                         <br>
                         <label>Mês/Ano de Conclusão</label>
-                        <input type="month" id="conclusao5" Name="" value="" />
+                        <input type="month" id="Conclusao5" for="conclusao5" value="@Model.Conclusao5" />
 
                         <div>
                             <label>Período de aula</label>
                             <div>
-                                <select name="" id="periodo5">
-                                    <option value=""></option>
-                                    <option value="1">A distancia</option>
-                                    <option value="2">Madrugada</option>
-                                    <option value="3">Noturno</option>
-                                    <option value="4">Sábado - Manhã</option>
-                                    <option value="5">Sábado - Tarde</option>
-                                    <option value="6">Sábado - Noite</option>
-                                    <option value="7">Sábado - Integral</option>
-                                    <option value="8">Integral</option>
-                                    <option value="9">Matutino</option>
-                                    <option value="10">Vespertino</option>
-                                </select>
+                                <input type="text" for="Periodo5" id="periodo5" value="@Model.Periodo5" />
                             </div>
                         </div>
                     </div>
@@ -350,65 +225,30 @@
             <!--Dados de experiências profissionais anteriores-->
             <div>
                 <h2>Dados de experiências profissionais anteriores:</h2>
-                <!--Experiências1-->
-                <input type="text" Name="" value="" />
-                <br>
-                <label>Início</label>
-                <input type="month" name="" value="" />
-                <br>
-                <label>Término</label>
-                <input type="month" name="" value="" />
-                <br>
-                <div>
-                    <label>Ocupaçoes na Empresa</label>
-                    <div>
-                        <select name="" id="">
-                            <option value=""></option>
-                            <option value="1">Auxiliar/Operacional</option>
-                            <option value="2">Técnico</option>
-                            <option value="3">Estágio</option>
-                            <option value="4">Júnior/Trainee</option>
-                            <option value="5">Pleno</option>
-                            <option value="6">Sênior</option>
-                            <option value="7">Supervisão/Coordenação</option>
-                            <option value="8">Gerência</option>
-                            <option value="9">Diretoria</option>
-                        </select>
-                    </div>
-                </div>
+                <br />
+
                 <div id="Experiencias1">
                     <div>
                         <label>Empresa</label>
-                        <input type="text" id="empresa1" Name="" value="" required />
+                        <input type="text" id="empresa1" for="Empresa1" value="@Model.Empresa1" />
                         <br>
                         <label>Início</label>
-                        <input type="month" id="inicio1" name="" value="" required />
+                        <input type="month" id="inicio1" for="Inicio1" value="@Model.Inicio1" />
                         <br>
                         <label>Término</label>
-                        <input type="month" id="termino1" name="" value="" required />
+                        <input type="month" id="termino1" for="Termino1" value="@Model.Termino1" />
                         <br>
                         <div>
                             <label>Ocupaçoes na Empresa</label>
                             <div>
-                                <select name="" id="ocupacao1" required>
-                                    <option value=""></option>
-                                    <option value="1">Auxiliar/Operacional</option>
-                                    <option value="2">Técnico</option>
-                                    <option value="3">Estágio</option>
-                                    <option value="4">Júnior/Trainee</option>
-                                    <option value="5">Pleno</option>
-                                    <option value="6">Sênior</option>
-                                    <option value="7">Supervisão/Coordenação</option>
-                                    <option value="8">Gerência</option>
-                                    <option value="9">Diretoria</option>
-                                </select>
+                                <input for="Ocupacao1" id="ocupacao1" value="@Model.Ocupacao1" />
                             </div>
                         </div>
 
                         <div>
                             <label>Atividades</label>
                             <div>
-                                <textarea id="atividades1" placeholder="Descreva suas atividades" required></textarea>
+                                <textarea id="atividades1" for="Atividades1" placeholder="Descreva suas atividades" value="@Model.Atividades1"></textarea>
                             </div>
                         </div>
                     </div>
@@ -418,36 +258,25 @@
                 <div id="Experiencias2" style="display: none">
                     <div>
                         <label>Empresa</label>
-                        <input type="text" id="empresa2" Name="" value="" required />
+                        <input type="text" id="empresa2" for="Empresa2" value="@Model.Empresa2" />
                         <br>
                         <label>Início</label>
-                        <input type="month" id="inicio2" name="" value="" required />
+                        <input type="month" id="inicio2" for="Inicio2" value="@Model.Inicio2" />
                         <br>
                         <label>Término</label>
-                        <input type="month" id="termino2" name="" value="" required />
+                        <input type="month" id="termino2" for="Termino2" value="@Model.Termino2" />
                         <br>
                         <div>
                             <label>Ocupaçoes na Empresa</label>
                             <div>
-                                <select name="" id="ocupacao2" required>
-                                    <option value=""></option>
-                                    <option value="1">Auxiliar/Operacional</option>
-                                    <option value="2">Técnico</option>
-                                    <option value="3">Estágio</option>
-                                    <option value="4">Júnior/Trainee</option>
-                                    <option value="5">Pleno</option>
-                                    <option value="6">Sênior</option>
-                                    <option value="7">Supervisão/Coordenação</option>
-                                    <option value="8">Gerência</option>
-                                    <option value="9">Diretoria</option>
-                                </select>
+                                <input for="Ocupacao2" id="ocupacao2" value="@Model.Ocupacao2" />
                             </div>
                         </div>
 
                         <div>
                             <label>Atividades</label>
                             <div>
-                                <textarea id="atividades2" placeholder="Descreva suas atividades" required></textarea>
+                                <textarea id="atividades2" for="Atividades2" placeholder="Descreva suas atividades" value="@Model.Atividades2"></textarea>
                             </div>
                         </div>
                     </div>
@@ -457,13 +286,13 @@
                 <div id="Experiencias3" style="display: none">
                     <div>
                         <label>Empresa</label>
-                        <input type="text" id="empresa3" Name="" value="" required />
+                        <input type="text" id="empresa3" for="Empresa3" value="@Model.Empresa3" />
                         <br>
                         <label>Início</label>
-                        <input type="month" id="inicio3" name="" value="" required />
+                        <input type="month" id="inicio3" for="Inicio3" value="@Model.Inicio3" />
                         <br>
                         <label>Término</label>
-                        <input type="month" id="termino3" name="" value="" required />
+                        <input type="month" id="termino3" for="Termino3" value="@Model.Termino3" />
                         <br>
                 </div> <!--Experiências3-->
                 
@@ -473,109 +302,40 @@
                 <button id="btnRemoveExperiencias" onclick="esconderExperiencia()" style="display: none" class="bg-danger">Remover</button>
                             <label>Ocupaçoes na Empresa</label>
                             <div>
-                                <select name="" id="ocupacao3" required>
-                                    <option value=""></option>
-                                    <option value="1">Auxiliar/Operacional</option>
-                                    <option value="2">Técnico</option>
-                                    <option value="3">Estágio</option>
-                                    <option value="4">Júnior/Trainee</option>
-                                    <option value="5">Pleno</option>
-                                    <option value="6">Sênior</option>
-                                    <option value="7">Supervisão/Coordenação</option>
-                                    <option value="8">Gerência</option>
-                                    <option value="9">Diretoria</option>
-                                </select>
+                                <input for="Ocupacao3" id="ocupacao3" value="@Model.Ocupacao3" />
                             </div>
                         </div>
 
                         <div>
                             <label>Atividades</label>
                             <div>
-                                <textarea id="atividades3" placeholder="Descreva suas atividades" required></textarea>
+                                <textarea id="atividades3" for="Atividades3" placeholder="Descreva suas atividades" value="@Model.Atividades3"></textarea>
                             </div>
                         </div>
                     </div>
                 </div> <!--Experiências3-->
+
+                <br />
+
+                <button id="btnAdicionaExperiencia" onclick="showExperiencia()" class="bg-info">Adicionar</button>
+                <button id="btnRemoveExperiencias" onclick="esconderExperiencia()" style="display: none" class="bg-danger">Remover</button>
             </div>
 
             <!--Dados de idioma-->
             <div>
+                <h2>Dados de idiomas:</h2>
                 <!--Dados de idiomas1-->
                 <div>
-                    <h2>Dados de idiomas:</h2>
-                    <div id="dadosIdioma">
+                    <div id="dadosIdioma1">
                         <div>
                             <label>Idioma</label>
                             <div>
-                                <select name="" id="idioma1">
-                                    <option value="">Selecione um idioma...</option>
-                                    <option value="Africânder">Africânder</option>
-                                    <option value="Albanês">Albanês</option>
-                                    <option value="Alemão">Alemão</option>
-                                    <option value="Árabe">Árabe</option>
-                                    <option value="Armênio">Armênio</option>
-                                    <option value="Azeri">Azeri</option>
-                                    <option value="Azeri">Azeri</option>
-                                    <option value="Bielorusso">Bielorusso</option>
-                                    <option value="Búlgaro">Búlgaro</option>
-                                    <option value="Checo">Checo</option>
-                                    <option value="Chinês">Chinês (cantonês)</option>
-                                    <option value="Chinês">Chinês (mandarim)</option>
-                                    <option value="Coreano">Coreano</option>
-                                    <option value="Croata">Croata</option>
-                                    <option value="Dinamarquês">Dinamarquês</option>
-                                    <option value="Escocês">Escocês</option>
-                                    <option value="Eslovaco">Eslovaco</option>
-                                    <option value="Esloveno">Esloveno</option>
-                                    <option value="Espanhol">Espanhol</option>
-                                    <option value="Estônio">Estônio</option>
-                                    <option value="Farsi">Farsi</option>
-                                    <option value="Finlandês">Finlandês</option>
-                                    <option value="Francês">Francês</option>
-                                    <option value="Georgiano">Georgiano</option>
-                                    <option value="Grego">Grego</option>
-                                    <option value="Hebraico">Hebraico</option>
-                                    <option value="Hindi">Hindi</option>
-                                    <option value="Holandês">Holandês</option>
-                                    <option value="Húngaro">Húngaro</option>
-                                    <option value="Indonésio">Indonésio</option>
-                                    <option value="Irlandês">Irlandês</option>
-                                    <option value="Islandês">Islandês</option>
-                                    <option value="Italiano">Italiano</option>
-                                    <option value="Japonês">Japonês</option>
-                                    <option value="LIBRAS">LIBRAS</option>
-                                    <option value="Lituano">Lituano</option>
-                                    <option value="Macedônio">Macedônio</option>
-                                    <option value="Malaio">Malaio</option>
-                                    <option value="Mongol">Mongol</option>
-                                    <option value="Nepalês">Nepalês</option>
-                                    <option value="Norueguês">Norueguês</option>
-                                    <option value="Polaco">Polaco</option>
-                                    <option value="Português">Português</option>
-                                    <option value="Romeno">Romeno</option>
-                                    <option value="Russo">Russo</option>
-                                    <option value="Sérvio">Sérvio</option>
-                                    <option value="Sueco">Sueco</option>
-                                    <option value="Swahili">Swahili</option>
-                                    <option value="Tailandês">Tailandês</option>
-                                    <option value="Tibetano">Tibetano</option>
-                                    <option value="Turco">Turco</option>
-                                    <option value="Ucraniano">Ucraniano</option>
-                                    <option value="Urdu">Urdu</option>
-                                    <option value="Usbeque">Usbeque</option>
-                                    <option value="Vietnamita">Vietnamita</option>
-                                    <option value="Zulu">Zulu</option>
-                                </select>
+                                <input for="Idioma1" id="idioma1" value="@Model.Idioma1" />
                             </div>
                             <div>
                                 <label>Conhecimento</label>
                                 <div>
-                                    <select name="" id="nivelIdioma1">
-                                        <option value=""></option>
-                                        <option value="1">Básico</option>
-                                        <option value="2">Intermediário</option>
-                                        <option value="3">Avançado</option>
-                                    </select>
+                                    <input for="Nivelidioma1" id="nivelIdioma1" value="@Model.Nivelidioma1" />
                                 </div>
                             </div>
                         </div>
@@ -588,75 +348,12 @@
                         <div>
                             <label>Idioma</label>
                             <div>
-                                <select name="" id="idioma2">
-                                    <option value="">Selecione um idioma...</option>
-                                    <option value="Africânder">Africânder</option>
-                                    <option value="Albanês">Albanês</option>
-                                    <option value="Alemão">Alemão</option>
-                                    <option value="Árabe">Árabe</option>
-                                    <option value="Armênio">Armênio</option>
-                                    <option value="Azeri">Azeri</option>
-                                    <option value="Azeri">Azeri</option>
-                                    <option value="Bielorusso">Bielorusso</option>
-                                    <option value="Búlgaro">Búlgaro</option>
-                                    <option value="Checo">Checo</option>
-                                    <option value="Chinês">Chinês (cantonês)</option>
-                                    <option value="Chinês">Chinês (mandarim)</option>
-                                    <option value="Coreano">Coreano</option>
-                                    <option value="Croata">Croata</option>
-                                    <option value="Dinamarquês">Dinamarquês</option>
-                                    <option value="Escocês">Escocês</option>
-                                    <option value="Eslovaco">Eslovaco</option>
-                                    <option value="Esloveno">Esloveno</option>
-                                    <option value="Espanhol">Espanhol</option>
-                                    <option value="Estônio">Estônio</option>
-                                    <option value="Farsi">Farsi</option>
-                                    <option value="Finlandês">Finlandês</option>
-                                    <option value="Francês">Francês</option>
-                                    <option value="Georgiano">Georgiano</option>
-                                    <option value="Grego">Grego</option>
-                                    <option value="Hebraico">Hebraico</option>
-                                    <option value="Hindi">Hindi</option>
-                                    <option value="Holandês">Holandês</option>
-                                    <option value="Húngaro">Húngaro</option>
-                                    <option value="Indonésio">Indonésio</option>
-                                    <option value="Irlandês">Irlandês</option>
-                                    <option value="Islandês">Islandês</option>
-                                    <option value="Italiano">Italiano</option>
-                                    <option value="Japonês">Japonês</option>
-                                    <option value="LIBRAS">LIBRAS</option>
-                                    <option value="Lituano">Lituano</option>
-                                    <option value="Macedônio">Macedônio</option>
-                                    <option value="Malaio">Malaio</option>
-                                    <option value="Mongol">Mongol</option>
-                                    <option value="Nepalês">Nepalês</option>
-                                    <option value="Norueguês">Norueguês</option>
-                                    <option value="Polaco">Polaco</option>
-                                    <option value="Português">Português</option>
-                                    <option value="Romeno">Romeno</option>
-                                    <option value="Russo">Russo</option>
-                                    <option value="Sérvio">Sérvio</option>
-                                    <option value="Sueco">Sueco</option>
-                                    <option value="Swahili">Swahili</option>
-                                    <option value="Tailandês">Tailandês</option>
-                                    <option value="Tibetano">Tibetano</option>
-                                    <option value="Turco">Turco</option>
-                                    <option value="Ucraniano">Ucraniano</option>
-                                    <option value="Urdu">Urdu</option>
-                                    <option value="Usbeque">Usbeque</option>
-                                    <option value="Vietnamita">Vietnamita</option>
-                                    <option value="Zulu">Zulu</option>
-                                </select>
+                                <input for="Idioma2" id="idioma2" value="@Model.Idioma2" />
                             </div>
                             <div>
                                 <label>Conhecimento</label>
                                 <div>
-                                    <select name="" id="nivelIdioma2">
-                                        <option value=""></option>
-                                        <option value="1">Básico</option>
-                                        <option value="2">Intermediário</option>
-                                        <option value="3">Avançado</option>
-                                    </select>
+                                    <input for="Nivelidioma2" id="nivelIdioma2" value="@Model.Nivelidioma2" />
                                 </div>
                             </div>
                         </div>
@@ -669,75 +366,12 @@
                         <div>
                             <label>Idioma</label>
                             <div>
-                                <select name="" id="idioma3">
-                                    <option value="">Selecione um idioma...</option>
-                                    <option value="Africânder">Africânder</option>
-                                    <option value="Albanês">Albanês</option>
-                                    <option value="Alemão">Alemão</option>
-                                    <option value="Árabe">Árabe</option>
-                                    <option value="Armênio">Armênio</option>
-                                    <option value="Azeri">Azeri</option>
-                                    <option value="Azeri">Azeri</option>
-                                    <option value="Bielorusso">Bielorusso</option>
-                                    <option value="Búlgaro">Búlgaro</option>
-                                    <option value="Checo">Checo</option>
-                                    <option value="Chinês">Chinês (cantonês)</option>
-                                    <option value="Chinês">Chinês (mandarim)</option>
-                                    <option value="Coreano">Coreano</option>
-                                    <option value="Croata">Croata</option>
-                                    <option value="Dinamarquês">Dinamarquês</option>
-                                    <option value="Escocês">Escocês</option>
-                                    <option value="Eslovaco">Eslovaco</option>
-                                    <option value="Esloveno">Esloveno</option>
-                                    <option value="Espanhol">Espanhol</option>
-                                    <option value="Estônio">Estônio</option>
-                                    <option value="Farsi">Farsi</option>
-                                    <option value="Finlandês">Finlandês</option>
-                                    <option value="Francês">Francês</option>
-                                    <option value="Georgiano">Georgiano</option>
-                                    <option value="Grego">Grego</option>
-                                    <option value="Hebraico">Hebraico</option>
-                                    <option value="Hindi">Hindi</option>
-                                    <option value="Holandês">Holandês</option>
-                                    <option value="Húngaro">Húngaro</option>
-                                    <option value="Indonésio">Indonésio</option>
-                                    <option value="Irlandês">Irlandês</option>
-                                    <option value="Islandês">Islandês</option>
-                                    <option value="Italiano">Italiano</option>
-                                    <option value="Japonês">Japonês</option>
-                                    <option value="LIBRAS">LIBRAS</option>
-                                    <option value="Lituano">Lituano</option>
-                                    <option value="Macedônio">Macedônio</option>
-                                    <option value="Malaio">Malaio</option>
-                                    <option value="Mongol">Mongol</option>
-                                    <option value="Nepalês">Nepalês</option>
-                                    <option value="Norueguês">Norueguês</option>
-                                    <option value="Polaco">Polaco</option>
-                                    <option value="Português">Português</option>
-                                    <option value="Romeno">Romeno</option>
-                                    <option value="Russo">Russo</option>
-                                    <option value="Sérvio">Sérvio</option>
-                                    <option value="Sueco">Sueco</option>
-                                    <option value="Swahili">Swahili</option>
-                                    <option value="Tailandês">Tailandês</option>
-                                    <option value="Tibetano">Tibetano</option>
-                                    <option value="Turco">Turco</option>
-                                    <option value="Ucraniano">Ucraniano</option>
-                                    <option value="Urdu">Urdu</option>
-                                    <option value="Usbeque">Usbeque</option>
-                                    <option value="Vietnamita">Vietnamita</option>
-                                    <option value="Zulu">Zulu</option>
-                                </select>
+                                <input for="Idioma3" id="idioma3" value="@Model.Idioma3" />
                             </div>
                             <div>
                                 <label>Conhecimento</label>
                                 <div>
-                                    <select name="" id="nivelIdioma3">
-                                        <option value=""></option>
-                                        <option value="1">Básico</option>
-                                        <option value="2">Intermediário</option>
-                                        <option value="3">Avançado</option>
-                                    </select>
+                                    <input for="Nivelidioma3" id="nivelIdioma3" value="@Model.Nivelidioma3" />
                                 </div>
                             </div>
                         </div>
