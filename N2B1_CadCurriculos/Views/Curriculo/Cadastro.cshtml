@@ -30,7 +30,7 @@
                     <input type="text" Name="cpf" id="cpf" value="" onkeydown="mask.init(this, mask.cpf)" placeholder="000.000.000-00" />
                     <br>
                     <label>Telefone</label>
-                    <input type="tel" Name="telefone" value="" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" />
+                    <input type="text" Name="telefone" value="" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" />
                     <br>
                     <label>E-mail</label>
                     <input type="email" Name="email" value="" placeholder="nome@dominio.com" />
@@ -58,9 +58,6 @@
                     <label>Bairro</label>
                     <input id="bairro" type="text" Name="bairro" value="" readonly />
                     <br>
-                    <label>Endereço</label>
-                    <input id="rua" type="text" Name="endereco" value="" readonly />
-                    <br />
                     <label>Número</label>
                     <input id="numero" type="text" Name="numero" value="" />
                 </div>
@@ -350,32 +347,7 @@
             <!--Dados de experiências profissionais anteriores-->
             <div>
                 <h2>Dados de experiências profissionais anteriores:</h2>
-                <label>Empresa</label>
-                <input type="text" Name="" value="" />
-                <br>
-                <label>Início</label>
-                <input type="month" name="" value="" />
-                <br>
-                <label>Término</label>
-                <input type="month" name="" value="" />
-                <br>
-                <div>
-                    <label>Ocupaçoes na Empresa</label>
-                    <div>
-                        <select name="" id="">
-                            <option value=""></option>
-                            <option value="1">Auxiliar/Operacional</option>
-                            <option value="2">Técnico</option>
-                            <option value="3">Estágio</option>
-                            <option value="4">Júnior/Trainee</option>
-                            <option value="5">Pleno</option>
-                            <option value="6">Sênior</option>
-                            <option value="7">Supervisão/Coordenação</option>
-                            <option value="8">Gerência</option>
-                            <option value="9">Diretoria</option>
-                        </select>
-                    </div>
-                </div>
+                <!--Experiências1-->
                 <div id="Experiencias1">
                     <div>
                         <label>Empresa</label>
@@ -412,7 +384,9 @@
                             </div>
                         </div>
                     </div>
-                </div> <!--Experiências1-->
+                </div>
+
+                <!--Experiências2-->
                 <div id="Experiencias2" style="display: none">
                     <div>
                         <label>Empresa</label>
@@ -449,7 +423,9 @@
                             </div>
                         </div>
                     </div>
-                </div> <!--Experiências2-->
+                </div>
+
+                <!--Experiências3-->
                 <div id="Experiencias3" style="display: none">
                     <div>
                         <label>Empresa</label>
@@ -486,7 +462,7 @@
                             </div>
                         </div>
                     </div>
-                </div> <!--Experiências3-->
+                </div>
             </div>
 
             <!--Dados de idioma-->
