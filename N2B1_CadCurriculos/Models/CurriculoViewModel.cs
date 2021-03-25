@@ -14,7 +14,7 @@ namespace N2B1_CadCurriculos.Models
         public string Cargo { get; set; }
 
         //Endereço
-        public int Cep { get; set; }
+        public string Cep { get; set; }
         public string Estado { get; set; }
         public string Cidade { get; set; }
         public string Bairro { get; set; }
@@ -78,11 +78,13 @@ namespace N2B1_CadCurriculos.Models
 
 
         //Dados de idiomas
-        public int Idioma1 { get; set; }
-        public int Nivelidioma1 { get; set; }
-        public int Idioma2 { get; set; }
-        public int Nivelidioma2 { get; set; }
-        public int Idioma3 { get; set; }
-        public int Nivelidioma3 { get; set; }
+        public string Idioma1 { get; set; }
+        public string Nivelidioma1 { get; set; }
+
+        public string Idioma2 { get; set; }
+        public string Nivelidioma2 { get; set; }
+        
+        public string Idioma3 { get; set; }
+        public string Nivelidioma3 { get; set; }
     }
 }

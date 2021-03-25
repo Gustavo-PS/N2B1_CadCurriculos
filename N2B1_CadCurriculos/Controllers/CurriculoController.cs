@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using N2B1_CadCurriculos.Models;
 using System.Diagnostics;
+using N2B1_CadCurriculos.DAO;
+using System.Data;
+using System.Text.RegularExpressions;
 
 namespace N2B1_CadCurriculos.Controllers
 {
@@ -41,5 +44,134 @@ namespace N2B1_CadCurriculos.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public IActionResult Salvar(CurriculoViewModel cv, string Operacao)
+        {
+            try
+            {
+                ValidaDados(cv, Operacao);
+                if (ModelState.IsValid)
+                {
+                    CurriculoDAO dao = new CurriculoDAO();
+                    if (Operacao == "I")
+                        dao.Inserir(cv);
+                    else
+                        dao.Alterar(cv);
+                    return RedirectToAction("Index");
+                }
+                    
+                
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+
+        private void ValidaDados(CurriculoViewModel cv, string operacao)
+        {
+            ModelState.Clear();
+            CurriculoDAO dao = new CurriculoDAO();
+            if (operacao == "I" && dao.Consulta(cv.Cpf) != null)
+                ModelState.AddModelError("CPF", "CPF já cadastrado");
+            if (operacao == "A" && dao.Consulta(cv.Cpf) == null)
+                ModelState.AddModelError("CPF", "CV não existe");
+            //Dados Pessoais
+            if (string.IsNullOrEmpty(cv.Nome))
+                ModelState.AddModelError("Nome", "Preencha o nome.");
+            if (!ValidaCPF(cv.Cpf))
+                ModelState.AddModelError("CPF", "CPF inválido");
+            if (cv.Telefone.Length < 9)
+                ModelState.AddModelError("Telefone", "Telefone inválido");
+            if(!ValidaEmail(cv.Email))
+                ModelState.AddModelError("E-mail", "E-mail inválido");
+            if (string.IsNullOrEmpty(cv.Cargo))
+                ModelState.AddModelError("Cargo", "Preencha o cargo.");
+            //Endereço
+            if (string.IsNullOrEmpty(cv.Estado))
+                ModelState.AddModelError("CEP", "Preencha o CEP.");
+            if (cv.Numero <=0)
+                ModelState.AddModelError("Numero", "Preencha o Número.");
+
+            //Dados Academicos
+            if (string.IsNullOrEmpty(cv.Curso1))
+                ModelState.AddModelError("Curso", "Preencha o curso.");
+            if (string.IsNullOrEmpty(cv.Escolaridade1))
+                ModelState.AddModelError("Escolaridade", "Preencha a escolaridade.");
+            if (string.IsNullOrEmpty(cv.Instituicao1))
+                ModelState.AddModelError("Instiuição", "Preencha a instituição");
+            if (string.IsNullOrEmpty(cv.Situacao1))
+                ModelState.AddModelError("Situação", "Preencha a situação.");
+            if (string.IsNullOrEmpty(cv.Conclusao1.ToString()) || cv.Conclusao1 >= DateTime.Today)
+                ModelState.AddModelError("Conclusão", "Preencha a conclusão corretamente.");
+            if (string.IsNullOrEmpty(cv.Periodo1))
+                ModelState.AddModelError("Periodo", "Preencha o período.");
+
+            //Empresa
+            if (string.IsNullOrEmpty(cv.Empresa1))
+                ModelState.AddModelError("Empresa", "Preencha a empresa.");
+            if (string.IsNullOrEmpty(cv.Inicio1.ToString()) || cv.Inicio1 >= DateTime.Today)
+                ModelState.AddModelError("Início", "Preencha o início corretamente.");
+            if (string.IsNullOrEmpty(cv.Termino1.ToString()) || cv.Termino1 > DateTime.Today)
+                ModelState.AddModelError("Término", "Preencha o término corretamente.");
+            if (string.IsNullOrEmpty(cv.Ocupacao1))
+                ModelState.AddModelError("Ocupação", "Preencha a ocupação.");
+            if (string.IsNullOrEmpty(cv.Atividades1))
+                ModelState.AddModelError("Atividade", "Preencha a atividade.");
+
+            //Idioma 
+            if (string.IsNullOrEmpty(cv.Idioma1))
+                ModelState.AddModelError("Idioma", "Preencha o idioma.");
+            if (string.IsNullOrEmpty(cv.Nivelidioma1))
+                ModelState.AddModelError("Nível do idioma", "Preencha o nível do idioma.");
+        }
+
+        public static bool ValidaCPF(string cpf)
+        {
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            string tempCpf;
+            string digito;
+            int soma;
+            int resto;
+            cpf = cpf.Trim();
+            cpf = cpf.Replace(".", "").Replace("-", "");
+            if (cpf.Length != 11)
+                return false;
+            tempCpf = cpf.Substring(0, 9);
+            soma = 0;
+
+            for (int i = 0; i < 9; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito = resto.ToString();
+            tempCpf = tempCpf + digito;
+            soma = 0;
+            for (int i = 0; i < 10; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito = digito + resto.ToString();
+            return cpf.EndsWith(digito);
+        }
+
+        public static bool ValidaEmail(string email)
+        {
+            Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+
+            if (rg.IsMatch(email))
+                return true;
+            else
+                return false;
+        }
+
     }
 }
