@@ -22,30 +22,36 @@ namespace N2B1_CadCurriculos.Models
         public int numero { get; set; }
 
         //Dados de formação acadêmica e cursos
+        public string curso1 { get; set; }
         public string escolaridade1 { get; set; }
         public string instituicao1 { get; set; }
         public string situacao1 { get; set; }
         public DateTime conclusao1 { get; set; }
         public string periodo1 { get; set; }
 
+
+        public string curso2 { get; set; }
         public string escolaridade2 { get; set; }
         public string instituicao2 { get; set; }
         public string situacao2 { get; set; }
         public DateTime conclusao2 { get; set; }
         public string periodo2 { get; set; }
 
+        public string curso3 { get; set; }
         public string escolaridade3 { get; set; }
         public string instituicao3 { get; set; }
         public string situacao3 { get; set; }
         public DateTime conclusao3 { get; set; }
         public string periodo3 { get; set; }
 
+        public string curso4 { get; set; }
         public string escolaridade4 { get; set; }
         public string instituicao4 { get; set; }
         public string situacao4 { get; set; }
         public DateTime conclusao4 { get; set; }
         public string periodo4 { get; set; }
 
+        public string curso5 { get; set; }
         public string escolaridade5 { get; set; }
         public string instituicao5 { get; set; }
         public string situacao5 { get; set; }
