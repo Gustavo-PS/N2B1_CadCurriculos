@@ -101,8 +101,8 @@ function removerCampos(id) {
 }
 */
 
+//var e functions dos campos de cursos
 var countCurso = 2;
-
 function showCurso() {
     if (countCurso <= 5) {
         document.getElementById('Formacao' + countCurso).style.display = 'block';
@@ -111,7 +111,6 @@ function showCurso() {
         console.log(countCurso);
     }
 }
-
 function esconderCurso() {
     if (countCurso > 1) {
         document.getElementById('Formacao' + (countCurso - 1)).style.display = 'none';
@@ -123,6 +122,7 @@ function esconderCurso() {
     }
 }
 
+//var e functions dos campos de idioma
 var countIdioma = 2;
 function showIdioma() {
     if (countIdioma <= 3) {
@@ -132,7 +132,6 @@ function showIdioma() {
         console.log(countIdioma);
     }
 }
-
 function esconderIdioma() {
     if (countIdioma > 1) {
         document.getElementById('dadosIdioma' + (countIdioma - 1)).style.display = 'none';
@@ -140,6 +139,27 @@ function esconderIdioma() {
         console.log(countIdioma);
         if (countIdioma === 2) {
             document.getElementById("btnRemoveIdioma").style.display = 'none';
+        }
+    }
+}
+
+//var e functions dos campos de experiência
+var countExperiencia= 2;
+function showExperiencia() {
+    if (countExperiencia <= 3) {
+        document.getElementById('Experiencias' + countExperiencia).style.display = 'block';
+        document.getElementById("btnRemoveExperiencias").style.display = 'block';
+        countExperiencia++;
+        console.log(countExperiencia);
+    }
+}
+function esconderExperiencia() {
+    if (countExperiencia > 1) {
+        document.getElementById('Experiencias' + (countExperiencia - 1)).style.display = 'none';
+        countExperiencia--;
+        console.log(countExperiencia);
+        if (countExperiencia === 2) {
+            document.getElementById("btnRemoveExperiencias").style.display = 'none';
         }
     }
 }
