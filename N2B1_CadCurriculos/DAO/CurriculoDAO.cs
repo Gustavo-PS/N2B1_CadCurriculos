@@ -1,6 +1,7 @@
 ﻿using N2B1_CadCurriculos.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
@@ -170,6 +171,16 @@ namespace N2B1_CadCurriculos.DAO
             "nivelidioma3 = @nivelidioma3 where CPF = @CPF";
 
             HelperDAO.ExecutaSQL(sql, CriaParametros(cadastro));
+        }
+
+        public List<CurriculoViewModel> Listagem()
+        {
+            List<CurriculoViewModel> lista = new List<CurriculoViewModel>();
+            string sql = "select * from Cadastro order by nome";
+            DataTable tabela = HelperDAO.ExecutaSelect(sql, null);
+            foreach (DataRow registro in tabela.Rows)
+                lista.Add(MontaCurriculo(registro));
+            return lista;
         }
     }
 }
