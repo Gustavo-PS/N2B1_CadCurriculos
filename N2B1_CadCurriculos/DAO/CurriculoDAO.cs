@@ -182,5 +182,12 @@ namespace N2B1_CadCurriculos.DAO
                 lista.Add(MontaCurriculo(registro));
             return lista;
         }
+
+        public int ProximoCPF()
+        {
+            string sql = "select isnull(max(CPF) +1, 1) as 'MAIOR' from Cadastro";
+            DataTable tabela = HelperDAO.ExecutaSelect(sql, null);
+            return Convert.ToInt32(tabela.Rows[0]["MAIOR"]);
+        }
     }
 }
