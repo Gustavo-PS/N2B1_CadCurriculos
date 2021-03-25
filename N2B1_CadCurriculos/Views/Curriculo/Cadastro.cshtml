@@ -29,7 +29,7 @@
                     <input type="text" asp-for="Nome" class="form-control" placeholder="Seu nome aqui" />
                     <br>
                     <label>CPF</label>
-                    <input type="text" asp-for="Cpf"  onkeydown="mask.init(this, mask.cpf)" placeholder="000.000.000-00" />
+                    <input type="text" asp-for="Cpf" onkeydown="mask.init(this, mask.cpf)" placeholder="000.000.000-00" />
                     <br>
                     <label>Telefone</label>
                     <input type="tel" asp-for="Telefone" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" />
@@ -52,7 +52,7 @@
                     <input type="text" asp-for="Cep" onkeydown="mask.init(this, mask.cep)" placeholder="00000-000" />
                     <br>
                     <label>Estado</label>
-                    <input type="text" asp-for="Estado"  readonly />
+                    <input type="text" asp-for="Estado" readonly />
                     <br>
                     <label>Cidade</label>
                     <input type="text" asp-for="Cidade" readonly />
@@ -61,10 +61,10 @@
                     <input type="text" asp-for="Bairro" readonly />
                     <br>
                     <label>Endereço</label>
-                    <input type="text"  asp-for="Rua" readonly />
+                    <input type="text" asp-for="Rua" readonly />
                     <br />
                     <label>Número</label>
-                    <input type="text"  asp-for="Numero"/>
+                    <input type="text" asp-for="Numero" />
                 </div>
             </div>
 
@@ -74,27 +74,27 @@
                 <div id="Formacao1">
                     <div>
                         <label>Curso</label>
-                        <input type="text" id="curso1" for="Curso1" value="@Model.Curso1" />
+                        <input type="text" asp-for="Curso1" />
                         <br>
                         <label>Nível de escolaridade</label>
                         <div>
-                            <input type="text" for="Escolaridade1" id="escolaridade1" value="@Model.Escolaridade1" />
+                            <input type="text" asp-for="Escolaridade1" />
                         </div>
                         <br>
                         <label>Instituição</label>
-                        <input type="text" id="Instituicao1" for="instituicao1" value="@Model.Instituicao1" placeholder="Faculdade X" />
+                        <input type="text" asp-for="Instituicao1" placeholder="Faculdade X" />
                         <br>
 
                         <label>Situação Atual:</label>
-                        <input type="text" for="Situacao1" id="situacao1" value="@Model.Situacao1" />
+                        <input type="text" asp-for="Situacao1" />
                         <br>
                         <label>Mês/Ano de Conclusão</label>
-                        <input type="month" id="Conclusao1" for="conclusao1" value="@Model.Conclusao1" />
+                        <input type="month" asp-for="Conclusao1" />
 
                         <div>
                             <label>Período de aula</label>
                             <div>
-                                <input type="text" for="Periodo1" id="periodo1" value="@Model.Periodo1" />
+                                <input type="text" asp-for="Periodo1" />
                             </div>
                         </div>
                     </div>
@@ -103,27 +103,27 @@
                 <div id="Formacao2" style="display:none">
                     <div>
                         <label>Curso</label>
-                        <input type="text" id="curso2" for="Curso2" value="@Model.Curso2" />
+                        <input type="text" asp-for="Curso2" />
                         <br>
                         <label>Nível de escolaridade</label>
                         <div>
-                            <input type="text" for="Escolaridade2" id="escolaridade2" value="@Model.Escolaridade2" />
+                            <input type="text" asp-for="Escolaridade2" />
                         </div>
                         <br>
                         <label>Instituição</label>
-                        <input type="text" id="Instituicao2" for="instituicao2" value="@Model.Instituicao2" placeholder="Faculdade X" />
+                        <input type="text" asp-for="Instituicao2" placeholder="Faculdade X" />
                         <br>
 
                         <label>Situação Atual:</label>
-                        <input type="text" for="Situacao2" id="situacao2" value="@Model.Situacao2" />
+                        <input type="text" asp-for="Situacao2" />
                         <br>
                         <label>Mês/Ano de Conclusão</label>
-                        <input type="month" id="Conclusao2" for="conclusao2" value="@Model.Conclusao2" />
+                        <input type="month" asp-for="Conclusao2" />
 
                         <div>
                             <label>Período de aula</label>
                             <div>
-                                <input type="text" for="Periodo2" id="periodo2" value="@Model.Periodo2" />
+                                <input type="text" asp-for="Periodo2" />
                             </div>
                         </div>
                     </div>
@@ -132,27 +132,27 @@
                 <div id="Formacao3" style="display: none">
                     <div>
                         <label>Curso</label>
-                        <input type="text" id="curso3" for="Curso3" value="@Model.Curso3" />
+                        <input type="text" asp-for="Curso3" />
                         <br>
                         <label>Nível de escolaridade</label>
                         <div>
-                            <input type="text" for="Escolaridade3" id="escolaridade3" value="@Model.Escolaridade3" />
+                            <input type="text" asp-for="Escolaridade3" />
                         </div>
                         <br>
                         <label>Instituição</label>
-                        <input type="text" id="Instituicao3" for="instituicao3" value="@Model.Instituicao3" placeholder="Faculdade X" />
+                        <input type="text" asp-for="Instituicao3" placeholder="Faculdade X" />
                         <br>
 
                         <label>Situação Atual:</label>
-                        <input type="text" for="Situacao3" id="situacao3" value="@Model.Situacao3" />
+                        <input type="text" asp-for="Situacao3" />
                         <br>
                         <label>Mês/Ano de Conclusão</label>
-                        <input type="month" id="Conclusao3" for="conclusao3" value="@Model.Conclusao3" />
+                        <input type="month" asp-for="Conclusao3" />
 
                         <div>
                             <label>Período de aula</label>
                             <div>
-                                <input type="text" for="Periodo3" id="periodo3" value="@Model.Periodo3" />
+                                <input type="text" asp-for="Periodo3" />
                             </div>
                         </div>
                     </div>
@@ -161,27 +161,27 @@
                 <div id="Formacao4" style="display: none">
                     <div>
                         <label>Curso</label>
-                        <input type="text" id="curso4" for="Curso4" value="@Model.Curso4" />
+                        <input type="text" asp-for="Curso4" />
                         <br>
                         <label>Nível de escolaridade</label>
                         <div>
-                            <input type="text" for="Escolaridade4" id="escolaridade4" value="@Model.Escolaridade4" />
+                            <input type="text" asp-for="Escolaridade4" />
                         </div>
                         <br>
                         <label>Instituição</label>
-                        <input type="text" id="Instituicao4" for="instituicao4" value="@Model.Instituicao4" placeholder="Faculdade X" />
+                        <input type="text" asp-for="Instituicao4" placeholder="Faculdade X" />
                         <br>
 
                         <label>Situação Atual:</label>
-                        <input type="text" for="Situacao4" id="situacao4" value="@Model.Situacao4" />
+                        <input type="text" asp-for="Situacao4" />
                         <br>
                         <label>Mês/Ano de Conclusão</label>
-                        <input type="month" id="Conclusao4" for="conclusao4" value="@Model.Conclusao4" />
+                        <input type="month" asp-for="Conclusao4" />
 
                         <div>
                             <label>Período de aula</label>
                             <div>
-                                <input type="text" for="Periodo4" id="periodo4" value="@Model.Periodo4" />
+                                <input type="text" asp-for="Periodo4" />
                             </div>
                         </div>
                     </div>
@@ -190,27 +190,27 @@
                 <div id="Formacao5" style="display: none">
                     <div>
                         <label>Curso</label>
-                        <input type="text" id="curso5" for="Curso5" value="@Model.Curso5" />
+                        <input type="text" asp-for="Curso5" />
                         <br>
                         <label>Nível de escolaridade</label>
                         <div>
-                            <input type="text" for="Escolaridade5" id="escolaridade5" value="@Model.Escolaridade5" />
+                            <input type="text" asp-for="Escolaridade5" />
                         </div>
                         <br>
                         <label>Instituição</label>
-                        <input type="text" id="Instituicao5" for="instituicao5" value="@Model.Instituicao5" placeholder="Faculdade X" />
+                        <input type="text" asp-for="Instituicao5" placeholder="Faculdade X" />
                         <br>
 
                         <label>Situação Atual:</label>
-                        <input type="text" for="Situacao5" id="situacao5" value="@Model.Situacao5" />
+                        <input type="text" asp-for="Situacao5" />
                         <br>
                         <label>Mês/Ano de Conclusão</label>
-                        <input type="month" id="Conclusao5" for="conclusao5" value="@Model.Conclusao5" />
+                        <input type="month" asp-for="Conclusao5" />
 
                         <div>
                             <label>Período de aula</label>
                             <div>
-                                <input type="text" for="Periodo5" id="periodo5" value="@Model.Periodo5" />
+                                <input type="text" asp-for="Periodo5" />
                             </div>
                         </div>
                     </div>
@@ -230,25 +230,25 @@
                 <div id="Experiencias1">
                     <div>
                         <label>Empresa</label>
-                        <input type="text" id="empresa1" for="Empresa1" value="@Model.Empresa1" />
+                        <input type="text" asp-for="Empresa1" />
                         <br>
                         <label>Início</label>
-                        <input type="month" id="inicio1" for="Inicio1" value="@Model.Inicio1" />
+                        <input type="month" asp-for="Inicio1" />
                         <br>
                         <label>Término</label>
-                        <input type="month" id="termino1" for="Termino1" value="@Model.Termino1" />
+                        <input type="month" asp-for="Termino1" />
                         <br>
                         <div>
                             <label>Ocupaçoes na Empresa</label>
                             <div>
-                                <input for="Ocupacao1" id="ocupacao1" value="@Model.Ocupacao1" />
+                                <input asp-for="Ocupacao1" />
                             </div>
                         </div>
 
                         <div>
                             <label>Atividades</label>
                             <div>
-                                <textarea id="atividades1" for="Atividades1" placeholder="Descreva suas atividades" value="@Model.Atividades1"></textarea>
+                                <textarea asp-for="Atividades1" placeholder="Descreva suas atividades"></textarea>
                             </div>
                         </div>
                     </div>
@@ -258,25 +258,25 @@
                 <div id="Experiencias2" style="display: none">
                     <div>
                         <label>Empresa</label>
-                        <input type="text" id="empresa2" for="Empresa2" value="@Model.Empresa2" />
+                        <input type="text" asp-for="Empresa2" />
                         <br>
                         <label>Início</label>
-                        <input type="month" id="inicio2" for="Inicio2" value="@Model.Inicio2" />
+                        <input type="month" asp-for="Inicio2" />
                         <br>
                         <label>Término</label>
-                        <input type="month" id="termino2" for="Termino2" value="@Model.Termino2" />
+                        <input type="month" asp-for="Termino2" />
                         <br>
                         <div>
                             <label>Ocupaçoes na Empresa</label>
                             <div>
-                                <input for="Ocupacao2" id="ocupacao2" value="@Model.Ocupacao2" />
+                                <input asp-for="Ocupacao2" />
                             </div>
                         </div>
 
                         <div>
                             <label>Atividades</label>
                             <div>
-                                <textarea id="atividades2" for="Atividades2" placeholder="Descreva suas atividades" value="@Model.Atividades2"></textarea>
+                                <textarea asp-for="Atividades2" placeholder="Descreva suas atividades"></textarea>
                             </div>
                         </div>
                     </div>
@@ -286,97 +286,92 @@
                 <div id="Experiencias3" style="display: none">
                     <div>
                         <label>Empresa</label>
-                        <input type="text" id="empresa3" for="Empresa3" value="@Model.Empresa3" />
+                        <input type="text" asp-for="Empresa3" />
                         <br>
                         <label>Início</label>
-                        <input type="month" id="inicio3" for="Inicio3" value="@Model.Inicio3" />
+                        <input type="month" asp-for="Inicio3" />
                         <br>
                         <label>Término</label>
-                        <input type="month" id="termino3" for="Termino3" value="@Model.Termino3" />
+                        <input type="month" asp-for="Termino3" />
                         <br>
-                </div> <!--Experiências3-->
-                
-                <br />
+                    </div>
+                    <br />
 
-                <button id="btnAdicionaExperiencia" onclick="showExperiencia()" class="bg-info">Adicionar</button>
-                <button id="btnRemoveExperiencias" onclick="esconderExperiencia()" style="display: none" class="bg-danger">Remover</button>
-                            <label>Ocupaçoes na Empresa</label>
-                            <div>
-                                <input for="Ocupacao3" id="ocupacao3" value="@Model.Ocupacao3" />
-                            </div>
-                        </div>
+                    <button id="btnAdicionaExperiencia" onclick="showExperiencia()" class="bg-info">Adicionar</button>
+                    <button id="btnRemoveExperiencias" onclick="esconderExperiencia()" style="display: none" class="bg-danger">Remover</button>
+                    <label>Ocupaçoes na Empresa</label>
+                    <div>
+                        <input asp-for="Ocupacao3" />
+                    </div>
 
+                    <div>
+                        <label>Atividades</label>
                         <div>
-                            <label>Atividades</label>
-                            <div>
-                                <textarea id="atividades3" for="Atividades3" placeholder="Descreva suas atividades" value="@Model.Atividades3"></textarea>
-                            </div>
+                            <textarea asp-for="Atividades3" placeholder="Descreva suas atividades"></textarea>
                         </div>
                     </div>
-                </div> <!--Experiências3-->
-
-                <br />
-
-                <button id="btnAdicionaExperiencia" onclick="showExperiencia()" class="bg-info">Adicionar</button>
-                <button id="btnRemoveExperiencias" onclick="esconderExperiencia()" style="display: none" class="bg-danger">Remover</button>
+                </div>
             </div>
+
+            <br />
+
+            <button id="btnAdicionaExperiencia" onclick="showExperiencia()" class="bg-info">Adicionar</button>
+            <button id="btnRemoveExperiencias" onclick="esconderExperiencia()" style="display: none" class="bg-danger">Remover</button>
 
             <!--Dados de idioma-->
             <div>
                 <h2>Dados de idiomas:</h2>
+
                 <!--Dados de idiomas1-->
-                <div>
-                    <div id="dadosIdioma1">
+                <div id="dadosIdioma1">
+                    <div>
+                        <label>Idioma</label>
                         <div>
-                            <label>Idioma</label>
+                            <input asp-for="Idioma1" />
+                        </div>
+                        <div>
+                            <label>Conhecimento</label>
                             <div>
-                                <input for="Idioma1" id="idioma1" value="@Model.Idioma1" />
-                            </div>
-                            <div>
-                                <label>Conhecimento</label>
-                                <div>
-                                    <input for="Nivelidioma1" id="nivelIdioma1" value="@Model.Nivelidioma1" />
-                                </div>
+                                <input asp-for="Nivelidioma1" />
                             </div>
                         </div>
                     </div>
                 </div>
 
+
                 <!--Dados de idioma2-->
-                <div>
-                    <div id="dadosIdioma2" style="display:none">
+                <div id="dadosIdioma2" style="display:none">
+                    <div>
+                        <label>Idioma</label>
                         <div>
-                            <label>Idioma</label>
+                            <input asp-for="Idioma2" />
+                        </div>
+                        <div>
+                            <label>Conhecimento</label>
                             <div>
-                                <input for="Idioma2" id="idioma2" value="@Model.Idioma2" />
-                            </div>
-                            <div>
-                                <label>Conhecimento</label>
-                                <div>
-                                    <input for="Nivelidioma2" id="nivelIdioma2" value="@Model.Nivelidioma2" />
-                                </div>
+                                <input asp-for="Nivelidioma2" />
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!--Dados de idioma3-->
-                <div>
-                    <div id="dadosIdioma3" style="display:none">
+
+                <div id="dadosIdioma3" style="display:none">
+                    <div>
+                        <label>Idioma</label>
                         <div>
-                            <label>Idioma</label>
+                            <input asp-for="Idioma3" />
+                        </div>
+                        <div>
+                            <label>Conhecimento</label>
                             <div>
-                                <input for="Idioma3" id="idioma3" value="@Model.Idioma3" />
-                            </div>
-                            <div>
-                                <label>Conhecimento</label>
-                                <div>
-                                    <input for="Nivelidioma3" id="nivelIdioma3" value="@Model.Nivelidioma3" />
-                                </div>
+                                <input asp-for="Nivelidioma3" />
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <br />
 
