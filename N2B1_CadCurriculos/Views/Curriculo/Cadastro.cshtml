@@ -252,7 +252,9 @@
                             </div>
                         </div>
                     </div>
-                </div> <!--Experiências1-->
+                </div>
+
+                <!--Experiências2-->
                 <div id="Experiencias2" style="display: none">
                     <div>
                         <label>Empresa</label>
@@ -278,7 +280,9 @@
                             </div>
                         </div>
                     </div>
-                </div> <!--Experiências2-->
+                </div>
+
+                <!--Experiências3-->
                 <div id="Experiencias3" style="display: none">
                     <div>
                         <label>Empresa</label>
@@ -290,7 +294,12 @@
                         <label>Término</label>
                         <input type="month" id="termino3" for="Termino3" value="@Model.Termino3" />
                         <br>
-                        <div>
+                </div> <!--Experiências3-->
+                
+                <br />
+
+                <button id="btnAdicionaExperiencia" onclick="showExperiencia()" class="bg-info">Adicionar</button>
+                <button id="btnRemoveExperiencias" onclick="esconderExperiencia()" style="display: none" class="bg-danger">Remover</button>
                             <label>Ocupaçoes na Empresa</label>
                             <div>
                                 <input for="Ocupacao3" id="ocupacao3" value="@Model.Ocupacao3" />

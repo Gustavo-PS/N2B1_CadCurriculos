@@ -3,10 +3,16 @@
 }
 
 
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/Index.css">
+</head>
+
 <body>
     <header>
         <nav>
-            <ul>
+            <h1 class="titulo">Gerador de Currículos </h1>
+            <ul class="options">
                 <li><a asp-area="" asp-controller="Curriculo" asp-action="Sobre">Sobre</a></li>
                 <li><a asp-area="" asp-controller="Curriculo" asp-action="Cadastro">Cadastrar</a></li>
                 <li><a asp-area="" asp-controller="Curriculo" asp-action="Listagem">Listagem</a></li>
@@ -14,4 +20,17 @@
             </ul>
         </nav>
     </header>
+
+    <div class="div1">
+        <a asp-area="" asp-controller="Curriculo" asp-action="Cadastro">Cadastrar</a>
+    </div>
+
+    <div class="div2">
+        <p>info 2</p>
+    </div>
+
+    <div class="div3">
+        <p>info 3</p>
+    </div>
+
 </body>
