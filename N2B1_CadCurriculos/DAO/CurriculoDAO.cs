@@ -112,6 +112,91 @@ namespace N2B1_CadCurriculos.DAO
             HelperDAO.ExecutaSQL(sql, null);
         }
 
+        public void Alterar(CurriculoViewModel cadastro)
+        {
+            string sql =
+            "update Cadastro set nome = @nome, " +
+            "telefone = @telefone, " +
+            "email = @email," +
+            "cargo = @cargo," +
+            "CEP = @CEP," +                                     //Endereço
+            "estado = @estado," +
+            "cidade = @cidade," +
+            "bairro = @bairro," +
+            "rua = @rua," +
+            "numero = @numero," +
+            "curso1 = @curso1," +                               //curso 1
+            "nivelescolaridade1 = @nivelescolaridade1," +
+            "instituicao1 = @instituicao1," +
+            "situacao1 = @situacao1," +
+            "conclusao1 = @conclusao1," +
+            "periodo1 = @periodo1," +
+            "curso2 = @curso2," +                               //curso 2
+            "nivelescolaridade2 = @nivelescolaridade2," +
+            "instituicao2 = @instituicao2," +
+            "situacao2 = @situacao2," +
+            "conclusao2 = @conclusao2," +
+            "periodo2 = @periodo2," +
+            "curso3 = @curso3," +                               //curso 3
+            "nivelescolaridade3 = @nivelescolaridade3," +
+            "instituicao3 = @instituicao3," +
+            "situacao3 = @situacao3," +
+            "conclusao3 = @conclusao3," +
+            "periodo3 = @periodo3," +
+            "curso4 = @curso4," +                               //curso 4
+            "nivelescolaridade4 = @nivelescolaridade4," +
+            "instituicao4 = @instituicao4," +
+            "situacao4 = @situacao4," +
+            "conclusao4 = @conclusao4," +
+            "periodo4 = @periodo4," +
+            "curso5 = @curso5," +                               //curso 5
+            "nivelescolaridade5 = @nivelescolaridade5," +
+            "instituicao5 = @instituicao5," +
+            "situacao5 = @situacao5," +
+            "conclusao5 = @conclusao5," +
+            "periodo5 = @periodo5," +
+            "empresa1 = @empresa1," +                           //empresa 1
+            "inicio1 = @inicio1," +
+            "termino1 = @termino1," +
+            "ocupacao1 = @ocupacao1," +
+            "Atividades1 = @Atividades1," +
+            "empresa2 = @empresa2," +                           //empresa 2
+            "inicio2 = @inicio2," +
+            "termino2 = @termino2," +
+            "ocupacao2 = @ocupacao2," +
+            "Atividades2 = @Atividades2," +
+            "empresa3 = @empresa3," +                           //empresa 3
+            "inicio3 = @inicio3," +
+            "termino3 = @termino3," +
+            "ocupacao3 = @ocupacao3," +
+            "Atividades3 = @Atividades3," +
+            "idioma1 = @idioma1," +                             //idioma 1
+            "nivelidioma1 = @nivelidioma1," +
+            "idioma2 = @idioma2," +                             //idioma 2
+            "nivelidioma2 = @nivelidioma2," +
+            "idioma3 = @idioma3," +                             //idioma 3
+            "nivelidioma3 = @nivelidioma3 where CPF = @CPF";
+
+            HelperDAO.ExecutaSQL(sql, CriaParametros(cadastro));
+        }
+
+        public List<CurriculoViewModel> Listagem()
+        {
+            List<CurriculoViewModel> lista = new List<CurriculoViewModel>();
+            string sql = "select * from Cadastro order by nome";
+            DataTable tabela = HelperDAO.ExecutaSelect(sql, null);
+            foreach (DataRow registro in tabela.Rows)
+                lista.Add(MontaCurriculo(registro));
+            return lista;
+        }
+
+        public int ProximoCPF()
+        {
+            string sql = "select isnull(max(CPF) +1, 1) as 'MAIOR' from Cadastro";
+            DataTable tabela = HelperDAO.ExecutaSelect(sql, null);
+            return Convert.ToInt32(tabela.Rows[0]["MAIOR"]);
+        }
+
 
 
         public CurriculoViewModel Consulta(string cpf)
