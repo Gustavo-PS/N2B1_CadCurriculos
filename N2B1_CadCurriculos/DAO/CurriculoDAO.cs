@@ -13,18 +13,80 @@ namespace N2B1_CadCurriculos.DAO
         private SqlParameter[] CriaParametros(CurriculoViewModel c)
         {
             SqlParameter[] parametros = new SqlParameter[5];
-            parametros[0] = new SqlParameter("cpf", c.cpf);
-            parametros[1] = new SqlParameter("nome", c.nome);
-            parametros[2] = new SqlParameter("telefone", c.telefone);
-            parametros[3] = new SqlParameter("email", c.email);
-            parametros[4] = new SqlParameter("cargo", c.cargo);
+            //dados pessoais
+            parametros[0] = new SqlParameter("cpf", c.Cpf);
+            parametros[1] = new SqlParameter("nome", c.Nome);
+            parametros[2] = new SqlParameter("telefone", c.Telefone);
+            parametros[3] = new SqlParameter("email", c.Email);
+            parametros[4] = new SqlParameter("cargo", c.Cargo);
 
-            parametros[5] = new SqlParameter("cep", c.cep);
-            parametros[6] = new SqlParameter("estado", c.estado);
-            parametros[7] = new SqlParameter("cidade", c.cidade);
-            parametros[8] = new SqlParameter("bairro", c.bairro);
-            parametros[9] = new SqlParameter("rua", c.rua);
-            parametros[10] = new SqlParameter("numero", c.numero);
+            //endereço
+            parametros[5] = new SqlParameter("cep", c.Cep);
+            parametros[6] = new SqlParameter("estado", c.Estado);
+            parametros[7] = new SqlParameter("cidade", c.Cidade);
+            parametros[8] = new SqlParameter("bairro", c.Bairro);
+            parametros[9] = new SqlParameter("rua", c.Rua);
+            parametros[10] = new SqlParameter("numero", c.Numero);
+
+            //Cursos
+            parametros[11] = new SqlParameter("curso1", c.Curso1);
+            parametros[12] = new SqlParameter("nivelescolaridade1", c.Escolaridade1);
+            parametros[13] = new SqlParameter("instituicao1", c.Instituicao1);
+            parametros[14] = new SqlParameter("situacao1", c.Situacao1);
+            parametros[15] = new SqlParameter("periodo1", c.Periodo1);
+
+            parametros[16] = new SqlParameter("curso2", c.Curso2);
+            parametros[17] = new SqlParameter("nivelescolaridade2", c.Escolaridade2);
+            parametros[18] = new SqlParameter("instituicao2", c.Instituicao2);
+            parametros[19] = new SqlParameter("situacao2", c.Situacao2);
+            parametros[20] = new SqlParameter("periodo2", c.Periodo2);
+
+            parametros[21] = new SqlParameter("curso3", c.Curso3);
+            parametros[22] = new SqlParameter("nivelescolaridade3", c.Escolaridade3);
+            parametros[23] = new SqlParameter("instituicao3", c.Instituicao3);
+            parametros[24] = new SqlParameter("situacao3", c.Situacao3);
+            parametros[25] = new SqlParameter("periodo3", c.Periodo3);
+
+            parametros[26] = new SqlParameter("curso4", c.Curso4);
+            parametros[27] = new SqlParameter("nivelescolaridade4", c.Escolaridade4);
+            parametros[28] = new SqlParameter("instituicao4", c.Instituicao4);
+            parametros[29] = new SqlParameter("situacao4", c.Situacao4);
+            parametros[30] = new SqlParameter("periodo4", c.Periodo4);
+
+            parametros[31] = new SqlParameter("curso5", c.Curso5);
+            parametros[32] = new SqlParameter("nivelescolaridade5", c.Escolaridade5);
+            parametros[33] = new SqlParameter("instituicao5", c.Instituicao5);
+            parametros[34] = new SqlParameter("situacao5", c.Situacao5);
+            parametros[35] = new SqlParameter("periodo5", c.Periodo5);
+
+            //Experiências
+            parametros[36] = new SqlParameter("empresa1", c.Empresa1);
+            parametros[37] = new SqlParameter("inicio1", c.Inicio1);
+            parametros[38] = new SqlParameter("termino1", c.Termino1);
+            parametros[39] = new SqlParameter("ocupacao1", c.Ocupacao1);
+            parametros[40] = new SqlParameter("Atividades1", c.Atividades1);
+
+            parametros[41] = new SqlParameter("empresa2", c.Empresa2);
+            parametros[42] = new SqlParameter("inicio2", c.Inicio2);
+            parametros[43] = new SqlParameter("termino2", c.Termino2);
+            parametros[44] = new SqlParameter("ocupacao2", c.Ocupacao2);
+            parametros[45] = new SqlParameter("Atividades2", c.Atividades2);
+
+            parametros[46] = new SqlParameter("empresa3", c.Empresa3);
+            parametros[47] = new SqlParameter("inicio3", c.Inicio3);
+            parametros[47] = new SqlParameter("termino3", c.Termino3);
+            parametros[49] = new SqlParameter("ocupacao3", c.Ocupacao3);
+            parametros[50] = new SqlParameter("Atividades3", c.Atividades3);
+
+            //Idiomas
+            parametros[51] = new SqlParameter("idioma1", c.Idioma1);
+            parametros[52] = new SqlParameter("nivelidioma1", c.Nivelidioma2);
+
+            parametros[53] = new SqlParameter("empresa2", c.Idioma2);
+            parametros[54] = new SqlParameter("empresa2", c.Empresa2);
+
+            parametros[55] = new SqlParameter("empresa3", c.Idioma3);
+            parametros[56] = new SqlParameter("empresa3", c.Empresa3);
 
             return parametros;
         }
