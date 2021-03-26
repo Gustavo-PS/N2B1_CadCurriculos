@@ -36,13 +36,13 @@ var mask = {
     },
 
     //CPF
-    cpf: function (v) {
+    Cpf: function (v) {
         v = v.replace(/\D/g, "");
         v = v.replace(/(\d{3})(\d)/, "$1.$2");
         v = v.replace(/(\d{3})(\d)/, "$1.$2");
         v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
 
-        document.getElementById("cpf").maxLength = "14";
+        document.getElementById("Cpf").maxLength = "14";
 
         return v;
     },

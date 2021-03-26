@@ -55,10 +55,10 @@ namespace N2B1_CadCurriculos.Controllers
                 if (ModelState.IsValid)
                 {
                     CurriculoDAO dao = new CurriculoDAO();
-                    if (Operacao == "I")
+                   // if (Operacao == "I")
                         dao.Inserir(cv);
-                    else
-                        dao.Alterar(cv);
+                   // else
+                      //  dao.Alterar(cv);
                     return RedirectToAction("Index");
                 }
                 else
@@ -79,10 +79,7 @@ namespace N2B1_CadCurriculos.Controllers
         {
             ModelState.Clear();
             CurriculoDAO dao = new CurriculoDAO();
-            if (operacao == "I" && dao.Consulta(cv.Cpf) != null)
-                ModelState.AddModelError("CPF", "CPF já cadastrado");
-            if (operacao == "A" && dao.Consulta(cv.Cpf) == null)
-                ModelState.AddModelError("CPF", "CV não existe");
+          
             //Dados Pessoais
             if (string.IsNullOrEmpty(cv.Nome))
                 ModelState.AddModelError("Nome", "Preencha o nome.");
@@ -109,7 +106,7 @@ namespace N2B1_CadCurriculos.Controllers
                 ModelState.AddModelError("Instiuição", "Preencha a instituição");
             if (string.IsNullOrEmpty(cv.Situacao1))
                 ModelState.AddModelError("Situação", "Preencha a situação.");
-            if (string.IsNullOrEmpty(cv.Conclusao1.ToString()) || cv.Conclusao1 >= DateTime.Today)
+            if (string.IsNullOrEmpty(cv.Conclusao1.ToString()))
                 ModelState.AddModelError("Conclusão", "Preencha a conclusão corretamente.");
             if (string.IsNullOrEmpty(cv.Periodo1))
                 ModelState.AddModelError("Periodo", "Preencha o período.");

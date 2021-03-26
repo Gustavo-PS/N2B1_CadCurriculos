@@ -20,17 +20,7 @@
 
     <main>
         <form asp-action="Salvar" method="post">
-            <input type="hidden" name="Operacao" value="@ViewBag.Operacao" />
-            @if (ViewBag.Operacao == "I")
-            {
-                <input asp-for="Cpf" class="form-control" />
-            }
-            else
-            {
-                <input asp-for="Cpf" class="form-control" readonly />
-            }
-
-
+            
             <!--Dados Pessoais-->
             <div>
                 <h2>Dados pessoais:</h2>
@@ -40,7 +30,7 @@
                     <input type="text" asp-for="Nome" class="form-control" placeholder="Seu nome aqui" />
                     <br>
                     <label>CPF</label>
-                    <input type="text" asp-for="Cpf" onkeydown="mask.init(this, mask.cpf)" placeholder="000.000.000-00" />
+                    <input type="text" asp-for="Cpf" onkeydown="mask.init(this, mask.Cpf)" placeholder="000.000.000-00" />
                     <br>
                     <label>Telefone</label>
                     <input type="tel" asp-for="Telefone" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" />
