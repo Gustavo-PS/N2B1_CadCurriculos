@@ -2,10 +2,10 @@
     ViewData["Title"] = "Home Page";
 }
 
-
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="~/css/Index.css">
+
 </head>
 
 <body>
@@ -13,24 +13,51 @@
         <nav>
             <h1 class="titulo">Gerador de Currículos </h1>
             <ul class="options">
-                <li><a asp-area="" asp-controller="Curriculo" asp-action="Sobre">Sobre</a></li>
                 <li><a asp-area="" asp-controller="Curriculo" asp-action="Cadastro">Cadastrar</a></li>
                 <li><a asp-area="" asp-controller="Curriculo" asp-action="Listagem">Listagem</a></li>
                 <li><a asp-area="" asp-controller="Curriculo" asp-action="Impressao">Impressão</a></li>
+                <li><a asp-area="" asp-controller="Curriculo" asp-action="Sobre">Sobre</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="div1">
-        <a asp-area="" asp-controller="Curriculo" asp-action="Cadastro">Cadastrar</a>
+        <figure>
+            <figure id="click">
+                <img src="~/img/click.png" width="120px" height="110px"/>
+            </figure>
+        </figure>
+        <h2>Praticidade. </h2>
+        <p>
+            Para utilizar nosso montador de currículos basta adicionar suas
+            informações pessoais e realizar apenas um clique e seu currículo estará pronto.
+        </p>
     </div>
 
     <div class="div2">
-        <p>info 2</p>
+        <figure>
+            <figure id="curriculum">
+                <img src="~/img/curriculo.png" width="120px" height="120px" />
+            </figure>
+        </figure>
+            <h2>Organização. </h2>
+            <p>
+                Suas informações são organizadas da melhor maneira, facilitando
+                a visualização do recrutador e destacando suas qualidades de forma visível.
+            </p>
     </div>
 
     <div class="div3">
-        <p>info 3</p>
+        <figure>
+            <figure id="idea">
+                <img src="~/img/idea.png" width="110px" height="120px" />
+            </figure>
+        </figure>
+        <h2>Apresentação. </h2>
+        <p>
+            Um currículo visualmente atrativo chamará atenção e te oferecerá
+            mais visibilidade durante um processo seletivo.
+        </p>
     </div>
 
 </body>

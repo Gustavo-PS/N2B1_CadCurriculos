@@ -14,58 +14,69 @@
     list-style: none;
 }
 
-.options li {
-    display: inline;
-}
-
-.options li a {
-    padding: 30px 78px;
-    display: inline-block;
-    background-color: #EDEDED;
-    color: #333;
-    text-decoration: none;
-    border-bottom: 5px solid #EDEDED;
-}
-
-   
-.options li a:hover {
-        background-color: #D6D6D6;
-        color: #6D6D6D;
-        border-bottom: 5px solid #A9A9A9;
+    .options li {
+        display: inline;
     }
 
-body {
+        .options li a {
+            padding: 30px 78px;
+            display: inline-block;
+            background-color: #EDEDED;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 5px solid #EDEDED;
+        }
 
-    background-repeat: no-repeat;
-    background-size: auto;
-    padding: 0px;
-}
 
-    .div1 :hover {
-        background-color: #D6D6D6;
-        color: #6D6D6D;
-    }
+            .options li a:hover {
+                background-color: #D6D6D6;
+                color: #6D6D6D;
+                border-bottom: 5px solid #A9A9A9;
+            }
+
 
 .div1 {
-    font-size: 70px;
-    padding: 20px 70px;
+    font-size: 20px;
+    padding: 20px 25px;
     margin: 50px;
     background-color: #EDEDED;
     list-style: none;
+    text-align: left;
+    font-weight: 500;
 }
 
 .div2 {
-    font-size: 70px;
-    padding: 20px 70px;
+    font-size: 20px;
+    padding: 20px 25px;
     margin: 50px;
     background-color: #EDEDED;
     list-style: none;
+    text-align: left;
+    font-weight: 500;
+}
+
+#curriculum{
+    float:left;
+    padding: 10px;
+}
+
+#click {
+    float: left;
+    padding: 10px;
+}
+
+#idea {
+    float: left;
+    padding: 10px;
+    padding-right: 20px;
 }
 
 .div3 {
-    font-size: 70px;
-    padding: 20px 70px;
+    font-size: 20px;
+    padding: 20px 25px;
     margin: 50px;
     background-color: #EDEDED;
     list-style: none;
+    text-align: left;
+    font-weight: 500;
 }
