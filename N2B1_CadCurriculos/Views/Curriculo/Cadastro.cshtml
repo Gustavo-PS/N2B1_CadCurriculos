@@ -20,6 +20,17 @@
 
     <main>
         <form asp-action="Salvar" method="post">
+            <input type="hidden" name="Operacao" value="@ViewBag.Operacao" />
+            @if (ViewBag.Operacao == "I")
+            {
+                <input asp-for="Cpf" class="form-control" />
+            }
+            else
+            {
+                <input asp-for="Cpf" class="form-control" readonly />
+            }
+
+
             <!--Dados Pessoais-->
             <div>
                 <h2>Dados pessoais:</h2>
@@ -218,8 +229,8 @@
 
                 <br />
 
-                <button id="btnAdicionaCurso" onclick="showCurso()" class="bg-info">Adicionar</button>
-                <button id="btnRemoveCurso" onclick="esconderCurso()" style="display: none" class="bg-danger">Remover</button>
+                <input id="btnAdicionaCurso" type="button" onclick="showCurso()" class="bg-info" value="Adicionar" />
+                <input id="btnRemoveCurso" type="button" onclick="esconderCurso()" style="display: none" class="bg-danger" value="Remover" />
             </div>
 
             <!--Dados de experiências profissionais anteriores-->
@@ -297,8 +308,6 @@
                     </div>
                     <br />
 
-                    <button id="btnAdicionaExperiencia" onclick="showExperiencia()" class="bg-info">Adicionar</button>
-                    <button id="btnRemoveExperiencias" onclick="esconderExperiencia()" style="display: none" class="bg-danger">Remover</button>
                     <label>Ocupaçoes na Empresa</label>
                     <div>
                         <input asp-for="Ocupacao3" />
@@ -311,12 +320,10 @@
                         </div>
                     </div>
                 </div>
+
+                <input id="btnAdicionaExperiencia" type="button" onclick="showExperiencia()" class="bg-info" value="Adicionar" />
+                <input id="btnRemoveExperiencias" type="button" onclick="esconderExperiencia()" style="display: none" class="bg-danger" value="Remover" />
             </div>
-
-            <br />
-
-            <button id="btnAdicionaExperiencia" onclick="showExperiencia()" class="bg-info">Adicionar</button>
-            <button id="btnRemoveExperiencias" onclick="esconderExperiencia()" style="display: none" class="bg-danger">Remover</button>
 
             <!--Dados de idioma-->
             <div>
@@ -372,21 +379,20 @@
                     </div>
                 </div>
 
-
                 <br />
 
-                <button id="btnAdicionaIdioma" onclick="showIdioma()" class="bg-info">Adicionar</button>
-                <button id="btnRemoveIdioma" onclick="esconderIdioma()" style="display: none" class="bg-danger">Remover</button>
+                <input id="btnAdicionaIdioma" type="button" onclick="showIdioma()" class="bg-info" value="Adicionar" />
+                <input id="btnRemoveIdioma" type="button" onclick="esconderIdioma()" style="display: none" class="bg-danger" value="Remover" />
             </div>
 
-            <input type="submit" value="Salvar Curriculo">
+            <br /><br /> <input type="submit" value="Salvar Curriculo">
         </form>
     </main>
 
 
     <!--Script de pesquisa e preenchimento do CEP-->
     <script type="text/javascript">
-        $("#cep").focusout(function () {
+        $("#Cep").focusout(function () {
             //Início do Comando AJAX
             $.ajax({
                 //O campo URL diz o caminho de onde virá os dados
@@ -402,14 +408,14 @@
                 success: function (resposta) {
                     //Agora basta definir os valores que você deseja preencher
                     //automaticamente nos campos acima.
-                    $("#rua").val(resposta.logradouro);
+                    $("#Rua").val(resposta.logradouro);
                     //$("#numero").val(resposta.complemento);
-                    $("#bairro").val(resposta.bairro);
-                    $("#cidade").val(resposta.localidade);
-                    $("#uf").val(resposta.uf);
+                    $("#Bairro").val(resposta.bairro);
+                    $("#Cidade").val(resposta.localidade);
+                    $("#Estado").val(resposta.uf);
                     //Vamos incluir para que o Número seja focado automaticamente
                     //melhorando a experiência do usuário
-                    $("#numero").focus();
+                    $("#Numero").focus();
                 }
             });
         });</script>

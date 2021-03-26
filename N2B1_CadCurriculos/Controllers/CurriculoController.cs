@@ -40,6 +40,7 @@ namespace N2B1_CadCurriculos.Controllers
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+       
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
@@ -59,6 +60,11 @@ namespace N2B1_CadCurriculos.Controllers
                     else
                         dao.Alterar(cv);
                     return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.Operacao = Operacao;
+                    return View("Cadastro");
                 }
                     
                 

@@ -12,5 +12,10 @@ namespace N2B1_CadCurriculos.Models
         {
             this.Erro = erro;
         }
+
+        public ErrorViewModel()
+        {}
+
+        public string Erro { get; set; }
     }
 }
