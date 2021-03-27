@@ -11,22 +11,22 @@
     <meta for="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <title>Cadastro</title>
+    <link rel="stylesheet" href="~/css/Cadastro.css">
 </head>
 
 <body>
     <header>
-        <h1>Cadastrar Currículo</h1>
+        <h1 class="titulo">Cadastrar Currículo</h1>
     </header>
 
     <main>
         <form asp-action="Salvar" method="post">
             
             <!--Dados Pessoais-->
-            <div>
+            <div class="DadosPessoais">
                 <h2>Dados pessoais:</h2>
                 <div>
                     <label>Nome</label>
-
                     <input type="text" asp-for="Nome" class="form-control" placeholder="Seu nome aqui" />
                     <br>
                     <label>CPF</label>
@@ -45,7 +45,7 @@
             </div>
 
             <!--Endereço-->
-            <div>
+            <div class="Endereco">
                 <h2>Endereço</h2>
                 <div>
                     <br>
@@ -70,7 +70,7 @@
             </div>
 
             <!--Dados de Formação Academica e Cursos-->
-            <div>
+            <div class="Formacao">
                 <h2>Dados de formação acadêmica e cursos:</h2>
                 <div id="Formacao1">
                     <div>
@@ -224,7 +224,7 @@
             </div>
 
             <!--Dados de experiências profissionais anteriores-->
-            <div>
+            <div class="ExperienciasAnteriores">
                 <h2>Dados de experiências profissionais anteriores:</h2>
                 <br />
 
@@ -313,10 +313,10 @@
 
                 <input id="btnAdicionaExperiencia" type="button" onclick="showExperiencia()" class="bg-info" value="Adicionar" />
                 <input id="btnRemoveExperiencias" type="button" onclick="esconderExperiencia()" style="display: none" class="bg-danger" value="Remover" />
-            </div>
+            </div="Experiencias">
 
             <!--Dados de idioma-->
-            <div>
+            <div class="Idioma">
                 <h2>Dados de idiomas:</h2>
 
                 <!--Dados de idiomas1-->
