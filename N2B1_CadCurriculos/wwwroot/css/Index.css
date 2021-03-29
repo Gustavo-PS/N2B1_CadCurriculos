@@ -1,9 +1,14 @@
 ﻿.titulo {
     margin: auto;
-    width: 50%;
+    width: 54%;
     padding: 30px;
-    font-size: 50px;
-    font-family: 'Raleway',sans-serif;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 58px;
+}
+
+h2{
+    font-weight:300;
 }
 
 .options {
@@ -12,6 +17,7 @@
     margin: 0px;
     background-color: #EDEDED;
     list-style: none;
+    font-weight:300;
 }
 
     .options li {
@@ -19,7 +25,7 @@
     }
 
         .options li a {
-            padding: 30px 78px;
+            padding: 30px 81px;
             display: inline-block;
             background-color: #EDEDED;
             color: #333;
@@ -42,7 +48,7 @@
     background-color: #EDEDED;
     list-style: none;
     text-align: left;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .div2 {
@@ -52,7 +58,7 @@
     background-color: #EDEDED;
     list-style: none;
     text-align: left;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 #curriculum{
@@ -78,5 +84,5 @@
     background-color: #EDEDED;
     list-style: none;
     text-align: left;
-    font-weight: 500;
+    font-weight: 400;
 }

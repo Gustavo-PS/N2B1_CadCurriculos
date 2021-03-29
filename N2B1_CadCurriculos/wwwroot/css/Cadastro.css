@@ -2,42 +2,52 @@
     margin: auto;
     width: 50%;
     padding: 30px;
-    font-size: 50px;
+    color: #000000;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 58px;
+}
+
+h2 {
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #EDEDED;
+    font-weight: 350;
 }
 
 
 .DadosPessoais {
     font-size: 20px;
     padding: 20px 25px;
-    margin: 20px;
+    margin: 25px;
     background-color: #EDEDED;
     list-style: none;
     text-align: left;
-    font-weight: 500;
     float: left;
     width: 500px;
+    height: 380px;
 }
 
 .Endereco {
     font-size: 20px;
     padding: 20px 25px;
-    margin: 20px;
+    margin: 25px;
     background-color: #EDEDED;
     list-style: none;
     text-align: left;
-    font-weight: 500;
     float: right;
     width: 500px;
+    height: 380px;
 }
 
 .Formacao {
     font-size: 20px;
     padding: 20px 25px;
-    margin: 20px;
+    margin: 25px;
     background-color: #EDEDED;
     list-style: none;
     text-align: left;
-    font-weight: 500;
     float: left;
     width: 500px;
 }
@@ -46,26 +56,23 @@
 
     font-size: 20px;
     padding: 20px 25px;
-    margin: 20px;
+    margin: 25px;
     background-color: #EDEDED;
     list-style: none;
     text-align: left;
-    font-weight: 500;
     float: right;
     width: 500px;
-
 }
 
 .Idioma {
     font-size: 20px;
     padding: 20px 25px;
-    margin: 50px;
+    margin: 25px;
     background-color: #EDEDED;
     list-style: none;
     text-align: left;
-    font-weight: 500;
     float: left;
-    width: 450px;
+    width: 1060px;
 }
 
 
@@ -85,54 +92,112 @@ input {
 
 label {
     font-size: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.btnAdicionaRemove {
-    display: inline;
-}
-
-.divLeft{
-    float:left;
-}
-
-.btnAdicionaRemove {
-    display: inline-block;
-    padding-right: 4px;
-    width: 55;
-    
+    font-family: 'Lato', sans-serif;
 }
 
 #btnRemoveCurso {
     margin-right: 0px;
     margin-left: 0px;
     width: 50px;
+    float: right;
 }
 
 #btnAdicionaCurso {
     margin-right: 0px;
     width: 50px;
+    float: right;
 }
 #btnRemoveIdioma {
     margin-right: 0px;
     margin-left: 0px;
     width: 50px;
+    float:right;
 }
 
-#btnAdicionaidioma {
+#btnAdicionaIdioma {
     margin-right: 0px;
     width: 50px;
+    float:right;
 }
 #btnRemoveExperiencias {
     margin-right: 0px;
     margin-left: 0px;
     width: 50px;
+    float: right;
 }
 
 #btnAdicionaExperiencia {
     margin-right: 0px;
     width: 50px;
+    float: right;
+}
 
 .divRight{
     float:right;
+}
+
+
+.divLeft {
+    float: left;
+}
+
+.txtNome{
+    width:435px;
+}
+
+.txtAtividades {
+    width: 435px;
+    height: 48px;
+    padding: 6px;
+    font-size: 16px;
+    margin-right: 8px;
+    margin-left: 8px;
+    border-width: 2px;
+    border-color: #858585;
+    background-color: #ffffff;
+    color: #000000;
+    border-style: hidden;
+    border-radius: 6px;
+    box-shadow: 0px 0px 2px rgba(66,66,66,.86);
+    text-shadow: -50px 0px 0px rgba(66,66,66,.100);
+}
+
+#Formacao2, #Formacao3, #Formacao4, #Formacao5 {
+    font-size: 20px;
+    background-color: #EDEDED;
+    list-style: none;
+    text-align: left;
+    font-weight: 500;
+    float: left;
+    border-top: 2px solid black;
+    border-color: #ffffff;
+    margin-top: 30px;
+}
+
+#Experiencias2, #Experiencias3 {
+    margin-top: 30px;
+    padding-top: 30px;
+    font-size: 20px;
+    background-color: #EDEDED;
+    list-style: none;
+    text-align: left;
+    font-weight: 500;
+    float: left;
+    border-top: 2px solid black;
+    border-color: #ffffff;
+    margin-top: 30px;
+}
+
+#dadosIdioma2, #dadosIdioma3 {
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 20px;
+    background-color: #EDEDED;
+    list-style: none;
+    text-align: left;
+    font-weight: 500;
+    float: left;
+    border-top: 2px solid black;
+    border-color: #ffffff;
+    margin-right: 600px;
 }
