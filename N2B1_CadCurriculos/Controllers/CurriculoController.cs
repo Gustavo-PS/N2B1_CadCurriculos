@@ -30,7 +30,16 @@ namespace N2B1_CadCurriculos.Controllers
         }
         public IActionResult Listagem()
         {
-            return View();
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                List<CurriculoViewModel> lista = dao.Listagem();
+                return View(lista);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new Exception(erro.ToString()));
+            }
         }
 
         public IActionResult Impressao()
@@ -60,6 +69,7 @@ namespace N2B1_CadCurriculos.Controllers
                    // else
                       //  dao.Alterar(cv);
                     return RedirectToAction("Index");
+                    
                 }
                 else
                 {

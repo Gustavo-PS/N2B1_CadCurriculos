@@ -21,7 +21,7 @@
 
     <main>
         <form asp-action="Salvar" method="post">
-            
+
             <!--Dados Pessoais-->
             <div class="DadosPessoais">
                 <h2>Dados pessoais:</h2>
@@ -219,8 +219,12 @@
 
                 <br />
 
-                <input id="btnAdicionaCurso" type="button" onclick="showCurso()" class="bg-info" value="Adicionar" />
-                <input id="btnRemoveCurso" type="button" onclick="esconderCurso()" style="display: none" class="bg-danger" value="Remover" />
+                <div class="btnAdiconaRemove">
+                    <img id="btnAdicionaCurso" src="~/img/add.png" onclick="showCurso()" width="50" height="50" />
+                </div>
+                <div class="btnAdiconaRemove">
+                    <img id="btnRemoveCurso" src="~/img/remove.png" onclick="esconderCurso()" style="display: none" width="50" height="50" />
+                </div>
             </div>
 
             <!--Dados de experiências profissionais anteriores-->
@@ -311,9 +315,13 @@
                     </div>
                 </div>
 
-                <input id="btnAdicionaExperiencia" type="button" onclick="showExperiencia()" class="bg-info" value="Adicionar" />
-                <input id="btnRemoveExperiencias" type="button" onclick="esconderExperiencia()" style="display: none" class="bg-danger" value="Remover" />
-            </div="Experiencias">
+                <div class="btnAdiconaRemove">
+                    <img id="btnAdicionaExperiencia" src="~/img/add.png" onclick="showExperiencia()" width="50" height="50" />
+                </div>
+                <div class="btnAdiconaRemove">
+                    <img id="btnRemoveExperiencias" src="~/img/remove.png" onclick="esconderExperiencia()" style="display: none" width="50" height="50" />
+                </div>
+            </div>
 
             <!--Dados de idioma-->
             <div class="Idioma">
@@ -371,8 +379,12 @@
 
                 <br />
 
-                <input id="btnAdicionaIdioma" type="button" onclick="showIdioma()" class="bg-info" value="Adicionar" />
-                <input id="btnRemoveIdioma" type="button" onclick="esconderIdioma()" style="display: none" class="bg-danger" value="Remover" />
+                <div class="btnAdiconaRemove">
+                    <img id="btnAdicionaIdioma" src="~/img/add.png" onclick="showIdioma()" width="50" height="50" />
+                </div>
+                <div class="btnAdiconaRemove">
+                    <img id="btnRemoveIdioma" src="~/img/remove.png" onclick="esconderIdioma()" style="display: none" width="50" height="50" />
+                </div>
             </div>
 
             <br /><br /> <input type="submit" value="Salvar Curriculo">

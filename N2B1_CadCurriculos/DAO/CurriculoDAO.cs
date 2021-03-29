@@ -14,7 +14,10 @@ namespace N2B1_CadCurriculos.DAO
         private CurriculoViewModel MontaCurriculo(DataRow registro)
         {
             CurriculoViewModel cv = new CurriculoViewModel();
-
+            cv.Cpf = registro["cpf"].ToString();
+            cv.Nome = registro["nome"].ToString();
+            cv.Cep = registro["cep"].ToString();
+            cv.Rua = registro["rua"].ToString();
             return cv;
         }
 
@@ -75,20 +78,20 @@ namespace N2B1_CadCurriculos.DAO
 
             //Experiências
             parametros[41] = new SqlParameter("empresa1", c.Empresa1 ?? (object)DBNull.Value);
-            parametros[42] = new SqlParameter("inicio1", c.Inicio1);
-            parametros[43] = new SqlParameter("termino1", c.Termino1);
+            parametros[42] = new SqlParameter("inicio1", c.Inicio1 == data ? (object)DBNull.Value : c.Inicio1); 
+            parametros[43] = new SqlParameter("termino1", c.Termino1 == data ? (object)DBNull.Value : c.Termino1);
             parametros[44] = new SqlParameter("ocupacao1", c.Ocupacao1 ?? (object)DBNull.Value);
             parametros[45] = new SqlParameter("Atividades1", c.Atividades1 ?? (object)DBNull.Value);
 
             parametros[46] = new SqlParameter("empresa2", c.Empresa2 ?? (object)DBNull.Value);
-            parametros[47] = new SqlParameter("inicio2", c.Inicio2);
-            parametros[48] = new SqlParameter("termino2", c.Termino2);
+            parametros[47] = new SqlParameter("inicio2", c.Inicio2 == data ? (object)DBNull.Value : c.Inicio2);
+            parametros[48] = new SqlParameter("termino2", c.Termino2 == data ? (object)DBNull.Value : c.Termino2);
             parametros[49] = new SqlParameter("ocupacao2", c.Ocupacao2 ?? (object)DBNull.Value);
             parametros[50] = new SqlParameter("Atividades2", c.Atividades2 ?? (object)DBNull.Value);
 
             parametros[51] = new SqlParameter("empresa3", c.Empresa3 ?? (object)DBNull.Value);
-            parametros[52] = new SqlParameter("inicio3", c.Inicio3);
-            parametros[53] = new SqlParameter("termino3", c.Termino3);
+            parametros[52] = new SqlParameter("inicio3", c.Inicio3 == data ? (object)DBNull.Value : c.Inicio3);
+            parametros[53] = new SqlParameter("termino3", c.Termino3 == data ? (object)DBNull.Value : c.Termino3);
             parametros[54] = new SqlParameter("ocupacao3", c.Ocupacao3 ?? (object)DBNull.Value);
             parametros[55] = new SqlParameter("Atividades3", c.Atividades3 ?? (object)DBNull.Value);
 
@@ -96,11 +99,11 @@ namespace N2B1_CadCurriculos.DAO
             parametros[56] = new SqlParameter("idioma1", c.Idioma1 ?? (object)DBNull.Value);
             parametros[57] = new SqlParameter("nivelidioma1", c.Nivelidioma2 ?? (object)DBNull.Value);
 
-            parametros[58] = new SqlParameter("empresa2", c.Idioma2 ?? (object)DBNull.Value);
-            parametros[59] = new SqlParameter("empresa2", c.Empresa2 ?? (object)DBNull.Value);
+            parametros[58] = new SqlParameter("idioma2", c.Idioma2 ?? (object)DBNull.Value);
+            parametros[59] = new SqlParameter("nivelidioma2", c.Nivelidioma2 ?? (object)DBNull.Value);
 
-            parametros[60] = new SqlParameter("empresa3", c.Idioma3 ?? (object)DBNull.Value);
-            parametros[61] = new SqlParameter("empresa3", c.Empresa3 ?? (object)DBNull.Value);
+            parametros[60] = new SqlParameter("idioma3", c.Idioma3 ?? (object)DBNull.Value);
+            parametros[61] = new SqlParameter("nivelidioma3", c.Nivelidioma3 ?? (object)DBNull.Value);
 
             return parametros;
         }
@@ -189,7 +192,7 @@ namespace N2B1_CadCurriculos.DAO
         public List<CurriculoViewModel> Listagem()
         {
             List<CurriculoViewModel> lista = new List<CurriculoViewModel>();
-            string sql = "select * from Cadastro order by nome";
+            string sql = "select * from Cadastro order by Nome";
             DataTable tabela = HelperDAO.ExecutaSelect(sql, null);
             foreach (DataRow registro in tabela.Rows)
                 lista.Add(MontaCurriculo(registro));

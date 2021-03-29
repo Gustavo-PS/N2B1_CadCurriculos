@@ -87,3 +87,7 @@ label{
     font-size:15px;
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
+.btnAdicionaRemove{
+    display: inline-block;
+    padding-right: 4px;
+}

@@ -1,3 +1,31 @@
-﻿@{
-    ViewData["Title"] = "Curriculo";
-}
+﻿@model List<CurriculoViewModel>
+
+<div>
+    <h2>Relação de currículos cadastrados</h2>
+
+
+    <table class="table table-responsive table-striped">
+        <tr>
+            <th>Ações </th>
+            <th>CPF </th>
+            <th>Nome </th>
+            <th>CEP </th>
+            <th>Endereço</th>
+        </tr>
+
+        @foreach (CurriculoViewModel cv in Model)
+        {
+            <tr>
+                <td>
+                    <a href=""><img src="~/img/alterar.png" width="30" height="30" /></a>
+                    <a href=""><img src="~/img/trash.png" width="30" height="30" /></a>
+                </td>
+                <td>@cv.Cpf</td>
+                <td>@cv.Nome</td>
+                <td>@cv.Cep</td>
+                <td>@cv.Rua</td>
+            </tr>
+        }
+
+    </table>
+</div>
