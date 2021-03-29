@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="~/css/Cadastro.css">
 </head>
 
-<body>
+<body onload="CampoData()">
     <header>
         <h1 class="titulo">Cadastrar Currículo</h1>
     </header>
 
     <main>
-        <form asp-action="Salvar" method="post">
+        <form asp-action="Alterar" method="post">
 
             <!--Dados Pessoais-->
             <div class="DadosPessoais">
@@ -30,13 +30,13 @@
                     <div>
                         <label>Nome</label>
                         <br>
-                        <input class ="txtNome" type="text" asp-for="Nome" placeholder="Seu nome aqui" />
+                        <input class="txtNome" type="text" asp-for="Nome" placeholder="Seu nome aqui" />
                         <br>
                     </div>
                     <div class="divLeft">
                         <label>CPF</label>
                         <br>
-                        <input type="text" asp-for="Cpf" onkeydown="mask.init(this, mask.Cpf)" placeholder="000.000.000-00" />
+                        <input type="text" asp-for="Cpf" onkeydown="mask.init(this, mask.Cpf)" placeholder="000.000.000-00" readonly />
                     </div>
                     <div class="divRight">
                         <label>Telefone</label>
@@ -390,7 +390,7 @@
                         <div class="divRight">
                             <label>Término</label>
                             <br>
-                            <input type="month" asp-for="Termino2" />
+                            <input type="month" asp-for="Termino2"/>
                         </div>
                         <div>
                             <label>Atividades</label>
@@ -524,7 +524,7 @@
 
             </div>
 
-            <br /><br /> <input type="submit" value="Salvar Curriculo">
+            <br /><br /> <input type="submit" value="Alerar Curriculo">
         </form>
     </main>
 

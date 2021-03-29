@@ -28,6 +28,12 @@ namespace N2B1_CadCurriculos.Controllers
         {
             return View();
         }
+
+        public IActionResult Editar()
+        {
+            return View();
+        }
+
         public IActionResult Listagem()
         {
             try
@@ -56,6 +62,34 @@ namespace N2B1_CadCurriculos.Controllers
         }
 
 
+        public IActionResult Alterar(CurriculoViewModel cv, string Operacao)
+        {
+            try
+            {
+                ValidaDados(cv, Operacao);
+                if (ModelState.IsValid)
+                {
+                    CurriculoDAO dao = new CurriculoDAO();
+                    // if (Operacao == "I")
+                    dao.Alterar(cv);
+                    // else
+                    //  dao.Alterar(cv);
+                    return RedirectToAction("Index");
+
+                }
+                else
+                {
+                    //ViewBag.Operacao = Operacao;
+                    return View("Editar");
+                }
+
+
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
         public IActionResult Salvar(CurriculoViewModel cv, string Operacao)
         {
             try
@@ -195,7 +229,7 @@ namespace N2B1_CadCurriculos.Controllers
                 if (cadastro == null)
                     return RedirectToAction("Listagem");
                 else
-                    return View("Cadastro", cadastro);
+                    return View("Editar", cadastro);
             }
             catch (Exception erro)
             {

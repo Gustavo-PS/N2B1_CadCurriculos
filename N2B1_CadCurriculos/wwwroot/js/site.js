@@ -132,3 +132,22 @@ function esconderExperiencia() {
 function cvInserido() {
     alert("Currículo inserido com sucesso!");
 }
+
+
+function CampoData() {
+    for (var i = 1; i <= 5; i++) {
+        var dtConclusao = document.getElementById("Conclusao" + i);
+        var dtInicio = document.getElementById("Inicio" + i);
+        var dtTermino = document.getElementById("Termino" + i);
+        
+        if (dtConclusao.value === "0001-01") {
+            dtConclusao.value = null;
+        }
+        if (dtInicio.value === "0001-01") {
+            dtInicio.value = null;
+        }
+        if (dtTermino.value === "0001-01") {
+            dtTermino.value = null;
+        }
+    }
+}

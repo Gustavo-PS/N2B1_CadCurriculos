@@ -78,7 +78,7 @@ namespace N2B1_CadCurriculos.DAO
 
             //Experiências
             parametros[41] = new SqlParameter("empresa1", c.Empresa1 ?? (object)DBNull.Value);
-            parametros[42] = new SqlParameter("inicio1", c.Inicio1 == data ? (object)DBNull.Value : c.Inicio1); 
+            parametros[42] = new SqlParameter("inicio1", c.Inicio1 == data ? (object)DBNull.Value : c.Inicio1);
             parametros[43] = new SqlParameter("termino1", c.Termino1 == data ? (object)DBNull.Value : c.Termino1);
             parametros[44] = new SqlParameter("ocupacao1", c.Ocupacao1 ?? (object)DBNull.Value);
             parametros[45] = new SqlParameter("Atividades1", c.Atividades1 ?? (object)DBNull.Value);
@@ -221,6 +221,7 @@ namespace N2B1_CadCurriculos.DAO
 
         private CurriculoViewModel MontaCV(DataRow registro)
         {
+            DateTime data = Convert.ToDateTime("01/01/0001");
             CurriculoViewModel cv = new CurriculoViewModel();
             //Dados Pessoais
             cv.Nome = registro["Nome"].ToString();
@@ -242,54 +243,100 @@ namespace N2B1_CadCurriculos.DAO
             cv.Escolaridade1 = registro["Escolaridade1"].ToString();
             cv.Instituicao1 = registro["Instituicao1"].ToString();
             cv.Situacao1 = registro["Situacao1"].ToString();
-            cv.Conclusao1 = Convert.ToDateTime(registro["Conclusao1"]);
+            if (registro["Conclusao1"].ToString() == String.Empty)
+                cv.Conclusao1 = data;
+            else
+                cv.Conclusao1 = Convert.ToDateTime(registro["Conclusao1"]);
+
             cv.Periodo1 = registro["Periodo1"].ToString();
+            
             // Cursos Acadêmicos 2
             cv.Curso2 = registro["Curso2"].ToString();
             cv.Escolaridade2 = registro["Escolaridade2"].ToString();
             cv.Instituicao2 = registro["Instituicao2"].ToString();
             cv.Situacao2 = registro["Situacao2"].ToString();
-            cv.Conclusao2 = Convert.ToDateTime(registro["Conclusao2"]);
+
+            if (registro["Conclusao2"].ToString() == String.Empty)
+                cv.Conclusao2 = data;
+            else
+                cv.Conclusao2 = Convert.ToDateTime(registro["Conclusao2"]);
+
             cv.Periodo2 = registro["Periodo2"].ToString();
+
             // Cursos Acadêmicos 3
             cv.Curso3 = registro["Curso3"].ToString();
             cv.Escolaridade3 = registro["Escolaridade3"].ToString();
             cv.Instituicao3 = registro["Instituicao3"].ToString();
             cv.Situacao3 = registro["Situacao3"].ToString();
-            cv.Conclusao3 = Convert.ToDateTime(registro["Conclusao3"]);
+            if (registro["Conclusao3"].ToString() == String.Empty)
+                cv.Conclusao3 = data;
+            else
+                cv.Conclusao3 = Convert.ToDateTime(registro["Conclusao3"]);
+
             cv.Periodo3 = registro["Periodo3"].ToString();
             // Cursos Acadêmicos 4
             cv.Curso4 = registro["Curso4"].ToString();
             cv.Escolaridade4 = registro["Escolaridade4"].ToString();
             cv.Instituicao4 = registro["Instituicao4"].ToString();
             cv.Situacao4 = registro["Situacao4"].ToString();
-            cv.Conclusao4 = Convert.ToDateTime(registro["Conclusao4"]);
+            if (registro["Conclusao4"].ToString() == String.Empty)
+                cv.Conclusao4 = data;
+            else
+                cv.Conclusao4 = Convert.ToDateTime(registro["Conclusao4"]);
+
             cv.Periodo4 = registro["Periodo4"].ToString();
+            
             // Cursos Acadêmicos 5
             cv.Curso5 = registro["Curso5"].ToString();
             cv.Escolaridade5 = registro["Escolaridade5"].ToString();
             cv.Instituicao5 = registro["Instituicao5"].ToString();
             cv.Situacao5 = registro["Situacao5"].ToString();
-            cv.Conclusao5 = Convert.ToDateTime(registro["Conclusao5"]);
+            if (registro["Conclusao5"].ToString() == String.Empty)
+                cv.Conclusao5 = data;
+            else
+                cv.Conclusao5 = Convert.ToDateTime(registro["Conclusao5"]);
+
             cv.Periodo5 = registro["Periodo5"].ToString();
 
 
             //Experiencia 1
             cv.Empresa1 = registro["Empresa1"].ToString();
-            cv.Inicio1 = Convert.ToDateTime(registro["Inicio1"]);
-            cv.Termino1 = Convert.ToDateTime(registro["Termino1"]);
+            if (registro["Inicio1"].ToString() == String.Empty)
+                cv.Inicio1 = data;
+            else
+                cv.Inicio1= Convert.ToDateTime(registro["Inicio1"]);
+
+            if (registro["Termino1"].ToString() == String.Empty)
+                cv.Termino1 = data;
+            else
+                cv.Termino1 = Convert.ToDateTime(registro["Termino1"]);
+
             cv.Ocupacao1 = registro["Ocupacao1"].ToString();
             cv.Atividades1 = registro["Atividades1"].ToString();
             //Experiencia 2
             cv.Empresa2 = registro["Empresa2"].ToString();
-            cv.Inicio2 = Convert.ToDateTime(registro["Inicio2"]);
-            cv.Termino2 = Convert.ToDateTime(registro["Termino2"]);
+            if (registro["Inicio2"].ToString() == String.Empty)
+                cv.Inicio2 = data;
+            else
+                cv.Inicio2 = Convert.ToDateTime(registro["Inicio2"]);
+
+            if (registro["Termino2"].ToString() == String.Empty)
+                cv.Termino2 = data;
+            else
+                cv.Termino2 = Convert.ToDateTime(registro["Termino2"]);
             cv.Ocupacao2 = registro["Ocupacao2"].ToString();
             cv.Atividades2 = registro["Atividades2"].ToString();
             //Experiencia 3
             cv.Empresa3 = registro["Empresa3"].ToString();
-            cv.Inicio3 = Convert.ToDateTime(registro["Inicio3"]);
-            cv.Termino3 = Convert.ToDateTime(registro["Termino3"]);
+             if (registro["Inicio3"].ToString() == String.Empty)
+                cv.Inicio3 = data;
+            else
+                cv.Inicio3= Convert.ToDateTime(registro["Inicio3"]);
+
+            if (registro["Termino3"].ToString() == String.Empty)
+                cv.Termino3 = data;
+            else
+                cv.Termino3 = Convert.ToDateTime(registro["Termino3"]);
             cv.Ocupacao3 = registro["Ocupacao3"].ToString();
             cv.Atividades3 = registro["Atividades3"].ToString();
 
