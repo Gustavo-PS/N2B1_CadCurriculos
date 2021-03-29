@@ -42,35 +42,35 @@ namespace N2B1_CadCurriculos.DAO
 
             //Cursos
             parametros[11] = new SqlParameter("curso1", c.Curso1 ?? (object)DBNull.Value);
-            parametros[12] = new SqlParameter("nivelescolaridade1", c.Escolaridade1 ?? (object)DBNull.Value);
+            parametros[12] = new SqlParameter("escolaridade1", c.Escolaridade1 ?? (object)DBNull.Value);
             parametros[13] = new SqlParameter("instituicao1", c.Instituicao1 ?? (object)DBNull.Value);
             parametros[14] = new SqlParameter("situacao1", c.Situacao1 ?? (object)DBNull.Value);
             parametros[15] = new SqlParameter("conclusao1", c.Conclusao1 == data ? (object)DBNull.Value : c.Conclusao1);
             parametros[16] = new SqlParameter("periodo1", c.Periodo1 ?? (object)DBNull.Value);
 
             parametros[17] = new SqlParameter("curso2", c.Curso2 ?? (object)DBNull.Value);
-            parametros[18] = new SqlParameter("nivelescolaridade2", c.Escolaridade2 ?? (object)DBNull.Value);
+            parametros[18] = new SqlParameter("escolaridade2", c.Escolaridade2 ?? (object)DBNull.Value);
             parametros[19] = new SqlParameter("instituicao2", c.Instituicao2 ?? (object)DBNull.Value);
             parametros[20] = new SqlParameter("situacao2", c.Situacao2 ?? (object)DBNull.Value);
             parametros[21] = new SqlParameter("conclusao2", c.Conclusao2 == data ? (object)DBNull.Value : c.Conclusao2);
             parametros[22] = new SqlParameter("periodo2", c.Periodo2 ?? (object)DBNull.Value);
 
             parametros[23] = new SqlParameter("curso3", c.Curso3 ?? (object)DBNull.Value);
-            parametros[24] = new SqlParameter("nivelescolaridade3", c.Escolaridade3 ?? (object)DBNull.Value);
+            parametros[24] = new SqlParameter("escolaridade3", c.Escolaridade3 ?? (object)DBNull.Value);
             parametros[25] = new SqlParameter("instituicao3", c.Instituicao3 ?? (object)DBNull.Value);
             parametros[26] = new SqlParameter("situacao3", c.Situacao3 ?? (object)DBNull.Value);
             parametros[27] = new SqlParameter("conclusao3", c.Conclusao3 == data ? (object)DBNull.Value : c.Conclusao3);
             parametros[28] = new SqlParameter("periodo3", c.Periodo3 ?? (object)DBNull.Value);
 
             parametros[29] = new SqlParameter("curso4", c.Curso4 ?? (object)DBNull.Value);
-            parametros[30] = new SqlParameter("nivelescolaridade4", c.Escolaridade4 ?? (object)DBNull.Value);
+            parametros[30] = new SqlParameter("escolaridade4", c.Escolaridade4 ?? (object)DBNull.Value);
             parametros[31] = new SqlParameter("instituicao4", c.Instituicao4 ?? (object)DBNull.Value);
             parametros[32] = new SqlParameter("situacao4", c.Situacao4 ?? (object)DBNull.Value);
             parametros[33] = new SqlParameter("conclusao4", c.Conclusao4 == data ? (object)DBNull.Value : c.Conclusao4);
             parametros[34] = new SqlParameter("periodo4", c.Periodo4 ?? (object)DBNull.Value);
 
             parametros[35] = new SqlParameter("curso5", c.Curso5 ?? (object)DBNull.Value);
-            parametros[36] = new SqlParameter("nivelescolaridade5", c.Escolaridade5 ?? (object)DBNull.Value);
+            parametros[36] = new SqlParameter("escolaridade5", c.Escolaridade5 ?? (object)DBNull.Value);
             parametros[37] = new SqlParameter("instituicao5", c.Instituicao5 ?? (object)DBNull.Value);
             parametros[38] = new SqlParameter("situacao5", c.Situacao5 ?? (object)DBNull.Value);
             parametros[39] = new SqlParameter("conclusao5", c.Conclusao5 == data ? (object)DBNull.Value : c.Conclusao5);
@@ -110,14 +110,14 @@ namespace N2B1_CadCurriculos.DAO
         public void Inserir(CurriculoViewModel c)
         {
             string sql =
-            "insert into Cadastro (CPF, nome, telefone, email, cargo, CEP, estado, cidade, bairro, rua, numero, curso1, nivelescolaridade1, instituicao1, situacao1, conclusao1, periodo1, curso2, nivelescolaridade2, instituicao2, situacao2, conclusao2, periodo2, curso3, nivelescolaridade3, instituicao3, situacao3, conclusao3, periodo3, curso4, nivelescolaridade4, instituicao4, situacao4, conclusao4, periodo4, curso5, nivelescolaridade5, instituicao5, situacao5, conclusao5, periodo5, empresa1, inicio1, termino1, ocupacao1, Atividades1, empresa2, inicio2, termino2, ocupacao2, Atividades2, empresa3, inicio3, termino3, ocupacao3, Atividades3, idioma1, nivelidioma1, idioma2, nivelidioma2, idioma3, nivelidioma3)" +
-            "values (@CPF, @nome, @telefone, @email, @cargo, @CEP, @estado, @cidade, @bairro, @rua, @numero, @curso1, @nivelescolaridade1, @instituicao1, @situacao1, @conclusao1, @periodo1, @curso2, @nivelescolaridade2, @instituicao2, @situacao2, @conclusao2, @periodo2, @curso3, @nivelescolaridade3, @instituicao3, @situacao3, @conclusao3, @periodo3, @curso4, @nivelescolaridade4, @instituicao4, @situacao4, @conclusao4, @periodo4, @curso5, @nivelescolaridade5, @instituicao5, @situacao5, @conclusao5, @periodo5, @empresa1, @inicio1, @termino1, @ocupacao1, @Atividades1, @empresa2, @inicio2, @termino2, @ocupacao2, @Atividades2, @empresa3, @inicio3, @termino3, @ocupacao3, @Atividades3, @idioma1, @nivelidioma1, @idioma2, @nivelidioma2, @idioma3, @nivelidioma3)";
+            "insert into Cadastro (CPF, nome, telefone, email, cargo, CEP, estado, cidade, bairro, rua, numero, curso1, escolaridade1, instituicao1, situacao1, conclusao1, periodo1, curso2, escolaridade2, instituicao2, situacao2, conclusao2, periodo2, curso3, escolaridade3, instituicao3, situacao3, conclusao3, periodo3, curso4, escolaridade4, instituicao4, situacao4, conclusao4, periodo4, curso5, escolaridade5, instituicao5, situacao5, conclusao5, periodo5, empresa1, inicio1, termino1, ocupacao1, Atividades1, empresa2, inicio2, termino2, ocupacao2, Atividades2, empresa3, inicio3, termino3, ocupacao3, Atividades3, idioma1, nivelidioma1, idioma2, nivelidioma2, idioma3, nivelidioma3)" +
+            "values (@CPF, @nome, @telefone, @email, @cargo, @CEP, @estado, @cidade, @bairro, @rua, @numero, @curso1, @escolaridade1, @instituicao1, @situacao1, @conclusao1, @periodo1, @curso2, @escolaridade2, @instituicao2, @situacao2, @conclusao2, @periodo2, @curso3, @escolaridade3, @instituicao3, @situacao3, @conclusao3, @periodo3, @curso4, @escolaridade4, @instituicao4, @situacao4, @conclusao4, @periodo4, @curso5, @escolaridade5, @instituicao5, @situacao5, @conclusao5, @periodo5, @empresa1, @inicio1, @termino1, @ocupacao1, @Atividades1, @empresa2, @inicio2, @termino2, @ocupacao2, @Atividades2, @empresa3, @inicio3, @termino3, @ocupacao3, @Atividades3, @idioma1, @nivelidioma1, @idioma2, @nivelidioma2, @idioma3, @nivelidioma3)";
             HelperDAO.ExecutaSQL(sql, CriaParametros(c));
         }
 
-        public void Excluir(int CPF)
+        public void Excluir(string CPF)
         {
-            string sql = "delete Cadastro where CPF =" + CPF;
+            string sql = "delete Cadastro where CPF =" + '\'' + CPF + '\'';
             HelperDAO.ExecutaSQL(sql, null);
         }
 
@@ -135,31 +135,31 @@ namespace N2B1_CadCurriculos.DAO
             "rua = @rua," +
             "numero = @numero," +
             "curso1 = @curso1," +                               //curso 1
-            "nivelescolaridade1 = @nivelescolaridade1," +
+            "escolaridade1 = @escolaridade1," +
             "instituicao1 = @instituicao1," +
             "situacao1 = @situacao1," +
             "conclusao1 = @conclusao1," +
             "periodo1 = @periodo1," +
             "curso2 = @curso2," +                               //curso 2
-            "nivelescolaridade2 = @nivelescolaridade2," +
+            "escolaridade2 = @escolaridade2," +
             "instituicao2 = @instituicao2," +
             "situacao2 = @situacao2," +
             "conclusao2 = @conclusao2," +
             "periodo2 = @periodo2," +
             "curso3 = @curso3," +                               //curso 3
-            "nivelescolaridade3 = @nivelescolaridade3," +
+            "escolaridade3 = @escolaridade3," +
             "instituicao3 = @instituicao3," +
             "situacao3 = @situacao3," +
             "conclusao3 = @conclusao3," +
             "periodo3 = @periodo3," +
             "curso4 = @curso4," +                               //curso 4
-            "nivelescolaridade4 = @nivelescolaridade4," +
+            "escolaridade4 = @escolaridade4," +
             "instituicao4 = @instituicao4," +
             "situacao4 = @situacao4," +
             "conclusao4 = @conclusao4," +
             "periodo4 = @periodo4," +
             "curso5 = @curso5," +                               //curso 5
-            "nivelescolaridade5 = @nivelescolaridade5," +
+            "escolaridade5 = @escolaridade5," +
             "instituicao5 = @instituicao5," +
             "situacao5 = @situacao5," +
             "conclusao5 = @conclusao5," +
@@ -210,7 +210,7 @@ namespace N2B1_CadCurriculos.DAO
 
         public CurriculoViewModel Consulta(string cpf)
         {
-            string sql = "select * from Cadastros where cpf =" + cpf;
+            string sql = "select * from Cadastro where cpf =" + '\'' + cpf + '\'';
             DataTable tabela = HelperDAO.ExecutaSelect(sql, null);
 
             if (tabela.Rows.Count == 0)

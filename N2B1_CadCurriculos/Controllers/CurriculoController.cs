@@ -186,5 +186,36 @@ namespace N2B1_CadCurriculos.Controllers
                 return false;
         }
 
+        public IActionResult Edit(string cpf)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                CurriculoViewModel cadastro = dao.Consulta(cpf);
+                if (cadastro == null)
+                    return RedirectToAction("Listagem");
+                else
+                    return View("Cadastro", cadastro);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+
+        public IActionResult Delete(string cpf)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                dao.Excluir(cpf);
+                return RedirectToAction("Listagem");
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+
     }
 }
