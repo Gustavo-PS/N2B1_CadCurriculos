@@ -71,7 +71,7 @@ var countCurso = 2;
 function showCurso() {
     if (countCurso <= 5) {
         document.getElementById('Formacao' + countCurso).style.display = 'block';
-        document.getElementById("btnRemoveCurso").style.display = 'block';
+        document.getElementById("btnRemoveCurso").style.display = 'inline-block';
         countCurso++;
         console.log(countCurso);
     }
@@ -91,8 +91,8 @@ function esconderCurso() {
 var countIdioma = 2;
 function showIdioma() {
     if (countIdioma <= 3) {
-        document.getElementById('dadosIdioma' + countIdioma).style.display = 'block';
-        document.getElementById("btnRemoveIdioma").style.display = 'block';
+        document.getElementById('dadosIdioma' + countIdioma).style.display = 'inline-block';
+        document.getElementById("btnRemoveIdioma").style.display = 'inline-block';
         countIdioma++;
         console.log(countIdioma);
     }
@@ -112,8 +112,8 @@ function esconderIdioma() {
 var countExperiencia= 2;
 function showExperiencia() {
     if (countExperiencia <= 3) {
-        document.getElementById('Experiencias' + countExperiencia).style.display = 'block';
-        document.getElementById("btnRemoveExperiencias").style.display = 'block';
+        document.getElementById('Experiencias' + countExperiencia).style.display = 'inline-block';
+        document.getElementById("btnRemoveExperiencias").style.display = 'inline-block';
         countExperiencia++;
         console.log(countExperiencia);
     }

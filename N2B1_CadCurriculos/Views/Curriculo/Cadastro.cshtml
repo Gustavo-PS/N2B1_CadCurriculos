@@ -80,6 +80,10 @@
             <!--Dados de Formação Academica e Cursos-->
             <div class="Formacao">
                 <h2>Dados de formação acadêmica e cursos:</h2>
+                <br />
+                <img id="btnAdicionaCurso" src="~/img/add.png" onclick="showCurso()" />
+                <img id="btnRemoveCurso" src="~/img/remove.png" onclick="esconderCurso()" style="display: none" />
+
                 <div id="Formacao1">
                     <div>
                         <label>Curso</label>
@@ -108,7 +112,7 @@
                         </div>
                     </div>
                 </div> <!--Formação1-->
-
+            
                 <div id="Formacao2" style="display:none">
                     <div>
                         <label>Curso</label>
@@ -227,6 +231,8 @@
 
                 <br />
 
+
+            </div>
                 <div class="btnAdiconaRemove">
                     <img id="btnAdicionaCurso" src="~/img/add.png" onclick="showCurso()" width="50" height="50" />
                     <img id="btnRemoveCurso" src="~/img/remove.png" onclick="esconderCurso()" style="display: none" width="50" height="50" />
@@ -237,6 +243,8 @@
             <div class="ExperienciasAnteriores">
                 <h2>Dados de experiências profissionais anteriores:</h2>
                 <br />
+                <img id="btnAdicionaExperiencia" src="~/img/add.png" onclick="showExperiencia()" width="50" height="50" />
+                <img id="btnRemoveExperiencias" src="~/img/remove.png" onclick="esconderExperiencia()" style="display: none" width="50" height="50" />
 
                 <div id="Experiencias1">
                     <div>
@@ -321,17 +329,16 @@
                     </div>
                 </div>
 
-                <div class="btnAdiconaRemove">
-                    <img id="btnAdicionaExperiencia" src="~/img/add.png" onclick="showExperiencia()" width="50" height="50" />
-                </div>
-                <div class="btnAdiconaRemove">
-                    <img id="btnRemoveExperiencias" src="~/img/remove.png" onclick="esconderExperiencia()" style="display: none" width="50" height="50" />
-                </div>
+
+
             </div>
 
             <!--Dados de idioma-->
             <div class="Idioma">
                 <h2>Dados de idiomas:</h2>
+                <br />
+                <img id="btnAdicionaIdioma" src="~/img/add.png" onclick="showIdioma()" width="50" height="50" />
+                <img id="btnRemoveIdioma" src="~/img/remove.png" onclick="esconderIdioma()" style="display: none" width="50" height="50" />
 
                 <!--Dados de idiomas1-->
                 <div id="dadosIdioma1">
@@ -385,12 +392,7 @@
 
                 <br />
 
-                <div class="btnAdiconaRemove">
-                    <img id="btnAdicionaIdioma" src="~/img/add.png" onclick="showIdioma()" width="50" height="50" />
-                </div>
-                <div class="btnAdiconaRemove">
-                    <img id="btnRemoveIdioma" src="~/img/remove.png" onclick="esconderIdioma()" style="display: none" width="50" height="50" />
-                </div>
+
             </div>
 
             <br /><br /> <input type="submit" value="Salvar Curriculo">

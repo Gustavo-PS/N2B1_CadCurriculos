@@ -96,6 +96,43 @@ label {
     float:left;
 }
 
+.btnAdicionaRemove {
+    display: inline-block;
+    padding-right: 4px;
+    width: 55;
+    
+}
+
+#btnRemoveCurso {
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 50px;
+}
+
+#btnAdicionaCurso {
+    margin-right: 0px;
+    width: 50px;
+}
+#btnRemoveIdioma {
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 50px;
+}
+
+#btnAdicionaidioma {
+    margin-right: 0px;
+    width: 50px;
+}
+#btnRemoveExperiencias {
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 50px;
+}
+
+#btnAdicionaExperiencia {
+    margin-right: 0px;
+    width: 50px;
+
 .divRight{
     float:right;
 }
