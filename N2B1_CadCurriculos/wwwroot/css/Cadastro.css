@@ -83,11 +83,19 @@ input {
     text-shadow: -50px 0px 0px rgba(66,66,66,.100);
 }
 
-label{
-    font-size:15px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+label {
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.btnAdicionaRemove{
-    display: inline-block;
-    padding-right: 4px;
+
+.btnAdicionaRemove {
+    display: inline;
+}
+
+.divLeft{
+    float:left;
+}
+
+.divRight{
+    float:right;
 }

@@ -29,18 +29,26 @@
                     <label>Nome</label>
                     <input type="text" asp-for="Nome" class="form-control" placeholder="Seu nome aqui" />
                     <br>
-                    <label>CPF</label>
-                    <input type="text" asp-for="Cpf" onkeydown="mask.init(this, mask.Cpf)" placeholder="000.000.000-00" />
-                    <br>
-                    <label>Telefone</label>
-                    <input type="tel" asp-for="Telefone" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" />
-                    <br>
-                    <label>E-mail</label>
-                    <input type="email" asp-for="Email" placeholder="nome@dominio.com" />
-                    <br>
-                    <label>Cargo</label>
-                    <input type="text" asp-for="Cargo" />
-
+                    <div class="divLeft">
+                        <label>CPF</label>
+                        <br>
+                        <input type="text" asp-for="Cpf" onkeydown="mask.init(this, mask.Cpf)" placeholder="000.000.000-00" />
+                    </div>
+                    <div class="divRight">
+                        <label>Telefone</label>
+                        <br>
+                        <input type="tel" asp-for="Telefone" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" />
+                    </div>
+                    <div class="divLeft">
+                        <label>E-mail</label>
+                        <br>
+                        <input type="email" asp-for="Email" placeholder="nome@dominio.com" />
+                    </div>
+                    <div class="divRight">
+                        <label>Cargo</label>
+                        <br>
+                        <input type="text" asp-for="Cargo" />
+                    </div>
                 </div>
             </div>
 
@@ -221,8 +229,6 @@
 
                 <div class="btnAdiconaRemove">
                     <img id="btnAdicionaCurso" src="~/img/add.png" onclick="showCurso()" width="50" height="50" />
-                </div>
-                <div class="btnAdiconaRemove">
                     <img id="btnRemoveCurso" src="~/img/remove.png" onclick="esconderCurso()" style="display: none" width="50" height="50" />
                 </div>
             </div>
