@@ -97,7 +97,7 @@ namespace N2B1_CadCurriculos.DAO
 
             //Idiomas
             parametros[56] = new SqlParameter("idioma1", c.Idioma1 ?? (object)DBNull.Value);
-            parametros[57] = new SqlParameter("nivelidioma1", c.Nivelidioma2 ?? (object)DBNull.Value);
+            parametros[57] = new SqlParameter("nivelidioma1", c.Nivelidioma1 ?? (object)DBNull.Value);
 
             parametros[58] = new SqlParameter("idioma2", c.Idioma2 ?? (object)DBNull.Value);
             parametros[59] = new SqlParameter("nivelidioma2", c.Nivelidioma2 ?? (object)DBNull.Value);
@@ -199,15 +199,7 @@ namespace N2B1_CadCurriculos.DAO
             return lista;
         }
 
-        public int ProximoCPF()
-        {
-            string sql = "select isnull(max(CPF) +1, 1) as 'MAIOR' from Cadastro";
-            DataTable tabela = HelperDAO.ExecutaSelect(sql, null);
-            return Convert.ToInt32(tabela.Rows[0]["MAIOR"]);
-        }
-
-
-
+       
         public CurriculoViewModel Consulta(string cpf)
         {
             string sql = "select * from Cadastro where cpf =" + '\'' + cpf + '\'';
@@ -217,6 +209,33 @@ namespace N2B1_CadCurriculos.DAO
                 return null;
             else
                 return MontaCV(tabela.Rows[0]);
+        }
+
+        public CurriculoViewModel ConsultaImpressao(string cpf)
+        {
+            string sql = "select * from Cadastro where cpf =" + '\'' + cpf + '\'';
+            DataTable tabela = HelperDAO.ExecutaSelect(sql, null);
+
+            if (tabela.Rows.Count == 0)
+                return null;
+            else
+                return MontaCVImpressao(tabela.Rows[0]);
+        }
+
+        public CurriculoViewModel MontaImpressao(string cpf)
+        {
+            string sql = "select * from Cadastro where cpf =" + '\'' + cpf + '\'';
+            DataTable tabela = HelperDAO.ExecutaSelect(sql, null);
+
+
+            if (tabela.Rows.Count == 0)
+                return null;
+            else
+            {
+                CurriculoViewModel cv = new CurriculoViewModel();
+                cv = MontaCV(tabela.Rows[0]); ;
+                return cv;
+            }
         }
 
         private CurriculoViewModel MontaCV(DataRow registro)
@@ -352,5 +371,127 @@ namespace N2B1_CadCurriculos.DAO
 
             return cv;
         }
+
+        private CurriculoViewModel MontaCVImpressao(DataRow registro)
+        {
+            DateTime data = Convert.ToDateTime("01/01/0001");
+            CurriculoViewModel cv = new CurriculoViewModel();
+            //Dados Pessoais
+            cv.Nome = registro["Nome"].ToString();
+            cv.Cpf = registro["Cpf"].ToString();
+            cv.Telefone = registro["Telefone"].ToString();
+            cv.Email = registro["Email"].ToString();
+            cv.Cargo = registro["Cargo"].ToString();
+
+            //Endereço
+            cv.Cep = registro["Cep"].ToString();
+            cv.Estado = registro["Estado"].ToString();
+            cv.Cidade = registro["Cidade"].ToString();
+            cv.Bairro = registro["Bairro"].ToString();
+            cv.Rua = registro["Rua"].ToString();
+            cv.Numero = Convert.ToInt32(registro["Numero"]);
+
+
+            //Curso1
+            if (registro["Curso1"].ToString() != "")
+            {
+                cv.Curso1 = registro["Curso1"].ToString();
+                cv.Escolaridade1 = registro["Escolaridade1"].ToString();
+                cv.Instituicao1 = registro["Instituicao1"].ToString();
+                cv.Situacao1 = registro["Situacao1"].ToString();
+                cv.Conclusao1 = Convert.ToDateTime(registro["Conclusao1"]);
+                cv.Periodo1 = registro["Periodo1"].ToString();
+            }
+            //Curso2
+            if (registro["Curso2"].ToString() != "")
+            {
+                cv.Curso2 = registro["Curso2"].ToString();
+                cv.Escolaridade2 = registro["Escolaridade2"].ToString();
+                cv.Instituicao2 = registro["Instituicao2"].ToString();
+                cv.Situacao2 = registro["Situacao2"].ToString();
+                cv.Conclusao2 = Convert.ToDateTime(registro["Conclusao2"]);
+                cv.Periodo2 = registro["Periodo2"].ToString();
+            }
+            //Curso3
+            if (registro["Curso3"].ToString() != "")
+            {
+                cv.Curso3 = registro["Curso3"].ToString();
+                cv.Escolaridade3 = registro["Escolaridade3"].ToString();
+                cv.Instituicao3 = registro["Instituicao3"].ToString();
+                cv.Situacao3 = registro["Situacao3"].ToString();
+                cv.Conclusao3 = Convert.ToDateTime(registro["Conclusao3"]);
+                cv.Periodo3 = registro["Periodo3"].ToString();
+            }
+            //Curso4
+            if (registro["Curso4"].ToString() != "")
+            {
+                cv.Curso4 = registro["Curso4"].ToString();
+                cv.Escolaridade4 = registro["Escolaridade4"].ToString();
+                cv.Instituicao4 = registro["Instituicao4"].ToString();
+                cv.Situacao4 = registro["Situacao4"].ToString();
+                cv.Conclusao4 = Convert.ToDateTime(registro["Conclusao4"]);
+                cv.Periodo4 = registro["Periodo4"].ToString();
+            }
+            //Curso5
+            if (registro["Curso5"].ToString() != "")
+            {
+                cv.Curso5 = registro["Curso5"].ToString();
+                cv.Escolaridade5 = registro["Escolaridade5"].ToString();
+                cv.Instituicao5 = registro["Instituicao5"].ToString();
+                cv.Situacao5 = registro["Situacao5"].ToString();
+                cv.Conclusao5 = Convert.ToDateTime(registro["Conclusao5"]);
+                cv.Periodo5 = registro["Periodo5"].ToString();
+            }
+
+            //Experiencia1
+            if(registro["Empresa1"].ToString() != "")
+            {
+                cv.Empresa1 = registro["Empresa1"].ToString();
+                cv.Inicio1 = Convert.ToDateTime(registro["Inicio1"]);
+                cv.Termino1 = Convert.ToDateTime(registro["Termino1"]);
+                cv.Ocupacao1 = registro["Ocupacao1"].ToString();
+                cv.Atividades1 = registro["Atividades1"].ToString();
+            }
+            //Experiencia2
+            if (registro["Empresa2"].ToString() != "")
+            {
+                cv.Empresa2 = registro["Empresa2"].ToString();
+                cv.Inicio2 = Convert.ToDateTime(registro["Inicio2"]);
+                cv.Termino2 = Convert.ToDateTime(registro["Termino2"]);
+                cv.Ocupacao2 = registro["Ocupacao2"].ToString();
+                cv.Atividades2 = registro["Atividades2"].ToString();
+            }
+            //Experiencia3
+            if (registro["Empresa3"].ToString() != "")
+            {
+                cv.Empresa3 = registro["Empresa3"].ToString();
+                cv.Inicio3 = Convert.ToDateTime(registro["Inicio3"]);
+                cv.Termino3 = Convert.ToDateTime(registro["Termino3"]);
+                cv.Ocupacao3 = registro["Ocupacao3"].ToString();
+                cv.Atividades3 = registro["Atividades3"].ToString();
+            }
+
+            //Idioma 1
+            if (registro["Idioma1"].ToString() != "")
+            {
+                cv.Idioma1 = registro["Idioma1"].ToString();
+                cv.Nivelidioma1 = registro["Nivelidioma1"].ToString();
+            }
+            //Idioma 2
+            if (registro["Idioma2"].ToString() != "")
+            {
+                cv.Idioma2 = registro["Idioma2"].ToString();
+                cv.Nivelidioma2 = registro["Nivelidioma2"].ToString();
+            }
+            //Idioma 3
+            if (registro["Idioma3"].ToString() != "")
+            {
+                cv.Idioma3 = registro["Idioma3"].ToString();
+                cv.Nivelidioma3 = registro["Nivelidioma3"].ToString();
+            }
+
+            return cv;
+        }
+
     }
 }

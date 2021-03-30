@@ -1,1 +1,113 @@
-﻿
+﻿@model CurriculoViewModel
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta for="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="~/css/">
+</head>
+
+<body onload="ApagaCampos()">
+
+    <!--DadosPessoais e Endereço-->
+    <div class="DadosPessoais">
+        <label id="nome">@Model.Nome</label><br />
+        <label>@Model.Cpf</label><br />
+        <label>@Model.Email</label><br />
+        <label>@Model.Telefone</label><br />
+        <label>@Model.Cargo</label><br />
+
+        <label>@Model.Rua, @Model.Numero</label><br />
+        <label>@Model.Bairro, @Model.Cidade - @Model.Estado</label><br />
+
+    </div>
+
+    <!--Educação-->
+    <div class="Educacao">
+        <div id="divCurso1" style="display: block">
+            <input value="@Model.Curso1" id="curso1" hidden />
+            <label>@Model.Curso1 - @Model.Instituicao1</label>
+            <label>@Model.Escolaridade1 - @Model.Situacao1</label><br />
+            <label>@Model.Periodo1- Formação: @Model.Conclusao1.ToString($"MMMM/yyyy")</label><br />
+        </div>
+
+        <div id="divCurso2" style="display: block">
+            <input value="@Model.Curso2" id="curso2" hidden />
+            <label>@Model.Curso2 - @Model.Instituicao2</label><br />
+            <label>@Model.Escolaridade2 - @Model.Situacao2</label><br />
+            <label>@Model.Periodo2- Formação: @Model.Conclusao2.ToString($"MMMM/yyyy")</label><br />
+        </div>
+
+        <div id="divCurso3" style="display: block">
+            <input value="@Model.Curso3" id="curso3" hidden />
+            <label>@Model.Curso3 - @Model.Instituicao3</label><br />
+            <label>@Model.Escolaridade3 - @Model.Situacao3</label><br />
+            <label>@Model.Periodo3- Formação: @Model.Conclusao3.ToString($"MMMM/yyyy")</label><br />
+        </div>
+
+        <div id="divCurso4" style="display: block">
+            <input value="@Model.Curso4" id="curso4" hidden />
+            <label>@Model.Curso4 - @Model.Instituicao4</label><br />
+            <label>@Model.Escolaridade4 - @Model.Situacao4</label><br />
+            <label>@Model.Periodo4- Formação: @Model.Conclusao4.ToString($"MMMM/yyyy")</label><br />
+        </div>
+
+        <div id="divCurso5" style="display: block">
+            <input value="@Model.Curso5" id="curso5" hidden />
+            <label>@Model.Curso5 - @Model.Instituicao5</label><br />
+            <label>@Model.Escolaridade5 - @Model.Situacao5</label><br />
+            <label>@Model.Periodo5- Formação: @Model.Conclusao5.ToString($"MMMM/yyyy")</label><br />
+        </div>
+    </div>
+
+    <!--Experiencias-->
+    <div class="Experiencias">
+        <div id="divExperiencia1">
+            <input id="empresa1" value="@Model.Empresa1" hidden />
+            <label>@Model.Empresa1 - @Model.Ocupacao1</label><br />
+            <label>@Model.Inicio1.ToString($"MMMM/yyyy")- @Model.Termino1.ToString($"MMMM/yyyy")</label><br />
+            <label>@Model.Atividades1</label><br />
+        </div>
+
+        <div id="divExperiencia2">
+            <input id="empresa2" value="@Model.Empresa2" hidden />
+            <label>@Model.Empresa2 - @Model.Ocupacao2</label><br />
+            <label>@Model.Inicio2.ToString($"MMMM/yyyy")- @Model.Termino2.ToString($"MMMM/yyyy")</label><br />
+            <p>@Model.Atividades2</p><br />
+        </div>
+        <div id="divExperiencia3">
+            <input id="empresa3" value="@Model.Empresa3" hidden />
+            <label>@Model.Empresa3 - @Model.Ocupacao3</label><br />
+            <label>@Model.Inicio3.ToString($"MMMM/yyyy")- @Model.Termino3.ToString($"MMMM/yyyy")</label><br />
+            <p>@Model.Atividades3</p><br />
+        </div>
+    </div>
+
+    <!--Idiomas-->
+    <div class="Idiomas">
+
+        <!--Idioma1-->
+        <div id="divIdioma1">
+            <input id="idioma1" value="@Model.Idioma1" hidden />
+            <label>@Model.Idioma1 - @Model.Nivelidioma1</label><br />
+        </div>
+        <!--Idioma2-->
+        <div id="divIdioma2">
+            <input id="idioma2" value="@Model.Idioma2" hidden />
+            <label>@Model.Idioma2 - @Model.Nivelidioma2</label><br />
+        </div>
+        <!--Idioma3-->
+        <div id="divIdioma3">
+            <input id="idioma3" value="@Model.Idioma3" hidden />
+            <label>@Model.Idioma3 - @Model.Nivelidioma3</label><br />
+        </div>
+    </div>
+
+</body>
+
+</html>
