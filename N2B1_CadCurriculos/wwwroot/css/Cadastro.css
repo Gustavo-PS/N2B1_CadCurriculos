@@ -1,6 +1,6 @@
 ﻿:root {
     --colorBG: #ffffff;
-    --color1: #333;
+    --color1: #ffffff;
     --colorText: #000000;
 }
 
@@ -30,9 +30,8 @@ h2 {
     background-color: var(--color1);
     list-style: none;
     text-align: left;
-    float: left;
-    width: 500px;
-    height: 380px;
+    width: 1000px;
+    height: 400px;
 }
 
 .Endereco {
@@ -42,9 +41,8 @@ h2 {
     background-color: var(--color1);
     list-style: none;
     text-align: left;
-    float: right;
-    width: 500px;
-    height: 380px;
+    width: 1000px;
+    height: 400px;
 }
 
 .Formacao {
@@ -55,34 +53,35 @@ h2 {
     list-style: none;
     text-align: left;
     float: left;
-    width: 500px;
+    width: 1000px;
+    padding-bottom:100px;
 }
 
 .ExperienciasAnteriores {
-
     font-size: 20px;
     padding: 20px 25px;
     margin: 25px;
     background-color: var(--color1);
     list-style: none;
     text-align: left;
-    float: right;
-    width: 500px;
+    width: 1000px;
 }
 
 .Idioma {
+
     font-size: 20px;
     padding: 20px 25px;
     margin: 25px;
     background-color: var(--color1);
     list-style: none;
     text-align: left;
-    float: left;
-    width: 1060px;
+    width: 1000px;
+    padding-top:400px;
 }
 
 
 input {
+    width:400px;
     padding: 6px;
     font-size: 16px;
     margin:8px;
@@ -148,12 +147,12 @@ label {
 }
 
 .txtNome{
-    width:435px;
+    width:935px;
 }
 
 .txtAtividades {
-    width: 435px;
-    height: 48px;
+    width: 935px;
+    height: 100px;
     padding: 6px;
     font-size: 16px;
     margin-right: 8px;
@@ -192,6 +191,7 @@ label {
     border-top: 2px solid black;
     border-color: var(--colorBG);
     margin-top: 30px;
+    padding-bottom:50px;
 }
 
 #dadosIdioma2, #dadosIdioma3 {
@@ -206,4 +206,9 @@ label {
     border-top: 2px solid black;
     border-color: var(--colorBG);
     margin-right: 600px;
+}
+
+.btnSalvarCurriculo{
+    float:right;
+    margin: 100px;
 }
