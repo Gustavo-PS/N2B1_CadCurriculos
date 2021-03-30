@@ -1,8 +1,14 @@
-﻿.titulo {
+﻿:root {
+    --colorBG: #ffffff;
+    --color1: #333;
+    --colorText: #000000;
+}
+
+.titulo {
     margin: auto;
     width: 50%;
     padding: 30px;
-    color: #000000;
+    color: var(--colorText);
     font-size: 54px;
     font-weight: 300;
     line-height: 58px;
@@ -12,7 +18,7 @@ h2 {
     font-size: 30px;
     padding: 0px;
     margin: 0px;
-    background-color: #EDEDED;
+    background-color: var(--color1);
     font-weight: 350;
 }
 
@@ -21,7 +27,7 @@ h2 {
     font-size: 20px;
     padding: 20px 25px;
     margin: 25px;
-    background-color: #EDEDED;
+    background-color: var(--color1);
     list-style: none;
     text-align: left;
     float: left;
@@ -33,7 +39,7 @@ h2 {
     font-size: 20px;
     padding: 20px 25px;
     margin: 25px;
-    background-color: #EDEDED;
+    background-color: var(--color1);
     list-style: none;
     text-align: left;
     float: right;
@@ -45,7 +51,7 @@ h2 {
     font-size: 20px;
     padding: 20px 25px;
     margin: 25px;
-    background-color: #EDEDED;
+    background-color: var(--color1);
     list-style: none;
     text-align: left;
     float: left;
@@ -57,7 +63,7 @@ h2 {
     font-size: 20px;
     padding: 20px 25px;
     margin: 25px;
-    background-color: #EDEDED;
+    background-color: var(--color1);
     list-style: none;
     text-align: left;
     float: right;
@@ -68,7 +74,7 @@ h2 {
     font-size: 20px;
     padding: 20px 25px;
     margin: 25px;
-    background-color: #EDEDED;
+    background-color: var(--color1);
     list-style: none;
     text-align: left;
     float: left;
@@ -82,8 +88,8 @@ input {
     margin:8px;
     border-width: 2px;
     border-color: #858585;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--colorBG);
+    color: var(--colorText);
     border-style: hidden;
     border-radius: 6px;
     box-shadow: 0px 0px 2px rgba(66,66,66,.86);
@@ -154,8 +160,8 @@ label {
     margin-left: 8px;
     border-width: 2px;
     border-color: #858585;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--colorBG);
+    color: var(--colorText);
     border-style: hidden;
     border-radius: 6px;
     box-shadow: 0px 0px 2px rgba(66,66,66,.86);
@@ -164,13 +170,13 @@ label {
 
 #Formacao2, #Formacao3, #Formacao4, #Formacao5 {
     font-size: 20px;
-    background-color: #EDEDED;
+    background-color: var(--color1);
     list-style: none;
     text-align: left;
     font-weight: 500;
     float: left;
     border-top: 2px solid black;
-    border-color: #ffffff;
+    border-color: var(--colorBG);
     margin-top: 30px;
 }
 
@@ -178,13 +184,13 @@ label {
     margin-top: 30px;
     padding-top: 30px;
     font-size: 20px;
-    background-color: #EDEDED;
+    background-color: var(--color1);
     list-style: none;
     text-align: left;
     font-weight: 500;
     float: left;
     border-top: 2px solid black;
-    border-color: #ffffff;
+    border-color: var(--colorBG);
     margin-top: 30px;
 }
 
@@ -192,12 +198,12 @@ label {
     margin-top: 20px;
     padding-top: 20px;
     font-size: 20px;
-    background-color: #EDEDED;
+    background-color: var(--color1);
     list-style: none;
     text-align: left;
     font-weight: 500;
     float: left;
     border-top: 2px solid black;
-    border-color: #ffffff;
+    border-color: var(--colorBG);
     margin-right: 600px;
 }
