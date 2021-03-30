@@ -109,7 +109,7 @@ function esconderIdioma() {
 }
 
 //var e functions dos campos de experiência
-var countExperiencia= 2;
+var countExperiencia = 2;
 function showExperiencia() {
     if (countExperiencia <= 3) {
         document.getElementById('Experiencias' + countExperiencia).style.display = 'inline-block';
@@ -139,7 +139,7 @@ function CampoData() {
         var dtConclusao = document.getElementById("Conclusao" + i);
         var dtInicio = document.getElementById("Inicio" + i);
         var dtTermino = document.getElementById("Termino" + i);
-        
+
         if (dtConclusao.value === "0001-01") {
             dtConclusao.value = null;
         }
@@ -148,6 +148,30 @@ function CampoData() {
         }
         if (dtTermino.value === "0001-01") {
             dtTermino.value = null;
+        }
+    }
+}
+
+function ApagaCampos() {
+    for (var i = 1; i <= 5; i++) {
+        var divCurso = document.getElementById("divCurso" + i);
+        var divExperiencia = document.getElementById("divExperiencia" + i);
+        var divIdioma= document.getElementById("divIdioma" + i);
+        if (document.getElementById("curso" + i).value === "") {
+            console.log("apagando a div de curso" + i);
+            divCurso.style.display = 'none';
+        }
+
+        if (i <= 3) {
+            if (document.getElementById("empresa" + i).value === "") {
+                console.log("apagando a div de exp" + i);
+                divExperiencia.style.display = 'none';
+            }
+
+            if (document.getElementById("idioma" + i).value === "") {
+                console.log("apagando a div de idioma" + i);
+                divIdioma.style.display = 'none';
+            }
         }
     }
 }
