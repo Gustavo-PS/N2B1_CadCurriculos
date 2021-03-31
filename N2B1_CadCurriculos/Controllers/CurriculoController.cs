@@ -128,6 +128,7 @@ namespace N2B1_CadCurriculos.Controllers
             }
         }
 
+        //Validação de dados 
         private void ValidaDados(CurriculoViewModel cv, string operacao)
         {
             ModelState.Clear();
@@ -152,8 +153,10 @@ namespace N2B1_CadCurriculos.Controllers
 
             //Dados Academicos
             //Curso1
-            if (!string.IsNullOrEmpty(cv.Curso1))
+            if (!string.IsNullOrEmpty(cv.Curso1) || !string.IsNullOrEmpty(cv.Escolaridade1) || !string.IsNullOrEmpty(cv.Instituicao1) || !string.IsNullOrEmpty(cv.Situacao1) || !string.IsNullOrEmpty(cv.Conclusao1.ToString()) || !string.IsNullOrEmpty(cv.Periodo1))
             {
+                if (string.IsNullOrEmpty(cv.Curso1))
+                    ModelState.AddModelError("Curso", "Preencha o curso.");
                 if (string.IsNullOrEmpty(cv.Escolaridade1))
                     ModelState.AddModelError("Escolaridade", "Preencha a escolaridade.");
                 if (string.IsNullOrEmpty(cv.Instituicao1))
@@ -166,8 +169,10 @@ namespace N2B1_CadCurriculos.Controllers
                     ModelState.AddModelError("Periodo", "Preencha o período.");
             }
             //Curso2
-            if (!string.IsNullOrEmpty(cv.Curso2))
+            if (!string.IsNullOrEmpty(cv.Curso2) || !string.IsNullOrEmpty(cv.Escolaridade2) || !string.IsNullOrEmpty(cv.Instituicao2) || !string.IsNullOrEmpty(cv.Situacao2) || !string.IsNullOrEmpty(cv.Conclusao2.ToString()) || !string.IsNullOrEmpty(cv.Periodo2))
             {
+                if (string.IsNullOrEmpty(cv.Curso2))
+                    ModelState.AddModelError("Curso", "Preencha o curso.");
                 if (string.IsNullOrEmpty(cv.Escolaridade2))
                     ModelState.AddModelError("Escolaridade", "Preencha a escolaridade.");
                 if (string.IsNullOrEmpty(cv.Instituicao2))
@@ -180,8 +185,10 @@ namespace N2B1_CadCurriculos.Controllers
                     ModelState.AddModelError("Periodo", "Preencha o período.");
             }
             //Curso3
-            if (!string.IsNullOrEmpty(cv.Curso3))
+            if (!string.IsNullOrEmpty(cv.Curso3) || !string.IsNullOrEmpty(cv.Escolaridade3) || !string.IsNullOrEmpty(cv.Instituicao3) || !string.IsNullOrEmpty(cv.Situacao3) || !string.IsNullOrEmpty(cv.Conclusao3.ToString()) || !string.IsNullOrEmpty(cv.Periodo3))
             {
+                if (string.IsNullOrEmpty(cv.Curso3))
+                    ModelState.AddModelError("Curso", "Preencha o curso.");
                 if (string.IsNullOrEmpty(cv.Escolaridade3))
                     ModelState.AddModelError("Escolaridade", "Preencha a escolaridade.");
                 if (string.IsNullOrEmpty(cv.Instituicao3))
@@ -194,8 +201,10 @@ namespace N2B1_CadCurriculos.Controllers
                     ModelState.AddModelError("Periodo", "Preencha o período.");
             }
             //Curso4
-            if (!string.IsNullOrEmpty(cv.Curso4))
+            if (!string.IsNullOrEmpty(cv.Curso4) || !string.IsNullOrEmpty(cv.Escolaridade4) || !string.IsNullOrEmpty(cv.Instituicao4) || !string.IsNullOrEmpty(cv.Situacao4) || !string.IsNullOrEmpty(cv.Conclusao4.ToString()) || !string.IsNullOrEmpty(cv.Periodo4))
             {
+                if (string.IsNullOrEmpty(cv.Curso4))
+                    ModelState.AddModelError("Curso", "Preencha o curso.");
                 if (string.IsNullOrEmpty(cv.Escolaridade4))
                     ModelState.AddModelError("Escolaridade", "Preencha a escolaridade.");
                 if (string.IsNullOrEmpty(cv.Instituicao4))
@@ -208,8 +217,10 @@ namespace N2B1_CadCurriculos.Controllers
                     ModelState.AddModelError("Periodo", "Preencha o período.");
             }
             //Curso5
-            if (!string.IsNullOrEmpty(cv.Curso5))
+            if (!string.IsNullOrEmpty(cv.Curso5) || !string.IsNullOrEmpty(cv.Escolaridade5) || !string.IsNullOrEmpty(cv.Instituicao5) || !string.IsNullOrEmpty(cv.Situacao5) || !string.IsNullOrEmpty(cv.Conclusao5.ToString()) || !string.IsNullOrEmpty(cv.Periodo5))
             {
+                if (string.IsNullOrEmpty(cv.Curso5))
+                    ModelState.AddModelError("Curso", "Preencha o curso.");
                 if (string.IsNullOrEmpty(cv.Escolaridade5))
                     ModelState.AddModelError("Escolaridade", "Preencha a escolaridade.");
                 if (string.IsNullOrEmpty(cv.Instituicao5))
@@ -225,8 +236,10 @@ namespace N2B1_CadCurriculos.Controllers
 
             //Empresa
             //Exp1
-            if (!string.IsNullOrEmpty(cv.Empresa1))
+            if (!string.IsNullOrEmpty(cv.Empresa1) || !string.IsNullOrEmpty(cv.Inicio1.ToString()) || !string.IsNullOrEmpty(cv.Termino1.ToString()) || string.IsNullOrEmpty(cv.Ocupacao1) || string.IsNullOrEmpty(cv.Atividades1))
             {
+                if (string.IsNullOrEmpty(cv.Empresa1))
+                    ModelState.AddModelError("Empresa", "Preencha a empresa.");
                 if (string.IsNullOrEmpty(cv.Inicio1.ToString()) || cv.Inicio1 >= DateTime.Today)
                     ModelState.AddModelError("Início", "Preencha o início corretamente.");
                 if (string.IsNullOrEmpty(cv.Termino1.ToString()) || cv.Termino1 > DateTime.Today)
@@ -237,8 +250,10 @@ namespace N2B1_CadCurriculos.Controllers
                     ModelState.AddModelError("Atividade", "Preencha a atividade.");
             }
             //Exp2
-            if (!string.IsNullOrEmpty(cv.Empresa2))
+            if (!string.IsNullOrEmpty(cv.Empresa2) || !string.IsNullOrEmpty(cv.Inicio2.ToString()) || !string.IsNullOrEmpty(cv.Termino2.ToString()) || string.IsNullOrEmpty(cv.Ocupacao2) || string.IsNullOrEmpty(cv.Atividades2))
             {
+                if (string.IsNullOrEmpty(cv.Empresa2))
+                    ModelState.AddModelError("Empresa", "Preencha a empresa.");
                 if (string.IsNullOrEmpty(cv.Inicio2.ToString()) || cv.Inicio2 >= DateTime.Today)
                     ModelState.AddModelError("Início", "Preencha o início corretamente.");
                 if (string.IsNullOrEmpty(cv.Termino2.ToString()) || cv.Termino2 > DateTime.Today)
@@ -249,8 +264,10 @@ namespace N2B1_CadCurriculos.Controllers
                     ModelState.AddModelError("Atividade", "Preencha a atividade.");
             }
             //Exp3
-            if (!string.IsNullOrEmpty(cv.Empresa3))
+            if (!string.IsNullOrEmpty(cv.Empresa3) || !string.IsNullOrEmpty(cv.Inicio3.ToString()) || !string.IsNullOrEmpty(cv.Termino3.ToString()) || string.IsNullOrEmpty(cv.Ocupacao3) || string.IsNullOrEmpty(cv.Atividades3))
             {
+                if (string.IsNullOrEmpty(cv.Empresa3))
+                    ModelState.AddModelError("Empresa", "Preencha a empresa.");
                 if (string.IsNullOrEmpty(cv.Inicio3.ToString()) || cv.Inicio3 >= DateTime.Today)
                     ModelState.AddModelError("Início", "Preencha o início corretamente.");
                 if (string.IsNullOrEmpty(cv.Termino3.ToString()) || cv.Termino3 > DateTime.Today)
@@ -263,25 +280,32 @@ namespace N2B1_CadCurriculos.Controllers
 
 
             //Idioma1
-            if (!string.IsNullOrEmpty(cv.Idioma1))
+            if (!string.IsNullOrEmpty(cv.Idioma1) || !string.IsNullOrEmpty(cv.Nivelidioma1))
             {
+                if (string.IsNullOrEmpty(cv.Idioma1))
+                    ModelState.AddModelError("Idioma", "Preencha o idioma.");
                 if (string.IsNullOrEmpty(cv.Nivelidioma1))
                     ModelState.AddModelError("Nível do idioma", "Preencha o nível do idioma.");
             }
             //Idioma2
-            if (!string.IsNullOrEmpty(cv.Idioma2))
+            if (!string.IsNullOrEmpty(cv.Idioma2) || !string.IsNullOrEmpty(cv.Nivelidioma1))
             {
+                if (string.IsNullOrEmpty(cv.Idioma2))
+                    ModelState.AddModelError("Idioma", "Preencha o idioma.");
                 if (string.IsNullOrEmpty(cv.Nivelidioma2))
                     ModelState.AddModelError("Nível do idioma", "Preencha o nível do idioma.");
             }
             //Idioma3
-            if (!string.IsNullOrEmpty(cv.Idioma3))
+            if (!string.IsNullOrEmpty(cv.Idioma3) || !string.IsNullOrEmpty(cv.Nivelidioma1))
             {
+                if (string.IsNullOrEmpty(cv.Idioma3))
+                    ModelState.AddModelError("Idioma", "Preencha o idioma.");
                 if (string.IsNullOrEmpty(cv.Nivelidioma3))
                     ModelState.AddModelError("Nível do idioma", "Preencha o nível do idioma.");
             }
         }
 
+        //Validador de CPF 
         public static bool ValidaCPF(string cpf)
         {
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -318,6 +342,7 @@ namespace N2B1_CadCurriculos.Controllers
             return cpf.EndsWith(digito);
         }
 
+        //Validador de E-mail
         public static bool ValidaEmail(string email)
         {
             Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");

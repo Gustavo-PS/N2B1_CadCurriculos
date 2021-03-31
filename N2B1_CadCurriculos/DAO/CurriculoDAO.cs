@@ -444,7 +444,7 @@ namespace N2B1_CadCurriculos.DAO
             }
 
             //Experiencia1
-            if(registro["Empresa1"].ToString() != "")
+            if(registro["Empresa1"].ToString() != "" )
             {
                 cv.Empresa1 = registro["Empresa1"].ToString();
                 cv.Inicio1 = Convert.ToDateTime(registro["Inicio1"]);
