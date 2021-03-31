@@ -1,4 +1,5 @@
 ﻿
+//Máscaras
 var mask = {
 
     //Init
@@ -66,6 +67,7 @@ var mask = {
     },
 
 }
+
 //var e function dos campos de cursos
 var countCurso = 2;
 function showCurso() {
@@ -129,12 +131,10 @@ function esconderExperiencia() {
     }
 }
 
-function cvInserido() {
-    alert("Currículo inserido com sucesso!");
-}
 
-
+//Function da view alteração: altera os campos com data = null e mostra as divs necessárias 
 function CampoData() {
+    debugger;
     for (var i = 1; i <= 5; i++) {
         var dtConclusao = document.getElementById("Conclusao" + i);
         var dtInicio = document.getElementById("Inicio" + i);
@@ -149,9 +149,35 @@ function CampoData() {
         if (dtTermino.value === "0001-01") {
             dtTermino.value = null;
         }
+
+
+        var divCurso = document.getElementById("Formacao" + i);
+        var divExperiencia = document.getElementById("Experiencias" + i);
+        var divIdioma = document.getElementById("dadosIdioma" + i);
+        if (document.getElementById("Curso" + i).value != "") {
+            console.log("mostrando a div de curso" + i);
+            divCurso.style.display = 'block';
+            countCurso++;
+        }
+
+        if (i <= 3) {
+            if (document.getElementById("Empresa" + i).value != "") {
+                console.log("mostrando a div de exp" + i);
+                divExperiencia.style.display = 'block';
+                countExperiencia++;
+            }
+
+            if (document.getElementById("Idioma" + i).value != "") {
+                console.log("mostrando a div de idioma" + i);
+                divIdioma.style.display = 'block';
+                countIdioma++;
+            }
+        }
     }
+    
 }
 
+//Function da view impressao que oculta as divs nulas 
 function ApagaCampos() {
     for (var i = 1; i <= 5; i++) {
         var divCurso = document.getElementById("divCurso" + i);
