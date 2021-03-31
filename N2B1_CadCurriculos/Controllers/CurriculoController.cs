@@ -103,9 +103,9 @@ namespace N2B1_CadCurriculos.Controllers
         {
             try
             {
-                ValidaDados(cv, Operacao);
-                if (ModelState.IsValid)
-                {
+                //ValidaDados(cv, Operacao);
+                //if (ModelState.IsValid)
+                //{
                     CurriculoDAO dao = new CurriculoDAO();
                     // if (Operacao == "I")
                     dao.Inserir(cv);
@@ -113,12 +113,12 @@ namespace N2B1_CadCurriculos.Controllers
                     //  dao.Alterar(cv);
                     return RedirectToAction("Index");
 
-                }
-                else
-                {
-                    ViewBag.Operacao = Operacao;
-                    return View("Cadastro");
-                }
+                 //}
+                //else
+                //{
+                    //ViewBag.Operacao = Operacao;
+                    //return View("Cadastro");
+               // }
 
 
             }
