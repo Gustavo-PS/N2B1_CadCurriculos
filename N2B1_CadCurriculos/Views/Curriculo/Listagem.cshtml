@@ -1,32 +1,45 @@
 ﻿@model List<CurriculoViewModel>
 
-<div>
-    <h2>Relação de currículos cadastrados</h2>
+
+    <head>
+        <meta charset="utf-8">
+        <meta for="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>Listagem</title>
+        <link rel="stylesheet" href="~/css/Listagem.css">
+
+    </head>
 
 
-    <table class="table table-responsive table-striped">
-        <tr>
-            <th>Ações </th>
-            <th>CPF </th>
-            <th>Nome </th>
-            <th>CEP </th>
-            <th>Endereço</th>
-        </tr>
+    <div>
+        <h1 class="titulo">Relação de currículos cadastrados</h1>
 
-        @foreach (CurriculoViewModel cv in Model)
-        {
-            <tr>
-                <td>
-                    <a href="/curriculo/Edit?cpf=@cv.Cpf"><img src="~/img/alterar.png" width="30" height="30" /></a>
-                    <a href="/curriculo/Delete?cpf=@cv.Cpf"><img src="~/img/trash.png" width="30" height="30" /></a>
-                    <a href="/curriculo/Impressao?cpf=@cv.Cpf"><img src="~/img/printer.png" width="30" height="30" /></a>
-                </td>
-                <td>@cv.Cpf</td>
-                <td>@cv.Nome</td>
-                <td>@cv.Cep</td>
-                <td>@cv.Rua</td>
-            </tr>
-        }
+        <div class="tableListagem">
+            <table class="table table-responsive table-striped">
+                <tr>
 
-    </table>
-</div>
+                    <th>CPF </th>
+                    <th>Nome </th>
+                    <th>CEP </th>
+                    <th>Endereço</th>
+                    <th>Ações </th>
+                </tr>
+
+                @foreach (CurriculoViewModel cv in Model)
+                {
+                    <tr>                       
+                        <td>@cv.Cpf</td>
+                        <td>@cv.Nome</td>
+                        <td>@cv.Cep</td>
+                        <td>@cv.Rua</td>
+                        <td>
+                            <a href="/curriculo/Edit?cpf=@cv.Cpf"><img src="~/img/alterar.png" width="30" height="30" /></a>
+                            <a href="/curriculo/Delete?cpf=@cv.Cpf"><img src="~/img/trash.png" width="30" height="30" /></a>
+                            <a href="/curriculo/Impressao?cpf=@cv.Cpf"><img src="~/img/printer.png" width="30" height="30" /></a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>

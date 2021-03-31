@@ -1,0 +1,38 @@
+﻿:root {
+    --colorBG: #ffffff;
+    --color1: #ffffff;
+    --colorText: #000000;
+}
+
+.titulo {
+    margin: auto;
+    width: 80%;
+    padding: 30px;
+    color: var(--colorText);
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 58px;
+}
+
+th {
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--color1);
+    font-weight: 350;
+    width:200px;
+}
+
+.tableListagem {
+    margin: auto;
+    width: 100%;
+    padding: 30px;
+    color: var(--colorBG);
+}
+
+td{
+    background-color:var(--colorBG)
+}
+
+
+       

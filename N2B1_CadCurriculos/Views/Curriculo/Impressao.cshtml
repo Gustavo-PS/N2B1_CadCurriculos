@@ -9,21 +9,28 @@
     <meta for="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <title>Cadastro</title>
-    <link rel="stylesheet" href="~/css/">
+    <link rel="stylesheet" href="~/css/Impressao.css">
 </head>
 
 <body onload="ApagaCampos()">
 
     <!--DadosPessoais e Endereço-->
     <div class="DadosPessoais">
-        <label id="nome">@Model.Nome</label><br />
-        <label>@Model.Cpf</label><br />
-        <label>@Model.Email</label><br />
-        <label>@Model.Telefone</label><br />
-        <label>@Model.Cargo</label><br />
+        <label id="nome">@Model.Nome</label>
+        <br />
+        <label id="cargo">@Model.Cargo</label><br />
+    </div>
 
-        <label>@Model.Rua, @Model.Numero</label><br />
+    <div class="DadosPessoais2">
+        <label><a>CPF:</a> @Model.Cpf</label><br />
+        <label><a>E-Mail:</a> @Model.Email</label><br />
+        <label><a>Telefone:</a> @Model.Telefone</label><br />
+        <label><a>Endereço:</a> @Model.Rua, @Model.Numero</label><br />
         <label>@Model.Bairro, @Model.Cidade - @Model.Estado</label><br />
+    </div>
+    
+    <div class="Endereco">
+        
 
     </div>
 

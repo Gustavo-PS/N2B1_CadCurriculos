@@ -1,1 +1,28 @@
-﻿
+﻿body{
+    margin-top: 50px;
+}
+a{
+    font-weight:600;
+}
+.DadosPessoais {
+    float: left;
+    padding: 40px 0px;
+}
+
+#nome {
+    font-size: 40px;
+}
+
+#cargo {
+    font-size: 20px;
+}
+
+.DadosPessoais2 {
+    float: right;
+    padding: 20px;
+}
+
+.Endereco{
+    float:right;
+}
+

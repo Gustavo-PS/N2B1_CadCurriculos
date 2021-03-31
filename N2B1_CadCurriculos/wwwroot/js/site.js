@@ -93,7 +93,7 @@ function esconderCurso() {
 var countIdioma = 2;
 function showIdioma() {
     if (countIdioma <= 3) {
-        document.getElementById('dadosIdioma' + countIdioma).style.display = 'inline-block';
+        document.getElementById('dadosIdioma' + countIdioma).style.display = 'block';
         document.getElementById("btnRemoveIdioma").style.display = 'inline-block';
         countIdioma++;
         console.log(countIdioma);
