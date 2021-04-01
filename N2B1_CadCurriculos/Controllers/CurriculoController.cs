@@ -103,22 +103,22 @@ namespace N2B1_CadCurriculos.Controllers
         {
             try
             {
-                //ValidaDados(cv, Operacao);
-                //if (ModelState.IsValid)
-                //{
+                ValidaDados(cv, Operacao);
+                if (ModelState.IsValid)
+                {
                     CurriculoDAO dao = new CurriculoDAO();
-                    // if (Operacao == "I")
-                    dao.Inserir(cv);
-                    // else
-                    //  dao.Alterar(cv);
+                    if (Operacao == "I")
+                        dao.Inserir(cv);
+                    else
+                        dao.Alterar(cv);
                     return RedirectToAction("Index");
 
-                 //}
-                //else
-                //{
-                    //ViewBag.Operacao = Operacao;
-                    //return View("Cadastro");
-               // }
+                }
+                else
+                {
+                    ViewBag.Operacao = Operacao;
+                    return View("Cadastro");
+                }
 
 
             }
@@ -129,13 +129,13 @@ namespace N2B1_CadCurriculos.Controllers
         }
 
 
-        
+
         //Validação de dados 
         private void ValidaDados(CurriculoViewModel cv, string operacao)
         {
             ModelState.Clear();
             CurriculoDAO dao = new CurriculoDAO();
-          
+
 
             //Dados Pessoais
             if (string.IsNullOrEmpty(cv.Nome))
@@ -239,7 +239,7 @@ namespace N2B1_CadCurriculos.Controllers
 
             //Empresa
             //Exp1
-            if (!string.IsNullOrEmpty(cv.Empresa1) || cv.Inicio1.ToString() != "01/01/0001 00:00:00" && cv.Inicio1.ToString() != "1/1/0001 12:00:00 AM" || cv.Termino1.ToString() != "01/01/0001 00:00:00" && cv.Termino1.ToString() != "1/1/0001 12:00:00 AM" || 
+            if (!string.IsNullOrEmpty(cv.Empresa1) || cv.Inicio1.ToString() != "01/01/0001 00:00:00" && cv.Inicio1.ToString() != "1/1/0001 12:00:00 AM" || cv.Termino1.ToString() != "01/01/0001 00:00:00" && cv.Termino1.ToString() != "1/1/0001 12:00:00 AM" ||
                 !string.IsNullOrEmpty(cv.Ocupacao1) || !string.IsNullOrEmpty(cv.Atividades1))
             {
                 if (string.IsNullOrEmpty(cv.Empresa1))
@@ -254,7 +254,7 @@ namespace N2B1_CadCurriculos.Controllers
                     ModelState.AddModelError("Atividade", "Preencha a atividade.");
             }
             //Exp2
-            if (!string.IsNullOrEmpty(cv.Empresa2) || cv.Inicio2.ToString() != "01/01/0001 00:00:00" && cv.Inicio2.ToString() != "1/1/0001 12:00:00 AM" || cv.Termino2.ToString() != "01/01/0001 00:00:00" && cv.Termino2.ToString() != "1/1/0001 12:00:00 AM" || 
+            if (!string.IsNullOrEmpty(cv.Empresa2) || cv.Inicio2.ToString() != "01/01/0001 00:00:00" && cv.Inicio2.ToString() != "1/1/0001 12:00:00 AM" || cv.Termino2.ToString() != "01/01/0001 00:00:00" && cv.Termino2.ToString() != "1/1/0001 12:00:00 AM" ||
                 !string.IsNullOrEmpty(cv.Ocupacao2) || !string.IsNullOrEmpty(cv.Atividades2))
             {
                 if (string.IsNullOrEmpty(cv.Empresa2))
