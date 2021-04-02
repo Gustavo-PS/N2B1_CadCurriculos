@@ -10,8 +10,8 @@ namespace N2B1_CadCurriculos.DAO
     {
         public static SqlConnection GetConexao()
         {
-            //string strCon = "Data Source=LAPTOP-9EADM12E; Database=N2B1P; integrated security=true";
-            string strCon = "Data Source=GUSTAVO-PC;Initial Catalog=N2B1P;integrated security=true";
+            string strCon = "Data Source=LAPTOP-9EADM12E; Database=N2B1P; integrated security=true";
+            //string strCon = "Data Source=GUSTAVO-PC;Initial Catalog=N2B1P;integrated security=true";
             SqlConnection conexao = new SqlConnection(strCon);
             conexao.Open();
             return conexao;

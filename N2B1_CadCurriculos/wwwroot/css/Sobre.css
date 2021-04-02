@@ -1,0 +1,43 @@
+﻿:root {
+    --colorBG: #ffffff;
+    --color1: #e8e8e8;
+    --colorText: #000000;
+}
+
+h1 {
+    margin: auto;
+    width: 20%;
+    padding: 30px;
+    color: var(--colorText);
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 58px;
+}
+
+h2 {
+    font-size: 30px;
+    padding: 0px;
+    margin: 20px;
+    font-weight: 350;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 350;
+    margin: auto;
+}
+
+.divGustavo {
+    float: left;
+    margin: 60px;
+}
+
+.divMarcio{
+    float:left;
+    margin:60px;
+}
+
+.divRodrigo {
+    float: left;
+    margin: 60px;
+}
