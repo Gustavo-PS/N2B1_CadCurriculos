@@ -134,7 +134,6 @@ function esconderExperiencia() {
 
 //Function da view alteração: altera os campos com data = null e mostra as divs necessárias 
 function CampoData() {
-    //debugger;
     countCurso = 1;
     countExperiencia = 1;
     countIdioma = 1;
