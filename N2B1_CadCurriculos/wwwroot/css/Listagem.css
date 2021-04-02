@@ -6,7 +6,7 @@
 
 .titulo {
     margin: auto;
-    width: 80%;
+    width: 50%;
     padding: 30px;
     color: var(--colorText);
     font-size: 54px;
@@ -30,9 +30,13 @@ th {
     color: var(--colorBG);
 }
 
+
 td{
-    background-color:var(--colorBG)
+    background-color:var(--colorBG);
+    font-size: 20px;
+    font-weight:300;
 }
+
 
 
        

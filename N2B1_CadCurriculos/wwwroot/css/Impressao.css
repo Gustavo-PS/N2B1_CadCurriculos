@@ -1,6 +1,6 @@
 ﻿:root {
     --colorBG: #ffffff;
-    --color1: #b4b4b4;
+    --color1: #808080;
     --colorText: #000000;
 }
 body{
@@ -31,7 +31,7 @@ h1 {
 
 #cargo {
     font-size: 25px;
-    font-weight:350;
+    font-weight:400;
 }
 
 .DadosPessoais2 {
@@ -58,6 +58,7 @@ h1 {
     .Educacao a{
         font-size:25px;
         font-weight:400;
+        color:var(--colorBG);
     }
 
 #divCurso1, #divCurso2, #divCurso3, #divCurso4, #divCurso5{
