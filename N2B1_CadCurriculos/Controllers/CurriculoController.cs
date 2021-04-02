@@ -107,13 +107,9 @@ namespace N2B1_CadCurriculos.Controllers
                 if (ModelState.IsValid)
                 {
                     CurriculoDAO dao = new CurriculoDAO();
-                    if (Operacao == "I")
-                        dao.Inserir(cv);
-                    else
-                        dao.Alterar(cv);
+                    dao.Inserir(cv);
                     return RedirectToAction("Index");
-
-                }
+                 }
                 else
                 {
                     ViewBag.Operacao = Operacao;

@@ -79,7 +79,7 @@ function showCurso() {
     }
 }
 function esconderCurso() {
-    if (countCurso > 1) {
+    if (countCurso > 2) {
         document.getElementById('Formacao' + (countCurso - 1)).style.display = 'none';
         countCurso--;
         console.log(countCurso);
@@ -100,7 +100,7 @@ function showIdioma() {
     }
 }
 function esconderIdioma() {
-    if (countIdioma > 1) {
+    if (countIdioma > 2) {
         document.getElementById('dadosIdioma' + (countIdioma - 1)).style.display = 'none';
         countIdioma--;
         console.log(countIdioma);
@@ -121,7 +121,7 @@ function showExperiencia() {
     }
 }
 function esconderExperiencia() {
-    if (countExperiencia > 1) {
+    if (countExperiencia > 2) {
         document.getElementById('Experiencias' + (countExperiencia - 1)).style.display = 'none';
         countExperiencia--;
         console.log(countExperiencia);
@@ -134,7 +134,10 @@ function esconderExperiencia() {
 
 //Function da view alteração: altera os campos com data = null e mostra as divs necessárias 
 function CampoData() {
-    debugger;
+    //debugger;
+    countCurso = 1;
+    countExperiencia = 1;
+    countIdioma = 1;
     for (var i = 1; i <= 5; i++) {
         var dtConclusao = document.getElementById("Conclusao" + i);
         var dtInicio = document.getElementById("Inicio" + i);
@@ -143,13 +146,6 @@ function CampoData() {
         if (dtConclusao.value === "0001-01") {
             dtConclusao.value = null;
         }
-        if (dtInicio.value === "0001-01") {
-            dtInicio.value = null;
-        }
-        if (dtTermino.value === "0001-01") {
-            dtTermino.value = null;
-        }
-
 
         var divCurso = document.getElementById("Formacao" + i);
         var divExperiencia = document.getElementById("Experiencias" + i);
@@ -158,23 +154,34 @@ function CampoData() {
             console.log("mostrando a div de curso" + i);
             divCurso.style.display = 'block';
             countCurso++;
+            document.getElementById("btnRemoveCurso").style.display = 'inline-block';
         }
 
         if (i <= 3) {
+            if (dtInicio.value === "0001-01") {
+                dtInicio.value = null;
+            }
+
+            if (dtTermino.value === "0001-01") {
+                dtTermino.value = null;
+            }
+
             if (document.getElementById("Empresa" + i).value != "") {
                 console.log("mostrando a div de exp" + i);
                 divExperiencia.style.display = 'block';
                 countExperiencia++;
+                document.getElementById("btnRemoveExperiencias").style.display = 'inline-block';
             }
 
             if (document.getElementById("Idioma" + i).value != "") {
                 console.log("mostrando a div de idioma" + i);
                 divIdioma.style.display = 'block';
                 countIdioma++;
+                document.getElementById("btnRemoveIdioma").style.display = 'inline-block';
             }
         }
     }
-    
+
 }
 
 //Function da view impressao que oculta as divs nulas 
@@ -182,7 +189,7 @@ function ApagaCampos() {
     for (var i = 1; i <= 5; i++) {
         var divCurso = document.getElementById("divCurso" + i);
         var divExperiencia = document.getElementById("divExperiencia" + i);
-        var divIdioma= document.getElementById("divIdioma" + i);
+        var divIdioma = document.getElementById("divIdioma" + i);
         if (document.getElementById("curso" + i).value === "") {
             console.log("apagando a div de curso" + i);
             divCurso.style.display = 'none';
