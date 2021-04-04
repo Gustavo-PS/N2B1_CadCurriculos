@@ -58,7 +58,6 @@ h1 {
     .Educacao a{
         font-size:25px;
         font-weight:400;
-        color:var(--colorBG);
     }
 
 #divCurso1, #divCurso2, #divCurso3, #divCurso4, #divCurso5{
@@ -99,3 +98,4 @@ h1 {
     margin-bottom: 15px;
     margin-left: 30px;
 }
+

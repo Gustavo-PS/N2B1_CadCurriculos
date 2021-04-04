@@ -19,7 +19,17 @@ namespace N2B1_CadCurriculos.Controllers
             return View();
         }
 
+        public IActionResult IndexEN()
+        {
+            return View();
+        }
+
         public IActionResult Sobre()
+        {
+            return View();
+        }
+
+        public IActionResult SobreEN()
         {
             return View();
         }
@@ -29,12 +39,37 @@ namespace N2B1_CadCurriculos.Controllers
             return View();
         }
 
+        public IActionResult CadastroEN()
+        {
+            return View();
+        }
+
+
         public IActionResult Editar()
         {
             return View();
         }
 
+        public IActionResult EditarEN()
+        {
+            return View();
+        }
+
         public IActionResult Listagem()
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                List<CurriculoViewModel> lista = dao.Listagem();
+                return View(lista);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new Exception(erro.ToString()));
+            }
+        }
+
+        public IActionResult ListagemEN()
         {
             try
             {
@@ -385,5 +420,40 @@ namespace N2B1_CadCurriculos.Controllers
                 return View("Error", new ErrorViewModel(erro.ToString()));
             }
         }
+
+        //ingles
+
+
+        public IActionResult EditEN(string cpf)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                CurriculoViewModel cadastro = dao.Consulta(cpf);
+                if (cadastro == null)
+                    return RedirectToAction("ListagemEN");
+                else
+                    return View("EditarEN", cadastro);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+
+        public IActionResult DeleteEN(string cpf)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                dao.Excluir(cpf);
+                return RedirectToAction("ListagemEN");
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+
     }
 }
