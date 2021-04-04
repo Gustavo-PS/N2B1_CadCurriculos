@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/Index.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1 class="titulo">Curriculum generator </h1>
+            <ul class="options">
+                <li><a asp-area="" asp-controller="Curriculo" asp-action="CadastroEN">New Curriculum</a></li>
+                <li><a asp-area="" asp-controller="Curriculo" asp-action="ListagemEN">My Resumes</a></li>
+                <li><a asp-area="" asp-controller="Curriculo" asp-action="SobreEN">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="div1">
+        <figure>
+            <figure id="click">
+
+            </figure>
+        </figure>
+        <h2>Practicality. </h2>
+        <p>
+            To use our resume maker just add your
+            personal information and make just one click and your resume will be ready.
+        </p>
+    </div>
+
+    <div class="div2">
+        <figure>
+            <figure id="curriculum">
+
+            </figure>
+        </figure>
+        <h2>Organization. </h2>
+        <p>
+            Your information is organized in the best way, making it easier
+            the recruiter's visualization and highlighting his qualities in a visible way.
+        </p>
+    </div>
+
+    <div class="div3">
+        <figure>
+            <figure id="idea">
+
+            </figure>
+        </figure>
+        <h2>Presentation. </h2>
+        <p>
+            A visually appealing resume will attract attention and offer you
+            more visibility during a selection process.
+        </p>
+    </div>
+
+    <a asp-area="" asp-controller="Curriculo" asp-action="Index">BR</a>
+</body>

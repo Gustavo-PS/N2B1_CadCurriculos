@@ -1,0 +1,566 @@
+﻿@model CurriculoViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta for="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="~/css/Cadastro.css">
+</head>
+
+<body onload="CampoData()">
+    <header>
+        <h1 class="titulo">Register Curriculum</h1>
+    </header>
+
+    <main>
+        <form asp-action="Alterar" method="post">
+
+            <!--Dados Pessoais-->
+            <div class="DadosPessoais">
+                <h2>Dados Pessoais</h2>
+                <br>
+                <div>
+                    <div>
+                        <label>Name</label>
+                        <br>
+                        <input class="txtNome" type="text" asp-for="Nome" placeholder="Seu nome aqui" />
+                        <br>
+                    </div>
+                    <div class="divLeft">
+                        <label>CPF</label>
+                        <br>
+                        <input type="text" asp-for="Cpf" onkeydown="mask.init(this, mask.Cpf)" placeholder="000.000.000-00" readonly />
+                    </div>
+                    <div class="divRight">
+                        <label>Telephone</label>
+                        <br>
+                        <input type="tel" asp-for="Telefone" id="tel" onkeydown="mask.init(this, mask.tel)" placeholder="(00) 0000-0000" />
+                    </div>
+                    <div class="divLeft">
+                        <label>E-mail</label>
+                        <br>
+                        <input type="email" asp-for="Email" placeholder="nome@dominio.com" />
+                    </div>
+                    <div class="divRight">
+                        <label>Job title</label>
+                        <br>
+                        <input type="text" asp-for="Cargo" />
+                    </div>
+                </div>
+            </div>
+
+            <!--Endereço-->
+            <div class="Endereco">
+                <h2>Address</h2>
+                <br>
+                <div>
+                    <div class="divLeft">
+                        <label>CEP</label>
+                        <br>
+                        <input type="text" asp-for="Cep" onkeydown="mask.init(this, mask.cep)" placeholder="00000-000" />
+                    </div>
+                    <div class="divRight">
+                        <label>State</label>
+                        <br>
+                        <input type="text" asp-for="Estado" readonly />
+                    </div>
+                    <div class="divLeft">
+                        <label>City</label>
+                        <br>
+                        <input type="text" asp-for="Cidade" readonly />
+                    </div>
+                    <div class="divRight">
+                        <label>Neighborhood</label>
+                        <br>
+                        <input type="text" asp-for="Bairro" readonly />
+                    </div>
+                    <div class="divLeft">
+                        <label>Address</label>
+                        <br>
+                        <input type="text" asp-for="Rua" readonly />
+                    </div>
+                    <div class="divRight">
+                        <label>Number</label>
+                        <br>
+                        <input type="text" asp-for="Numero" />
+                    </div>
+                </div>
+            </div>
+
+            <!--Dados de Formação Academica e Cursos-->
+            <div class="Formacao">
+                <div>
+                    <h2>Academic Formation / Courses</h2>
+                    <img id="btnAdicionaCurso" src="~/img/add.png" onclick="showCurso()" />
+                    <img id="btnRemoveCurso" src="~/img/remove.png" onclick="esconderCurso()" style="display: none" />
+                </div>
+                <br>
+                <br>
+                <div id="Formacao1">
+                    <div>
+                        <div class="divLeft">
+                            <label>Course</label>
+                            <br>
+                            <input type="text" asp-for="Curso1" />
+                        </div>
+                        <div class="divRight">
+                            <label>Education level</label>
+                            <br>
+                            <div>
+                                <input type="text" asp-for="Escolaridade1" />
+                            </div>
+                        </div>
+                        <div class="divLeft">
+                            <label>Institution</label>
+                            <br>
+                            <input type="text" asp-for="Instituicao1" placeholder="Faculdade X" />
+                        </div>
+                        <div class="divRight">
+                            <label>Current situation</label>
+                            <br>
+                            <input type="text" asp-for="Situacao1" />
+                        </div>
+                        <div class="divLeft">
+                            <label>Completion Month / Year</label>
+                            <br>
+                            <input type="month" asp-for="Conclusao1" />
+                        </div>
+                        <div class="divRight">
+                            <div>
+                                <label>Class Period</label>
+                                <br>
+                                <div>
+                                    <input type="text" asp-for="Periodo1" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Formação1-->
+
+                <div id="Formacao2" style="display:none">
+                    <div>
+                        <br>
+                        <div class="divLeft">
+                            <label>Course</label>
+                            <br>
+                            <input type="text" asp-for="Curso2" />
+                        </div>
+                        <div class="divRight">
+                            <label>Education level</label>
+                            <br>
+                            <div>
+                                <input type="text" asp-for="Escolaridade2" />
+                            </div>
+                        </div>
+                        <div class="divLeft">
+                            <label>Institution</label>
+                            <br>
+                            <input type="text" asp-for="Instituicao2" placeholder="Faculdade X" />
+                        </div>
+                        <div class="divRight">
+                            <label>Current situation</label>
+                            <br>
+                            <input type="text" asp-for="Situacao2" />
+                        </div>
+                        <div class="divLeft">
+                            <label>Completion Month / Year</label>
+                            <br>
+                            <input type="month" asp-for="Conclusao2" />
+                        </div>
+                        <div class="divRight">
+                            <div>
+                                <label>Class Period</label>
+                                <br>
+                                <div>
+                                    <input type="text" asp-for="Periodo2" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--Formação2-->
+
+                <div id="Formacao3" style="display:none">
+                    <div>
+                        <br>
+                        <div class="divLeft">
+                            <label>Course</label>
+                            <br>
+                            <input type="text" asp-for="Curso3" />
+                        </div>
+                        <div class="divRight">
+                            <label>Education level</label>
+                            <br>
+                            <div>
+                                <input type="text" asp-for="Escolaridade3" />
+                            </div>
+                        </div>
+                        <div class="divLeft">
+                            <label>Institution</label>
+                            <br>
+                            <input type="text" asp-for="Instituicao3" placeholder="Faculdade X" />
+                        </div>
+                        <div class="divRight">
+                            <label>Current situation</label>
+                            <br>
+                            <input type="text" asp-for="Situacao3" />
+                        </div>
+                        <div class="divLeft">
+                            <label>Completion Month / Year</label>
+                            <br>
+                            <input type="month" asp-for="Conclusao3" />
+                        </div>
+                        <div class="divRight">
+                            <div>
+                                <label>Class Period</label>
+                                <br>
+                                <div>
+                                    <input type="text" asp-for="Periodo3" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--Formação3-->
+
+                <div id="Formacao4" style="display:none">
+                    <div>
+                        <br>
+                        <div class="divLeft">
+                            <label>Course</label>
+                            <br>
+                            <input type="text" asp-for="Curso4" />
+                        </div>
+                        <div class="divRight">
+                            <label>Education level</label>
+                            <br>
+                            <div>
+                                <input type="text" asp-for="Escolaridade4" />
+                            </div>
+                        </div>
+                        <div class="divLeft">
+                            <label>Institution</label>
+                            <br>
+                            <input type="text" asp-for="Instituicao4" placeholder="Faculdade X" />
+                        </div>
+                        <div class="divRight">
+                            <label>Current situation</label>
+                            <br>
+                            <input type="text" asp-for="Situacao4" />
+                        </div>
+                        <div class="divLeft">
+                            <label>Completion Month / Year</label>
+                            <br>
+                            <input type="month" asp-for="Conclusao4" />
+                        </div>
+                        <div class="divRight">
+                            <div>
+                                <label>Class Period</label>
+                                <br>
+                                <div>
+                                    <input type="text" asp-for="Periodo4" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--Formação4-->
+
+                <div id="Formacao5" style="display:none">
+                    <div>
+                        <br>
+                        <div class="divLeft">
+                            <label>Course</label>
+                            <br>
+                            <input type="text" asp-for="Curso5" />
+                        </div>
+                        <div class="divRight">
+                            <label>Education level</label>
+                            <br>
+                            <div>
+                                <input type="text" asp-for="Escolaridade5" />
+                            </div>
+                        </div>
+                        <div class="divLeft">
+                            <label>Institution</label>
+                            <br>
+                            <input type="text" asp-for="Instituicao5" placeholder="Faculdade X" />
+                        </div>
+                        <div class="divRight">
+                            <label>Current situation</label>
+                            <br>
+                            <input type="text" asp-for="Situacao5" />
+                        </div>
+                        <div class="divLeft">
+                            <label>Completion Month / Year</label>
+                            <br>
+                            <input type="month" asp-for="Conclusao5" />
+                        </div>
+                        <div class="divRight">
+                            <div>
+                                <label>Class Period</label>
+                                <br>
+                                <div>
+                                    <input type="text" asp-for="Periodo5" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--Formação5-->
+
+                <br />
+
+
+            </div>
+
+            <!--Dados de experiências profissionais anteriores-->
+            <div class="ExperienciasAnteriores">
+                <div>
+                    <h2>Professional experience</h2>
+                    <img id="btnAdicionaExperiencia" src="~/img/add.png" onclick="showExperiencia()" width="50" height="50" />
+                    <img id="btnRemoveExperiencias" src="~/img/remove.png" onclick="esconderExperiencia()" style="display: none" width="50" height="50" />
+                </div>
+                <br>
+                <br>
+
+                <div id="Experiencias1">
+                    <div>
+                        <div class="divLeft">
+                            <label>Company</label>
+                            <br>
+                            <input type="text" asp-for="Empresa1" />
+                        </div>
+                        <div class="divRight">
+                            <label>Start</label>
+                            <br>
+                            <input type="month" asp-for="Inicio1" />
+                            <br>
+                        </div>
+                        <div class="divLeft">
+                            <div>
+                                <label>Company Occupations</label>
+                                <br>
+                                <div>
+                                    <input asp-for="Ocupacao1" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divRight">
+                            <label>End</label>
+                            <br>
+                            <input type="month" asp-for="Termino1" />
+                        </div>
+                        <div class="divLeft">
+                            <label>Activities</label>
+                            <div>
+                                <textarea class="txtAtividades" asp-for="Atividades1" placeholder="Describe your activities"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Experiências2-->
+                <div id="Experiencias2" style="display: none">
+                    <div>
+                        <div class="divLeft">
+                            <label>Company</label>
+                            <br>
+                            <input type="text" asp-for="Empresa2" />
+                        </div>
+                        <div class="divRight">
+                            <label>Start</label>
+                            <br>
+                            <input type="month" asp-for="Inicio2" />
+                            <br>
+                        </div>
+                        <div class="divLeft">
+                            <div>
+                                <label>Company Occupations</label>
+                                <br>
+                                <div>
+                                    <input asp-for="Ocupacao2" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divRight">
+                            <label>End</label>
+                            <br>
+                            <input type="month" asp-for="Termino2" />
+                        </div>
+                        <div class="divLeft">
+                            <label>Activities</label>
+                            <div>
+                                <textarea class="txtAtividades" asp-for="Atividades2" placeholder="Describe your activities"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Experiências3-->
+                <div id="Experiencias3" style="display: none">
+                    <div>
+                        <div class="divLeft">
+                            <label>Company</label>
+                            <br>
+                            <input type="text" asp-for="Empresa3" />
+                        </div>
+                        <div class="divRight">
+                            <label>Start</label>
+                            <br>
+                            <input type="month" asp-for="Inicio3" />
+                            <br>
+                        </div>
+                        <div class="divLeft">
+                            <div>
+                                <label>Company Occupations</label>
+                                <br>
+                                <div>
+                                    <input asp-for="Ocupacao3" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divRight">
+                            <label>End</label>
+                            <br>
+                            <input type="month" asp-for="Termino3" />
+                        </div>
+                        <div class="divLeft">
+                            <label>Activities</label>
+                            <div>
+                                <textarea class="txtAtividades" asp-for="Atividades3" placeholder="Describe your activities"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <!--Dados de idioma-->
+            <div class="Idioma">
+                <div>
+                    <h2>Languages</h2>
+                    <br />
+                    <img id="btnAdicionaIdioma" src="~/img/add.png" onclick="showIdioma()" width="50" height="50" />
+                    <img id="btnRemoveIdioma" src="~/img/remove.png" onclick="esconderIdioma()" style="display: none" width="50" height="50" />
+                </div>
+
+                <!--Dados de idiomas1-->
+                <div id="dadosIdioma1">
+                    <div>
+                        <div class="divLeft">
+                            <label>Language</label>
+                            <br>
+                            <div>
+                                <input asp-for="Idioma1" />
+                            </div>
+                        </div>
+                        <div class="divLeft">
+                            <div>
+                                <label>Knowledge</label>
+                                <br>
+                                <div>
+                                    <input asp-for="Nivelidioma1" />
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--Dados de idioma2-->
+                <div id="dadosIdioma2" style="display:none">
+                    <div>
+                        <div class="divLeft">
+                            <label>Language</label>
+                            <br>
+                            <div>
+                                <input asp-for="Idioma2" />
+                            </div>
+                        </div>
+                        <div class="divLeft">
+                            <div>
+                                <label>Knowledge</label>
+                                <br>
+                                <div>
+                                    <input asp-for="Nivelidioma2" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Dados de idioma3-->
+
+                <div id="dadosIdioma3" style="display:none">
+                    <div>
+                        <div class="divLeft">
+                            <label>Language</label>
+                            <br>
+                            <div>
+                                <input asp-for="Idioma3" />
+                            </div>
+                        </div>
+                        <div class="divLeft">
+                            <div>
+                                <label>Knowledge</label>
+                                <br>
+                                <div>
+                                    <input asp-for="Nivelidioma3" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
+
+            </div>
+
+            <br /><br /> <input class="btnSalvarCurriculo" type="submit" value="Change Curriculum">
+        </form>
+    </main>
+
+
+    <!--Script de pesquisa e preenchimento do CEP-->
+    <script type="text/javascript">
+        $("#Cep").focusout(function () {
+            //Início do Comando AJAX
+            $.ajax({
+                //O campo URL diz o caminho de onde virá os dados
+                //É importante concatenar o valor digitado no CEP
+                url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
+                //Aqui você deve preencher o tipo de dados que será lido,
+                //no caso, estamos lendo JSON.
+                dataType: 'json',
+                //SUCESS é referente a função que será executada caso
+                //ele consiga ler a fonte de dados com sucesso.
+                //O parâmetro dentro da função se refere ao nome da variável
+                //que você vai dar para ler esse objeto.
+                success: function (resposta) {
+                    //Agora basta definir os valores que você deseja preencher
+                    //automaticamente nos campos acima.
+                    $("#Rua").val(resposta.logradouro);
+                    //$("#numero").val(resposta.complemento);
+                    $("#Bairro").val(resposta.bairro);
+                    $("#Cidade").val(resposta.localidade);
+                    $("#Estado").val(resposta.uf);
+                    //Vamos incluir para que o Número seja focado automaticamente
+                    //melhorando a experiência do usuário
+                    $("#Numero").focus();
+                }
+            });
+        });</script>
+
+    <footer>
+    </footer>
+</body>
+</html>
